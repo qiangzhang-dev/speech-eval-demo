@@ -1,0 +1,60 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0029",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "设备控制",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0029.json",
+    "source_id": "synthetic://SYN-0029.wav",
+    "content_summary": "把客厅窗帘拉开",
+    "content_sha256": "99d95733ee4c6ddaa283e8989ba05fe9808186dc52d7a944607c39fc8b17b394",
+    "subscene_type": "设备控制",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "device_control"
+  },
+  "audio_info": {
+    "duration_ms": 1300,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "把客厅窗帘拉开",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "窗帘",
+      "位置": "客厅"
+    },
+    "expected_action": "open",
+    "expected_reply": "已拉开客厅窗帘",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "把客厅窗帘拉开",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "窗帘",
+      "位置": "客厅"
+    },
+    "action": "open",
+    "reply": "已拉开客厅窗帘",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0029"
+  }
+}

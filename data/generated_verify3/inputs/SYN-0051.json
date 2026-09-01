@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0051",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "短句语翻",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0051.json",
+    "source_id": "synthetic://SYN-0051.wav",
+    "content_summary": "把标题改成项目进展",
+    "content_sha256": "cbc7f80013876899fda7bc76c555de681280abed9c7a236c2fe35396188d3002",
+    "subscene_type": "短句语翻",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "short_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1700,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "把标题改成项目进展",
+    "translation": "Change the title to project progress",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "把标题改成项目",
+    "translation": "Change the title to project progress",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0051"
+  }
+}

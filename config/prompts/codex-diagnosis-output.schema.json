@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://speech-eval.local/schemas/codex-diagnosis-output.schema.json",
+  "title": "Codex CLI evidence-preserving diagnostic response",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["quality_diagnosis", "evidence", "impact_assessment", "recommendations", "final_conclusion", "prompt_version"],
+  "properties": {
+    "quality_diagnosis": {"$ref": "#/$defs/referencedText"},
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["evidence_id", "type", "source", "location", "content"],
+        "properties": {
+          "evidence_id": {"type": "string", "minLength": 1},
+          "type": {"type": "string", "minLength": 1},
+          "source": {"type": "string", "minLength": 1},
+          "location": {"type": "string", "minLength": 1},
+          "content": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["metric_name", "value", "metric_version", "normalization_version", "normalized_reference", "normalized_hypothesis", "substitutions", "deletions", "insertions", "reference_length", "input_summary_sha256", "status", "candidate_status", "overall_candidate_status", "threshold_version", "threshold_approval_status", "threshold_effective"],
+            "properties": {
+              "metric_name": {"type": "string"},
+              "value": {"type": "number"},
+              "metric_version": {"type": "string"},
+              "normalization_version": {"type": "string"},
+              "normalized_reference": {"type": "string"},
+              "normalized_hypothesis": {"type": "string"},
+              "substitutions": {"type": "integer"},
+              "deletions": {"type": "integer"},
+              "insertions": {"type": "integer"},
+              "reference_length": {"type": "integer"},
+              "input_summary_sha256": {"type": "string"},
+              "status": {"type": "string", "enum": ["通过", "需关注", "失败", "不判定"]},
+              "candidate_status": {"type": "string", "enum": ["通过", "需关注", "失败"]},
+              "overall_candidate_status": {"type": "string", "enum": ["通过", "需关注", "失败", "证据不足"]},
+              "threshold_version": {"type": "string"},
+              "threshold_approval_status": {"type": "string"},
+              "threshold_effective": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "impact_assessment": {"$ref": "#/$defs/referencedText"},
+    "recommendations": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/referencedText"}},
+    "final_conclusion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["level", "basis", "evidence_ids"],
+      "properties": {
+        "level": {"type": "string", "enum": ["通过", "需关注", "失败", "证据不足"]},
+        "basis": {"type": "string", "minLength": 1},
+        "evidence_ids": {"$ref": "#/$defs/evidenceIds"}
+      }
+    },
+    "prompt_version": {"type": "string", "const": "codex-cli-gpt-5.6-sol-v1"}
+  },
+  "$defs": {
+    "evidenceIds": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "referencedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "evidence_ids"],
+      "properties": {
+        "text": {"type": "string", "minLength": 1},
+        "evidence_ids": {"$ref": "#/$defs/evidenceIds"}
+      }
+    }
+  }
+}

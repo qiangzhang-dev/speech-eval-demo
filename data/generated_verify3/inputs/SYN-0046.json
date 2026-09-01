@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0046",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0046.json",
+    "source_id": "synthetic://SYN-0046.wav",
+    "content_summary": "请把访谈录音按说话人分段，删除重复的开场白，并在译文末尾保留受访者提出的两个问题。",
+    "content_sha256": "2ea4f76467158227421d74a11e4387ae911b419a20d0c1c952f349506599d64f",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：访谈资料整理"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "请把访谈录音按说话人分段，删除重复的开场白，并在译文末尾保留受访者提出的两个问题。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1200,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把访谈录音按说话人分段，删除重复的开场白，并在译文末尾保留受访者提出的两个问题。",
+    "translation": "Segment the interview recording by speaker, remove the repeated opening, and keep the two questions raised by the interviewee at the end of the translation.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "访谈资料整理",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把访谈录音按说话人分段，删除重复的开场白，并在译文末尾保留受访者提出的两个问题",
+    "translation": "Segment the interview recording by speaker, remove the repeated opening, and keep the two questions raised by the interviewee at the end of the translation.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0046"
+  }
+}

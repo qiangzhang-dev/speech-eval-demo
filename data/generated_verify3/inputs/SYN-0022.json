@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0022",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0022.json",
+    "source_id": "synthetic://SYN-0022.wav",
+    "content_summary": "我已经把上季度的销售数据放进表格，请保留原始列，并在翻译说明中指出华东区域的异常增长。",
+    "content_sha256": "041ee23133be0e0bd7f454a0e1b5d2a7fbd27f3da19bd7f978032e7b06b57a19",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：销售数据说明"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "我已经把上季度的销售数据放进表格，请保留原始列，并在翻译说明中指出华东区域的异常增长。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1500,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "我已经把上季度的销售数据放进表格，请保留原始列，并在翻译说明中指出华东区域的异常增长。",
+    "translation": "I have put last quarter's sales data into the spreadsheet; keep the original columns and point out the unusual growth in East China in the translation notes.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "销售数据说明",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "我已经把上季度的销售数据放进表格，请保留原始列，并在翻译说明中指出华东区域的异常增长",
+    "translation": "I have put last quarter's sales data into the spreadsheet; keep the original columns and point out the unusual growth in East China in the translation notes.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0022"
+  }
+}

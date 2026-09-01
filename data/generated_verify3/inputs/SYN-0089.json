@@ -1,0 +1,62 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0089",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "设备控制",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0089.json",
+    "source_id": "synthetic://SYN-0089.wav",
+    "content_summary": "把餐厅灯带亮度调到百分之六十",
+    "content_sha256": "b3711cb0670288071655600c10a09bb6af1b070d591525d933d46084977587b0",
+    "subscene_type": "设备控制",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "device_control"
+  },
+  "audio_info": {
+    "duration_ms": 1900,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "把餐厅灯带亮度调到百分之六十",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "灯带",
+      "位置": "餐厅",
+      "亮度": 60
+    },
+    "expected_action": "set_brightness",
+    "expected_reply": "餐厅灯带亮度已调到60%",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "把餐厅灯带亮度调到百分之六十",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "灯带",
+      "位置": "餐厅",
+      "亮度": 60
+    },
+    "action": "set_brightness",
+    "reply": "餐厅灯带亮度已调到60%",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0089"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0086",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "噪声/数字英文混合",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0086.json",
+    "source_id": "synthetic://SYN-0086.wav",
+    "content_summary": "请在 5 分钟后提醒我检查 API",
+    "content_sha256": "b31067465c2e31508de5a7ab17d331f41d9d851f9a3943d537440f45b79381df",
+    "subscene_type": "噪声/数字英文混合",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "noise_mixed_alphanumeric"
+  },
+  "audio_info": {
+    "duration_ms": 1600,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "noise",
+      "mixed_alphanumeric"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请在 5 分钟后提醒我检查 API",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请在 5 分钟后提醒我检查 AP",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0086"
+  }
+}

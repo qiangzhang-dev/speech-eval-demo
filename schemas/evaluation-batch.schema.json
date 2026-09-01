@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://speech-eval.local/schemas/evaluation-batch.schema.json",
+  "title": "正式语音评测结果批次",
+  "description": "G02要求正式样例、COMPLETED状态和完整结果均不少于100且数量一致。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "batch_id",
+    "generated_at",
+    "configuration",
+    "results"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "batch_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "configuration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "plan_version",
+        "threshold_version",
+        "prompt_version"
+      ],
+      "properties": {
+        "plan_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "threshold_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "prompt_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "result_schema_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "metric_version": {
+          "type": "string",
+          "minLength": 1
+        },
+        "normalization_version": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "results": {
+      "type": "array",
+      "minItems": 100,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "./evaluation-result.schema.json"
+      }
+    }
+  },
+  "x-readme-contract": {
+    "source": "../../README.md",
+    "gate_ids": [
+      "G01",
+      "G02",
+      "G03",
+      "G04",
+      "G05",
+      "G06",
+      "G07",
+      "G08",
+      "G09",
+      "G10",
+      "G11",
+      "G12"
+    ],
+    "typical_scenarios": [
+      "短语音/录音转写",
+      "会议/办公语音翻译",
+      "车载/语音助手交互"
+    ],
+    "semantic_checks": [
+      "样例ID在批次内唯一",
+      "正式样例数、COMPLETED状态数和完整结果数相等且均不少于100",
+      "典型场景不少于3、子场景不少于2、能力链路不少于2",
+      "所有证据引用在所属样例内可解析",
+      "系统、统计与导出数量、字段和值一致"
+    ]
+  }
+}

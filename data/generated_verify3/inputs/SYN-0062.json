@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0062",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "噪声/数字英文混合",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0062.json",
+    "source_id": "synthetic://SYN-0062.wav",
+    "content_summary": "请把发票号 INV20260825 录入系统",
+    "content_sha256": "a4d66d8155fef825fe6506c18db2618bb31011580e4ca50ec64a2a87ec3562c6",
+    "subscene_type": "噪声/数字英文混合",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "noise_mixed_alphanumeric"
+  },
+  "audio_info": {
+    "duration_ms": 1900,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "noise",
+      "mixed_alphanumeric"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把发票号 INV20260825 录入系统",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把发票号 INV20260825 录入系",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0062"
+  }
+}

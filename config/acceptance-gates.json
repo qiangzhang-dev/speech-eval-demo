@@ -1,0 +1,278 @@
+{
+  "schema_version": "1.0.0",
+  "gate_set_version": "1.0.0",
+  "contract_source": "../README.md",
+  "policy": {
+    "all_gates_must_pass": true,
+    "manual_gates_require_signed_evidence": true,
+    "unknown_is_failure": true,
+    "conditional_pass_cannot_mask_hard_requirement_failure": true
+  },
+  "gates": [
+    {
+      "id": "G01",
+      "name": "可运行",
+      "type": "hybrid",
+      "measure": "clean_environment_readme_run",
+      "operator": "equals",
+      "expected": true,
+      "required_evidence": [
+        "干净环境记录",
+        "README逐条命令记录",
+        "代表性完整链路日志"
+      ],
+      "blocking": true,
+      "readme_condition": "干净环境仅按 README 一次启动并跑通代表性完整链路"
+    },
+    {
+      "id": "G02",
+      "name": "数量",
+      "type": "automatic",
+      "measure": "formal_completed_result_counts",
+      "operator": "all",
+      "expected": {
+        "formal_sample_count_minimum": 100,
+        "completed_sample_count_minimum": 100,
+        "complete_result_count_minimum": 100,
+        "counts_equal": true
+      },
+      "required_evidence": [
+        "冻结清单摘要",
+        "运行状态统计",
+        "结果文件摘要"
+      ],
+      "blocking": true,
+      "readme_condition": "正式样例不少于100、COMPLETED不少于100、完整结果不少于100，三者一致"
+    },
+    {
+      "id": "G03",
+      "name": "覆盖",
+      "type": "automatic",
+      "measure": "coverage_counts",
+      "operator": "all",
+      "expected": {
+        "typical_scenario_count_minimum": 3,
+        "subscenario_count_minimum": 2,
+        "capability_chain_count_minimum": 2,
+        "planned_typical_scenarios": [
+          "短语音/录音转写",
+          "会议/办公语音翻译",
+          "车载/语音助手交互"
+        ]
+      },
+      "required_evidence": [
+        "冻结清单覆盖统计"
+      ],
+      "blocking": true,
+      "readme_condition": "场景不少于3、子场景不少于2、能力链路不少于2"
+    },
+    {
+      "id": "G04",
+      "name": "字段",
+      "type": "automatic",
+      "measure": "result_field_and_missing_fact_integrity",
+      "operator": "all",
+      "expected": {
+        "top_level_field_count": 14,
+        "field_presence_rate": 1.0,
+        "extra_top_level_field_count": 0,
+        "invalid_missing_fact_count": 0
+      },
+      "required_evidence": [
+        "全量Schema校验结果",
+        "缺失事实检查结果"
+      ],
+      "blocking": true,
+      "readme_condition": "14字段存在率100%，缺失事实正确标记"
+    },
+    {
+      "id": "G05",
+      "name": "指标",
+      "type": "hybrid",
+      "measure": "automatic_metric_reproducibility",
+      "operator": "all",
+      "expected": {
+        "automatic_metric_count_minimum": 1,
+        "gold_standard_test_pass_rate": 1.0,
+        "repeated_runs_identical": true
+      },
+      "required_evidence": [
+        "指标实现版本",
+        "输入摘要",
+        "金标准测试",
+        "重复运行记录"
+      ],
+      "blocking": true,
+      "readme_condition": "至少一种自动指标；金标准测试100%通过；重复运行一致"
+    },
+    {
+      "id": "G06",
+      "name": "完整链路",
+      "type": "hybrid",
+      "measure": "onsite_end_to_end_workflow",
+      "operator": "contains_all",
+      "expected": [
+        "数据导入",
+        "场景与任务标注",
+        "系统输出解析",
+        "自动指标计算",
+        "AI辅助质量诊断",
+        "人工复核与修订",
+        "结构化结果保存",
+        "查看、下载与报告生成"
+      ],
+      "required_evidence": [
+        "验收现场运行日志",
+        "端到端测试记录"
+      ],
+      "blocking": true,
+      "readme_condition": "导入到报告能够在验收现场完整执行"
+    },
+    {
+      "id": "G07",
+      "name": "证据与事实",
+      "type": "automatic",
+      "measure": "evidence_and_fact_integrity",
+      "operator": "all",
+      "expected": {
+        "unresolved_evidence_reference_count": 0,
+        "ungrounded_analysis_item_count": 0,
+        "fabricated_fact_count": 0
+      },
+      "required_evidence": [
+        "证据解析报告",
+        "AI人工抽检记录"
+      ],
+      "blocking": true,
+      "readme_condition": "诊断、影响、建议、最终结论均有证据；事实编造为0"
+    },
+    {
+      "id": "G08",
+      "name": "人工闭环",
+      "type": "automatic",
+      "measure": "human_revision_traceability",
+      "operator": "all_revisions_have",
+      "expected": [
+        "before",
+        "after",
+        "editor",
+        "edited_at",
+        "reason"
+      ],
+      "required_evidence": [
+        "修订记录全量检查",
+        "保存重载一致性记录"
+      ],
+      "blocking": true,
+      "readme_condition": "修订前后值、人员、时间和原因100%可追溯"
+    },
+    {
+      "id": "G09",
+      "name": "工程能力",
+      "type": "hybrid",
+      "measure": "operational_capabilities",
+      "operator": "contains_all",
+      "expected": [
+        "异常隔离",
+        "日志",
+        "保存",
+        "查看",
+        "下载"
+      ],
+      "required_evidence": [
+        "功能测试",
+        "异常测试",
+        "运行日志"
+      ],
+      "blocking": true,
+      "readme_condition": "异常隔离、日志、保存、查看和下载全部可用"
+    },
+    {
+      "id": "G10",
+      "name": "一致性",
+      "type": "automatic",
+      "measure": "system_statistics_export_consistency",
+      "operator": "all_equal",
+      "expected": [
+        "数量",
+        "字段",
+        "值"
+      ],
+      "required_evidence": [
+        "系统与统计比对",
+        "数据库与导出全量比对"
+      ],
+      "blocking": true,
+      "readme_condition": "系统、统计和导出结果的数量、字段和值一致"
+    },
+    {
+      "id": "G11",
+      "name": "交付",
+      "type": "manual",
+      "measure": "delivery_artifacts",
+      "operator": "contains_all",
+      "expected": [
+        "在线实践报告",
+        "源代码或仓库",
+        "README",
+        "依赖清单或锁文件",
+        "不少于100条样例清单或数据链接",
+        "不少于100条完整结构化结果",
+        "测试报告与验收矩阵",
+        "截图与典型案例",
+        "完整链路录屏",
+        "AI协作与提效总结",
+        "已知限制与风险"
+      ],
+      "required_evidence": [
+        "交付清单",
+        "文件摘要",
+        "非作者权限检查",
+        "冻结版本记录"
+      ],
+      "blocking": true,
+      "readme_condition": "所有必交材料齐全，链接可访问，录屏对应冻结版本"
+    },
+    {
+      "id": "G12",
+      "name": "缺陷与发布",
+      "type": "manual",
+      "measure": "test_evidence_and_release_defects",
+      "operator": "all",
+      "expected": {
+        "test_cases_with_evidence": [
+          "TC-01",
+          "TC-02",
+          "TC-03",
+          "TC-04",
+          "TC-05",
+          "TC-06",
+          "TC-07",
+          "TC-08",
+          "TC-09",
+          "TC-10",
+          "TC-11",
+          "TC-12",
+          "TC-13",
+          "TC-14",
+          "TC-15",
+          "TC-16",
+          "TC-17",
+          "TC-18",
+          "TC-19",
+          "TC-20"
+        ],
+        "open_p0_count": 0,
+        "open_p1_count": 0,
+        "p2_p3_have_owner_and_deadline": true
+      },
+      "required_evidence": [
+        "TC-01至TC-20测试记录",
+        "缺陷清单",
+        "验收签署"
+      ],
+      "blocking": true,
+      "readme_condition": "TC-01至TC-20均有证据；无未关闭P0/P1；P2/P3有责任人和期限"
+    }
+  ]
+}

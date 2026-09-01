@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0094",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0094.json",
+    "source_id": "synthetic://SYN-0094.wav",
+    "content_summary": "请把本周的值班安排翻译给海外团队，并特别标出周末负责处理紧急故障的联系人。",
+    "content_sha256": "476dfe4d438ea286271524cd3dad1174cb1b77986c21e11584abde51a911076f",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：值班安排同步"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "请把本周的值班安排翻译给海外团队，并特别标出周末负责处理紧急故障的联系人。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1500,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把本周的值班安排翻译给海外团队，并特别标出周末负责处理紧急故障的联系人。",
+    "translation": "Translate this week's duty roster for the overseas team and specifically mark the contact responsible for urgent incidents on the weekend.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "值班安排同步",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把本周的值班安排翻译给海外团队，并特别标出周末负责处理紧急故障的联系人",
+    "translation": "Translate this week's duty roster for the overseas team and specifically mark the contact responsible for urgent incidents on the weekend.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0094"
+  }
+}

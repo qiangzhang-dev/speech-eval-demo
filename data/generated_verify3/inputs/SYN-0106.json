@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0106",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0106.json",
+    "source_id": "synthetic://SYN-0106.wav",
+    "content_summary": "请把访客名单与门卫登记表逐项核对，确认没有重复姓名后再发送给接待同事。",
+    "content_sha256": "e023763e3b9e2ccc43c92b2e2ce7fd2b0a64e70610f185c6551825dc9fd6bc1f",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：访客名单核验"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "请把访客名单与门卫登记表逐项核对，确认没有重复姓名后再发送给接待同事。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把访客名单与门卫登记表逐项核对，确认没有重复姓名后再发送给接待同事。",
+    "translation": "Compare the visitor list with the guard's registration form item by item, and send it to the reception colleague only after confirming there are no duplicate names.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "访客名单核验",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把访客名单与门卫登记表逐项核对，确认没有重复姓名后再发送给接待同事",
+    "translation": "Compare the visitor list with the guard's registration form item by item, and send it to the reception colleague only after confirming there are no duplicate names.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0106"
+  }
+}

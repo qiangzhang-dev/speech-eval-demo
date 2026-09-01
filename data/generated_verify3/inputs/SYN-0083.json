@@ -1,0 +1,60 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0083",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "设备控制",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0083.json",
+    "source_id": "synthetic://SYN-0083.wav",
+    "content_summary": "关闭书房显示器",
+    "content_sha256": "e6930685b805ae5c7d04403b10beb70d9ef03bcb540929e70382f01e02afefa5",
+    "subscene_type": "设备控制",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "device_control"
+  },
+  "audio_info": {
+    "duration_ms": 1300,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "关闭书房显示器",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "显示器",
+      "位置": "书房"
+    },
+    "expected_action": "turn_off",
+    "expected_reply": "已关闭书房显示器",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "关闭书房显",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "显示器",
+      "位置": "书房"
+    },
+    "action": "turn_off",
+    "reply": "已关闭书房显示器",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0083"
+  }
+}

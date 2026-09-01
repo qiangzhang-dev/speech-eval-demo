@@ -1,0 +1,52 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0019",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "普通话口述",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0019.json",
+    "source_id": "synthetic://SYN-0019.wav",
+    "content_summary": "我明早要去机场请设置一个提醒",
+    "content_sha256": "363351da6fd5d21d4592c778ded8cb935088a01fe038d3788a6447131b438d20",
+    "subscene_type": "普通话口述",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "clean_mandarin"
+  },
+  "audio_info": {
+    "duration_ms": 1200,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "我明早要去机场请设置一个提醒",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "我明早要去机场请设置一个",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0019"
+  }
+}

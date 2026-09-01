@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0076",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0076.json",
+    "source_id": "synthetic://SYN-0076.wav",
+    "content_summary": "请将合同中的付款节点翻译清楚，并提醒法务核对违约条款是否与补充协议一致。",
+    "content_sha256": "0768ae2bc52f367e855906a9ae4ac8ccdf3374beb73edb4f19627864b6360ce2",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：合同条款核对"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "请将合同中的付款节点翻译清楚，并提醒法务核对违约条款是否与补充协议一致。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1500,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请将合同中的付款节点翻译清楚，并提醒法务核对违约条款是否与补充协议一致。",
+    "translation": "Translate the payment milestones in the contract clearly and remind legal to check whether the breach clauses match the supplemental agreement.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "合同条款核对",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请将",
+    "translation": "Translate the payment milestones in the contract clearly and remind legal to check whether the breach clauses match the supplemental agreement.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0076"
+  }
+}

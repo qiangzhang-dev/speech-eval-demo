@@ -1,0 +1,76 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0036",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "信息查询/多轮任务",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0036.json",
+    "source_id": "synthetic://SYN-0036.wav",
+    "content_summary": "请查询今天成都的航班信息",
+    "content_sha256": "db4d93220690c843bc91ab54f1b0488ebaf6bea57b7c2855ca60d9e2d0316794",
+    "subscene_type": "信息查询/多轮任务",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "用户",
+        "内容": "我想了解成都的安排。"
+      },
+      {
+        "轮次": 2,
+        "角色": "系统",
+        "内容": "好的，请问你想查询什么？"
+      },
+      {
+        "轮次": 3,
+        "角色": "用户",
+        "内容": "请查询今天成都的航班信息"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "multi_turn_query"
+  },
+  "audio_info": {
+    "duration_ms": 2000,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请查询今天成都的航班信息",
+    "translation": "-",
+    "intent": "信息查询",
+    "slots": {
+      "地点": "成都",
+      "日期": "今天"
+    },
+    "expected_action": "query_flight",
+    "expected_reply": "成都今天有两趟已保存航班",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请查",
+    "translation": "-",
+    "intent": "信息查询",
+    "slots": {
+      "地点": "成都",
+      "日期": "今天"
+    },
+    "action": "query_flight",
+    "reply": "成都今天有两趟已保存航班",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0036"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0057",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "短句语翻",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0057.json",
+    "source_id": "synthetic://SYN-0057.wav",
+    "content_summary": "查询最新库存",
+    "content_sha256": "d7f0a4ab956699ecc50491cfa179407a72692ab16ee9d8f4322bb81a37307990",
+    "subscene_type": "短句语翻",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "short_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1400,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "查询最新库存",
+    "translation": "Check the latest inventory",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "查询最新库存",
+    "translation": "Check the latest inventory",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0057"
+  }
+}

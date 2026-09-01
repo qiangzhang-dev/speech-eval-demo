@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0009",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "短句语翻",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0009.json",
+    "source_id": "synthetic://SYN-0009.wav",
+    "content_summary": "会议改到周五上午",
+    "content_sha256": "a3ce7270ececf0d1cf0b1d2dba2e1320ca08047b2f8cf82870d29c108a4fba88",
+    "subscene_type": "短句语翻",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "short_translation"
+  },
+  "audio_info": {
+    "duration_ms": 2000,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "会议改到周五上午",
+    "translation": "Move the meeting to Friday morning",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "会议改到周五上午",
+    "translation": "Move the meeting to Friday morning",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0009"
+  }
+}

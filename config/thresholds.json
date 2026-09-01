@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "threshold_version": "1.0.0-candidate.1",
+  "authority": "project_defined",
+  "approval_status": "pending_approval",
+  "effective": false,
+  "description": "项目自定义候选阈值，不代表作业官方阈值；经审批后方可作为正式验收判定依据。",
+  "approval": {
+    "required": true,
+    "required_roles": ["项目负责人", "评测负责人"],
+    "approved_by": "-",
+    "approved_at": "-",
+    "approval_record": "-"
+  },
+  "change_control": {
+    "versioned": true,
+    "immutable_after_use": true,
+    "new_version_required_for_change": true,
+    "result_must_record_threshold_version": true
+  },
+  "metrics": {
+    "CER": {
+      "metric_id": "cer-v1",
+      "name": "字符错误率",
+      "automatic": true,
+      "reproducible": true,
+      "applies_to": ["语音识别"],
+      "formula": "(substitutions + deletions + insertions) / reference_character_count",
+      "value_range": {
+        "minimum": 0,
+        "maximum": null
+      },
+      "invalid_when": [
+        "参考文本为 '-'",
+        "规范化后的参考文本长度为0"
+      ],
+      "normalization": {
+        "version": "cer-normalize-v1",
+        "steps": [
+          "Unicode NFKC规范化",
+          "拉丁字母转小写",
+          "移除Unicode空白符",
+          "移除Unicode标点符号",
+          "保留汉字、拉丁字母和数字"
+        ]
+      },
+      "distance_algorithm": "Levenshtein character distance",
+      "bands": [
+        {
+          "status": "通过",
+          "expression": "0 <= value <= 0.10",
+          "lower": 0,
+          "lower_inclusive": true,
+          "upper": 0.1,
+          "upper_inclusive": true
+        },
+        {
+          "status": "需关注",
+          "expression": "0.10 < value <= 0.20",
+          "lower": 0.1,
+          "lower_inclusive": false,
+          "upper": 0.2,
+          "upper_inclusive": true
+        },
+        {
+          "status": "失败",
+          "expression": "value > 0.20",
+          "lower": 0.2,
+          "lower_inclusive": false,
+          "upper": null,
+          "upper_inclusive": false
+        }
+      ]
+    }
+  },
+  "history": [
+    {
+      "version": "1.0.0-candidate.1",
+      "date": "2026-08-21",
+      "change": "首次建立CER候选阈值与可复现规范。",
+      "approval_status": "pending_approval"
+    }
+  ]
+}
+

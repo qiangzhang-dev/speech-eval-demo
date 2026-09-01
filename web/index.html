@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="离线语音智能体验评测结果浏览与人工复核工作台">
+    <title>语音智能体验评测工作台</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__inner">
+        <div>
+          <p class="eyebrow">OFFLINE EVALUATION CONSOLE</p>
+          <h1>语音智能体验评测工作台</h1>
+          <p class="hero__copy">集中查看批次结果、证据链与处理日志，并通过人工修订形成可追溯闭环。</p>
+        </div>
+        <div id="health-badge" class="health-badge" role="status" aria-live="polite">
+          <span class="health-dot" aria-hidden="true"></span>
+          正在连接本地服务
+        </div>
+      </div>
+    </header>
+
+    <aside class="verification-notice" aria-label="本地合成工程验证页面">
+      <div class="verification-notice__inner">
+        <strong>本地合成工程验证页面</strong>
+        <span>
+          当前交付验证使用 SYN-* 合成批次；候选阈值未生效时，正式结论保持“证据不足”，
+          “通过 / 需关注 / 失败”只保存在候选状态中；不代表真实业务效果或正式验收结论。formal_acceptance_claim=false。
+        </span>
+      </div>
+    </aside>
+
+    <main class="page-shell">
+      <section class="section" aria-labelledby="stats-heading">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">运行概览</p>
+            <h2 id="stats-heading">批次与结果统计</h2>
+          </div>
+          <button id="refresh-button" class="button button--quiet" type="button">刷新数据</button>
+        </div>
+        <div id="stats-grid" class="stats-grid" aria-live="polite">
+          <article class="stat-card stat-card--loading">正在读取统计数据…</article>
+        </div>
+        <div id="distribution-panel" class="distribution-panel" hidden></div>
+      </section>
+
+      <section class="workspace" aria-label="评测结果工作区">
+        <aside class="result-panel">
+          <div class="panel-title">
+            <div>
+              <p class="section-kicker">结果检索</p>
+              <h2>评测结果</h2>
+            </div>
+            <span id="result-count" class="count-pill">0 条</span>
+          </div>
+
+          <form id="filter-form" class="filter-form">
+            <label class="field field--wide">
+              <span>搜索</span>
+              <input id="filter-q" name="q" type="search" placeholder="样例 ID、诊断或结论">
+            </label>
+            <label class="field">
+              <span>状态</span>
+              <select id="filter-status" name="status">
+                <option value="">全部</option>
+                <option value="COMPLETED">COMPLETED</option>
+                <option value="FAILED">FAILED</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>最终结论</span>
+              <select id="filter-conclusion" name="conclusion">
+                <option value="">全部</option>
+                <option value="通过">通过</option>
+                <option value="需关注">需关注</option>
+                <option value="失败">失败</option>
+                <option value="证据不足">证据不足</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>场景类型</span>
+              <input id="filter-scene" name="scene_type" type="text" placeholder="精确匹配">
+            </label>
+            <label class="field">
+              <span>批次 ID</span>
+              <input id="filter-batch" name="batch_id" type="text" placeholder="batch-…">
+            </label>
+            <label class="field field--wide">
+              <span>运行 ID</span>
+              <input id="filter-run" name="run_id" type="text" placeholder="run-…">
+            </label>
+            <div class="filter-actions field--wide">
+              <button class="button" type="submit">应用筛选</button>
+              <button id="clear-filter" class="button button--quiet" type="button">清空</button>
+              <button id="download-json" class="button button--quiet" type="button">下载 JSON</button>
+              <button id="download-csv" class="button button--quiet" type="button">下载 CSV</button>
+            </div>
+          </form>
+
+          <div id="result-message" class="inline-message" aria-live="polite" hidden></div>
+          <div id="result-list" class="result-list" role="list"></div>
+        </aside>
+
+        <article class="detail-panel" aria-labelledby="detail-heading">
+          <div id="detail-placeholder" class="empty-state">
+            <div class="empty-icon" aria-hidden="true">⌁</div>
+            <h2 id="detail-heading">选择一条结果开始复核</h2>
+            <p>详情区将展示十四字段结果、运行元数据、证据引用、日志及人工修订记录。</p>
+          </div>
+
+          <div id="detail-content" hidden>
+            <div class="detail-header">
+              <div>
+                <p class="section-kicker">样例详情</p>
+                <h2 id="detail-sample-id"></h2>
+                <p id="detail-subtitle" class="detail-subtitle"></p>
+              </div>
+              <span id="detail-conclusion" class="conclusion-badge"></span>
+            </div>
+
+            <section class="detail-section" aria-labelledby="metadata-heading">
+              <h3 id="metadata-heading">运行元数据</h3>
+              <dl id="metadata-grid" class="metadata-grid"></dl>
+            </section>
+
+            <section class="detail-section" aria-labelledby="fields-heading">
+              <div class="subsection-heading">
+                <h3 id="fields-heading">评测输出</h3>
+                <span>标准十四字段</span>
+              </div>
+              <div id="field-grid" class="field-grid"></div>
+            </section>
+
+            <section class="detail-section" aria-labelledby="evidence-heading">
+              <div class="subsection-heading">
+                <h3 id="evidence-heading">证据引用</h3>
+                <span id="evidence-count">0 条</span>
+              </div>
+              <div id="evidence-list" class="evidence-list"></div>
+            </section>
+
+            <section class="detail-section" aria-labelledby="logs-heading">
+              <div class="subsection-heading">
+                <h3 id="logs-heading">处理日志</h3>
+                <span id="log-count">0 条</span>
+              </div>
+              <div id="log-list" class="log-list"></div>
+            </section>
+
+            <section class="detail-section revision-section" aria-labelledby="revision-heading">
+              <div class="subsection-heading">
+                <h3 id="revision-heading">人工修订</h3>
+                <span id="revision-count">0 条历史记录</span>
+              </div>
+              <div id="revision-history" class="revision-history"></div>
+              <form id="revision-form" class="revision-form">
+                <label class="field">
+                  <span>修订字段</span>
+                  <select id="revision-field" required>
+                    <option value="quality_diagnosis">质量诊断</option>
+                    <option value="impact_assessment">影响评估</option>
+                    <option value="recommendations">优化建议</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>修订人</span>
+                  <input id="revision-editor" type="text" required placeholder="reviewer-01">
+                </label>
+                <label class="field field--wide">
+                  <span>修订后内容 <small>支持 JSON；普通文字按字符串提交</small></span>
+                  <textarea id="revision-value" rows="7" required></textarea>
+                </label>
+                <label class="field field--wide">
+                  <span>修订原因</span>
+                  <textarea id="revision-reason" rows="3" required placeholder="说明修订依据，便于审计追溯"></textarea>
+                </label>
+                <div class="revision-actions field--wide">
+                  <p id="revision-message" class="form-message" role="status" aria-live="polite"></p>
+                  <button id="revision-submit" class="button" type="submit">提交并记录审计</button>
+                </div>
+              </form>
+              <div class="label-correction-panel">
+                <div class="subsection-heading">
+                  <h4>标签纠正（独立入口）</h4>
+                  <span>改变标签后原派生结果会明确作废</span>
+                </div>
+                <form id="label-correction-form" class="revision-form">
+                  <label class="field">
+                    <span>纠正字段</span>
+                    <select id="label-correction-field" required>
+                      <option value="subscene_type">子场景</option>
+                      <option value="scene_type">场景类型</option>
+                      <option value="task_types">任务类型</option>
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>纠正人</span>
+                    <input id="label-correction-editor" type="text" required placeholder="reviewer-01">
+                  </label>
+                  <label class="field field--wide">
+                    <span>纠正后标签 <small>任务类型使用 JSON 数组</small></span>
+                    <textarea id="label-correction-value" rows="3" required></textarea>
+                  </label>
+                  <label class="field field--wide">
+                    <span>纠正原因</span>
+                    <textarea id="label-correction-reason" rows="3" required placeholder="说明标签依据，便于审计追溯"></textarea>
+                  </label>
+                  <div class="revision-actions field--wide">
+                    <p id="label-correction-message" class="form-message" role="status" aria-live="polite"></p>
+                    <button id="label-correction-submit" class="button button--quiet" type="submit">纠正标签并使派生结果失效</button>
+                  </div>
+                </form>
+              </div>
+            </section>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      本地离线工程验证 · 数据仅写入指定 SQLite 评测库 · 不构成正式业务验收
+    </footer>
+  </body>
+</html>

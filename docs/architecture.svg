@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="720" viewBox="0 0 1400 720" role="img" aria-labelledby="title desc">
+  <title id="title">多场景语音智能体验评测 Demo 架构图</title>
+  <desc id="desc">从清单和输入文件开始，经过校验、标注、指标、证据和诊断，保存到 SQLite 并通过 Web、导出和报告验收。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#315b8a"/>
+    </marker>
+    <style>
+      .box { fill:#f7fbff; stroke:#315b8a; stroke-width:2; rx:12; }
+      .store { fill:#fff8e8; stroke:#b7791f; stroke-width:2; rx:12; }
+      .gate { fill:#f1fbf4; stroke:#2f855a; stroke-width:2; rx:12; }
+      .title { font:700 24px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill:#17324d; }
+      .label { font:600 18px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill:#17324d; text-anchor:middle; }
+      .small { font:400 15px "Microsoft YaHei", "Noto Sans CJK SC", sans-serif; fill:#315b8a; text-anchor:middle; }
+      .arrow { stroke:#315b8a; stroke-width:3; fill:none; marker-end:url(#arrow); }
+      .dashed { stroke:#718096; stroke-width:2; stroke-dasharray:8 7; fill:none; marker-end:url(#arrow); }
+    </style>
+  </defs>
+  <rect width="1400" height="720" fill="#ffffff"/>
+  <text x="700" y="42" class="title" text-anchor="middle">多场景语音智能体验评测与问题分析 Demo</text>
+
+  <rect x="35" y="95" width="180" height="105" class="box"/>
+  <text x="125" y="130" class="label"><tspan x="125" dy="0">输入层</tspan><tspan x="125" dy="27">CSV / JSON / JSONL</tspan><tspan x="125" dy="24">音频元数据与标注</tspan></text>
+
+  <rect x="260" y="95" width="190" height="105" class="box"/>
+  <text x="355" y="130" class="label"><tspan x="355" dy="0">导入与校验</tspan><tspan x="355" dy="27">ID / Schema / 路径</tspan><tspan x="355" dy="24">异常隔离与日志</tspan></text>
+
+  <rect x="495" y="95" width="190" height="105" class="box"/>
+  <text x="590" y="130" class="label"><tspan x="590" dy="0">场景与任务</tspan><tspan x="590" dy="27">C01 / C02 / C03</tspan><tspan x="590" dy="24">人工确认标签</tspan></text>
+
+  <rect x="730" y="95" width="190" height="105" class="box"/>
+  <text x="825" y="130" class="label"><tspan x="825" dy="0">指标引擎</tspan><tspan x="825" dy="27">CER / exact-match</tspan><tspan x="825" dy="24">版本化阈值</tspan></text>
+
+  <rect x="965" y="95" width="190" height="105" class="box"/>
+  <text x="1060" y="130" class="label"><tspan x="1060" dy="0">证据与诊断</tspan><tspan x="1060" dy="27">不可变证据目录</tspan><tspan x="1060" dy="24">rules / 可选 LLM</tspan></text>
+
+  <rect x="1200" y="95" width="165" height="105" class="store"/>
+  <text x="1282" y="130" class="label"><tspan x="1282" dy="0">持久化</tspan><tspan x="1282" dy="27">SQLite</tspan><tspan x="1282" dy="24">审计日志</tspan></text>
+
+  <path d="M215 147 H260" class="arrow"/><path d="M450 147 H495" class="arrow"/><path d="M685 147 H730" class="arrow"/><path d="M920 147 H965" class="arrow"/><path d="M1155 147 H1200" class="arrow"/>
+
+  <rect x="180" y="330" width="240" height="120" class="store"/>
+  <text x="300" y="367" class="label"><tspan x="300" dy="0">受控修订</tspan><tspan x="300" dy="27">主观字段 / 标签纠正</tspan><tspan x="300" dy="24">before / after / reason</tspan></text>
+
+  <rect x="500" y="330" width="240" height="120" class="box"/>
+  <text x="620" y="367" class="label"><tspan x="620" dy="0">结构化导出</tspan><tspan x="620" dy="27">JSONL / CSV</tspan><tspan x="620" dy="24">14 字段结果</tspan></text>
+
+  <rect x="820" y="330" width="240" height="120" class="box"/>
+  <text x="940" y="367" class="label"><tspan x="940" dy="0">查看与报告</tspan><tspan x="940" dy="27">本地 Web / HTML</tspan><tspan x="940" dy="24">筛选、详情、下载</tspan></text>
+
+  <rect x="1140" y="330" width="180" height="120" class="gate"/>
+  <text x="1230" y="367" class="label"><tspan x="1230" dy="0">验收门禁</tspan><tspan x="1230" dy="27">Schema / 引用</tspan><tspan x="1230" dy="24">跨存储 / 哈希</tspan></text>
+
+  <path d="M1282 200 V270 H300 V330" class="dashed"/>
+  <path d="M420 390 H500" class="arrow"/><path d="M740 390 H820" class="arrow"/><path d="M1060 390 H1140" class="arrow"/>
+  <path d="M1282 200 V270 H1230 V330" class="dashed"/>
+
+  <text x="700" y="535" class="small">实线：运行主链路　虚线：审计/回写/验收关联</text>
+  <text x="700" y="580" class="small">失败样例隔离并记录 AI_FAILED；标签纠正使派生结果失效，必须以新 run_id 重算</text>
+  <text x="700" y="625" class="small">当前证据分类：synthetic_engineering_validation；阈值未审批时 formal_acceptance_claim=false</text>
+</svg>

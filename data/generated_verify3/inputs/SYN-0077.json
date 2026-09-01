@@ -1,0 +1,60 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0077",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "设备控制",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0077.json",
+    "source_id": "synthetic://SYN-0077.wav",
+    "content_summary": "打开客厅电视",
+    "content_sha256": "ce0214aeb672067622c62fb5deac8bd3c8715cd1d2ca941b51b8f0e896847c9b",
+    "subscene_type": "设备控制",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "device_control"
+  },
+  "audio_info": {
+    "duration_ms": 1600,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "打开客厅电视",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "电视",
+      "位置": "客厅"
+    },
+    "expected_action": "turn_on",
+    "expected_reply": "已打开客厅电视",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "打开客厅电视",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "电视",
+      "位置": "客厅"
+    },
+    "action": "turn_on",
+    "reply": "已打开客厅电视",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0077"
+  }
+}

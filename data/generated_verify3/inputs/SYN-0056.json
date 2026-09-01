@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0056",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "噪声/数字英文混合",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0056.json",
+    "source_id": "synthetic://SYN-0056.wav",
+    "content_summary": "航班 CA1837 预计 21:05 起飞",
+    "content_sha256": "f11f9d468f2c006c3781f83306b009dc697207cf4cff752b6d2c20e06211fa8f",
+    "subscene_type": "噪声/数字英文混合",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "noise_mixed_alphanumeric"
+  },
+  "audio_info": {
+    "duration_ms": 1300,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "noise",
+      "mixed_alphanumeric"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "航班 CA1837 预计 21:05 起飞",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "航班",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0056"
+  }
+}

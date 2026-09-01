@@ -1,0 +1,257 @@
+{
+  "schema_version": "1.0.0",
+  "plan_version": "2.0.0",
+  "contract_source": "../README.md",
+  "status": "synthetic_engineering_validation_only",
+  "description": "本计划配额对应110条synthetic_engineering_validation合成工程样例，仅用于工程链路验证；候选阈值尚未审批且threshold_effective=false，不形成真实业务效果或正式验收结论。",
+  "effective_date": "2026-08-26",
+  "data_classification": "synthetic_engineering_validation",
+  "formal_acceptance_claim": false,
+  "result_schema": "schemas/evaluation-result.schema.json",
+  "batch_schema": "schemas/evaluation-batch.schema.json",
+  "dataset_policy": {
+    "planned_sample_count": 110,
+    "candidate_sample_count_range": {
+      "minimum": 110,
+      "maximum": 120
+    },
+    "formal_sample_minimum": 100,
+    "completed_sample_minimum": 100,
+    "complete_result_minimum": 100,
+    "formal_completed_result_counts_must_match": true,
+    "typical_scenario_minimum": 3,
+    "subscenario_minimum": 2,
+    "capability_chain_minimum": 2,
+    "reproducible_automatic_metric_minimum": 1,
+    "missing_value_token": "-",
+    "fabricated_fact_maximum": 0,
+    "failed_attempts_must_be_retained": true,
+    "reruns_require_new_run_id": true
+  },
+  "scenarios": [
+    {
+      "scenario_id": "S01",
+      "name": "短语音/录音转写",
+      "sample_count": 38,
+      "task_types": [
+        "语音识别"
+      ],
+      "capability_chain_id": "C01",
+      "subscenarios": [
+        {
+          "subscenario_id": "S01-01",
+          "name": "普通话口述",
+          "sample_count": 19
+        },
+        {
+          "subscenario_id": "S01-02",
+          "name": "噪声/数字英文混合",
+          "sample_count": 19
+        }
+      ]
+    },
+    {
+      "scenario_id": "S02",
+      "name": "会议/办公语音翻译",
+      "sample_count": 36,
+      "task_types": [
+        "语音识别",
+        "机器翻译"
+      ],
+      "capability_chain_id": "C02",
+      "subscenarios": [
+        {
+          "subscenario_id": "S02-01",
+          "name": "短句语翻",
+          "sample_count": 18
+        },
+        {
+          "subscenario_id": "S02-02",
+          "name": "长句/上下文翻译",
+          "sample_count": 18
+        }
+      ]
+    },
+    {
+      "scenario_id": "S03",
+      "name": "车载/语音助手交互",
+      "sample_count": 36,
+      "task_types": [
+        "语音识别",
+        "语义理解",
+        "对话生成"
+      ],
+      "capability_chain_id": "C03",
+      "subscenarios": [
+        {
+          "subscenario_id": "S03-01",
+          "name": "设备控制",
+          "sample_count": 18
+        },
+        {
+          "subscenario_id": "S03-02",
+          "name": "信息查询/多轮任务",
+          "sample_count": 18
+        }
+      ]
+    }
+  ],
+  "capability_chains": [
+    {
+      "chain_id": "C01",
+      "name": "语音识别",
+      "stages": [
+        "数据导入",
+        "语音识别",
+        "系统输出解析"
+      ]
+    },
+    {
+      "chain_id": "C02",
+      "name": "语音识别、机器翻译",
+      "stages": [
+        "数据导入",
+        "语音识别",
+        "机器翻译",
+        "系统输出解析"
+      ]
+    },
+    {
+      "chain_id": "C03",
+      "name": "语音识别、语义理解、对话生成",
+      "stages": [
+        "数据导入",
+        "语音识别",
+        "语义理解",
+        "对话生成",
+        "系统输出解析"
+      ]
+    }
+  ],
+  "required_workflow": [
+    {
+      "step": 1,
+      "id": "data_import",
+      "name": "数据导入",
+      "required": true
+    },
+    {
+      "step": 2,
+      "id": "scene_task_annotation",
+      "name": "场景与任务标注",
+      "required": true
+    },
+    {
+      "step": 3,
+      "id": "system_output_parse",
+      "name": "系统输出解析",
+      "required": true
+    },
+    {
+      "step": 4,
+      "id": "automatic_metric",
+      "name": "自动指标计算",
+      "required": true
+    },
+    {
+      "step": 5,
+      "id": "ai_diagnosis",
+      "name": "AI辅助质量诊断",
+      "required": true
+    },
+    {
+      "step": 6,
+      "id": "human_review_revision",
+      "name": "人工复核与修订",
+      "required": true
+    },
+    {
+      "step": 7,
+      "id": "structured_save",
+      "name": "结构化结果保存",
+      "required": true
+    },
+    {
+      "step": 8,
+      "id": "view_download_report",
+      "name": "查看、下载与报告生成",
+      "required": true
+    }
+  ],
+  "required_operational_capabilities": [
+    "异常隔离与反馈",
+    "运行日志",
+    "结果保存",
+    "结果查看",
+    "结果下载"
+  ],
+  "metric_baseline": {
+    "name": "CER",
+    "formula": "(S + D + I) / N",
+    "normalization_version": "cer-normalize-v1",
+    "normalization": [
+      "Unicode NFKC",
+      "casefold",
+      "仅保留汉字、Latin字符和数字"
+    ],
+    "empty_reference": "不适用",
+    "original_and_normalized_text_must_be_saved": true,
+    "candidate_threshold_configuration": "config/thresholds.json",
+    "threshold_version": "1.0.0-candidate.1",
+    "threshold_approval_status": "pending_approval",
+    "threshold_effective": false,
+    "formal_metric_status_when_threshold_ineffective": "不判定",
+    "unapproved_threshold_is_formal_decision": false
+  },
+  "evidence_policy": {
+    "whitelist_only": true,
+    "referencing_fields": [
+      "质量诊断",
+      "影响评估",
+      "优化建议",
+      "最终结论"
+    ],
+    "reference_property": "evidence_ids",
+    "minimum_references_per_item": 1,
+    "all_references_must_resolve_within_sample": true,
+    "missing_facts_must_use_token": "-",
+    "fabricated_facts_allowed": false,
+    "hidden_reasoning_must_not_be_requested_or_saved": true
+  },
+  "test_cases": [
+    "TC-01",
+    "TC-02",
+    "TC-03",
+    "TC-04",
+    "TC-05",
+    "TC-06",
+    "TC-07",
+    "TC-08",
+    "TC-09",
+    "TC-10",
+    "TC-11",
+    "TC-12",
+    "TC-13",
+    "TC-14",
+    "TC-15",
+    "TC-16",
+    "TC-17",
+    "TC-18",
+    "TC-19",
+    "TC-20"
+  ],
+  "acceptance_gate_ids": [
+    "G01",
+    "G02",
+    "G03",
+    "G04",
+    "G05",
+    "G06",
+    "G07",
+    "G08",
+    "G09",
+    "G10",
+    "G11",
+    "G12"
+  ]
+}

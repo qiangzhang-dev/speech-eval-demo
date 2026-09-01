@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://speech-eval.local/schemas/analysis-output.schema.json",
+  "title": "AI证据约束分析输出",
+  "description": "只包含根 README 允许 AI 生成的四项证据约束分析。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "质量诊断",
+    "影响评估",
+    "优化建议",
+    "最终结论"
+  ],
+  "properties": {
+    "质量诊断": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_ids"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    },
+    "影响评估": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_ids"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    },
+    "优化建议": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "evidence_ids"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "$ref": "#/$defs/evidenceIds"
+          }
+        }
+      }
+    },
+    "最终结论": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "basis",
+        "evidence_ids"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "通过",
+            "需关注",
+            "失败",
+            "证据不足"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^E(?:VID)?-[A-Za-z0-9][A-Za-z0-9._-]*$"
+      }
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0016",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0016.json",
+    "source_id": "synthetic://SYN-0016.wav",
+    "content_summary": "会议开始前请检查投影和麦克风是否正常，若发现共享屏幕延迟，就先切换到备用会议链接。",
+    "content_sha256": "a26dfe332d9186896631cebda5a0c3b5e5daf43837366665f54997842c51a31b",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：会议设备检查"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "会议开始前请检查投影和麦克风是否正常，若发现共享屏幕延迟，就先切换到备用会议链接。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "会议开始前请检查投影和麦克风是否正常，若发现共享屏幕延迟，就先切换到备用会议链接。",
+    "translation": "Before the meeting starts, check whether the projector and microphone work properly; if screen sharing is delayed, switch to the backup meeting link first.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "会议设备检查",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "会议",
+    "translation": "Before the meeting starts, check whether the projector and microphone work properly; if screen sharing is delayed, switch to the backup meeting link first.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0016"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0074",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "噪声/数字英文混合",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0074.json",
+    "source_id": "synthetic://SYN-0074.wav",
+    "content_summary": "订单 SKU-X9 需要补发 2 件",
+    "content_sha256": "0c2f3623f994d9b7c28ee458a434e1331128b85fd3be5d4a8fe577e5da2bbb57",
+    "subscene_type": "噪声/数字英文混合",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "noise_mixed_alphanumeric"
+  },
+  "audio_info": {
+    "duration_ms": 1300,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "noise",
+      "mixed_alphanumeric"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "订单 SKU-X9 需要补发 2 件",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "订单 SKU-X9 需要补发 2 ",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0074"
+  }
+}

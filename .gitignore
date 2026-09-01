@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Runtime data and generated deliverables
+data/uploads/
+data/private/
+artifacts/
+logs/
+*.log
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local evidence, recordings, databases, and generated reports
+docs/evidence/
+docs/archive/
+docs/*.md
+scripts/README_codex_ai_diagnosis.md
+scripts/refresh_delivery_docs.py
+data/generated_verify3/m3-review-REAL-ONE-TAKE-*.csv
+exports/
+var/
+data/archive/
+data/generated/
+data/_gen_check/
+*.db
+*.db-*
+*.webm
+*.mp4
+*.mov
+*.png

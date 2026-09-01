@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0034",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0034.json",
+    "source_id": "synthetic://SYN-0034.wav",
+    "content_summary": "请根据产品经理的补充说明更新帮助文档，同时保留旧版截图，方便客服比较两个版本的差异。",
+    "content_sha256": "579d97a71645ec85f87f8ac1ad130a361b7fd764722c363261aaf38ffba49bc3",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：帮助文档更新"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "请根据产品经理的补充说明更新帮助文档，同时保留旧版截图，方便客服比较两个版本的差异。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请根据产品经理的补充说明更新帮助文档，同时保留旧版截图，方便客服比较两个版本的差异。",
+    "translation": "Update the help document according to the product manager's additional notes, while keeping the old screenshots so customer service can compare the two versions.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "帮助文档更新",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请根据产品经理的补充说明更新帮助文档，同时保留旧版截图，方便客服比较两个版本的差异",
+    "translation": "Update the help document according to the product manager's additional notes, while keeping the old screenshots so customer service can compare the two versions.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0034"
+  }
+}

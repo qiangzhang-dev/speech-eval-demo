@@ -1,0 +1,60 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0059",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "设备控制",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0059.json",
+    "source_id": "synthetic://SYN-0059.wav",
+    "content_summary": "打开车库照明",
+    "content_sha256": "b6dd56f7284f09c5bd8f2a1c251289a0f44e80d9b5a6a7cfcaa18fbb0efc4344",
+    "subscene_type": "设备控制",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "device_control"
+  },
+  "audio_info": {
+    "duration_ms": 1600,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "打开车库照明",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "照明",
+      "位置": "车库"
+    },
+    "expected_action": "turn_on",
+    "expected_reply": "已打开车库照明",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "打开车库",
+    "translation": "-",
+    "intent": "设备控制",
+    "slots": {
+      "设备": "照明",
+      "位置": "车库"
+    },
+    "action": "turn_on",
+    "reply": "已打开车库照明",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0059"
+  }
+}

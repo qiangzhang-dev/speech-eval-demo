@@ -1,0 +1,52 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0109",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "普通话口述",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0109.json",
+    "source_id": "synthetic://SYN-0109.wav",
+    "content_summary": "把卧室的加湿器设为自动模式",
+    "content_sha256": "84a85effa6263824146e8b82bd024bd8d165954850055dec7ecd9c8137fd9710",
+    "subscene_type": "普通话口述",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "clean_mandarin"
+  },
+  "audio_info": {
+    "duration_ms": 1200,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "把卧室的加湿器设为自动模式",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "把卧室的加湿器设为自动模式",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0109"
+  }
+}

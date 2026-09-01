@@ -1,0 +1,52 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0007",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "普通话口述",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0007.json",
+    "source_id": "synthetic://SYN-0007.wav",
+    "content_summary": "下午三点提醒我参加项目评审",
+    "content_sha256": "ee9e5fcc9c5ff19d2810e8fba683f871b6cfd72b2d30a202948d8af0c45783a9",
+    "subscene_type": "普通话口述",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "clean_mandarin"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "下午三点提醒我参加项目评审",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "下午三点提醒我参加项目",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0007"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0100",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0100.json",
+    "source_id": "synthetic://SYN-0100.wav",
+    "content_summary": "在提交报销前检查发票抬头和金额是否一致，发现缺少附件时先退回申请而不要直接通过。",
+    "content_sha256": "d7ca1e4f6e767a8b9b455fa8d2fcbdb5bf96ccac4050f5073f2911ac0f57063c",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：报销审核规则"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "在提交报销前检查发票抬头和金额是否一致，发现缺少附件时先退回申请而不要直接通过。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1200,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "在提交报销前检查发票抬头和金额是否一致，发现缺少附件时先退回申请而不要直接通过。",
+    "translation": "Before submitting reimbursement, check that the invoice title and amount match; if an attachment is missing, return the request instead of approving it directly.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "报销审核规则",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "在提",
+    "translation": "Before submitting reimbursement, check that the invoice title and amount match; if an attachment is missing, return the request instead of approving it directly.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0100"
+  }
+}

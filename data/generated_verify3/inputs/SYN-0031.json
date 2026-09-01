@@ -1,0 +1,52 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0031",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "普通话口述",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0031.json",
+    "source_id": "synthetic://SYN-0031.wav",
+    "content_summary": "请把客厅的窗帘关上",
+    "content_sha256": "f245c5bb1e0350f9053b290bd5dde05571f8b3a9269c9c74a7fbcd3eb3995231",
+    "subscene_type": "普通话口述",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "clean_mandarin"
+  },
+  "audio_info": {
+    "duration_ms": 1500,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把客厅的窗帘关上",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把客厅的窗帘",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0031"
+  }
+}

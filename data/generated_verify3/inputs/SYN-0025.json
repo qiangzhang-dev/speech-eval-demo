@@ -1,0 +1,52 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0025",
+  "scene_type": "短语音/录音转写",
+  "subscene_type": "普通话口述",
+  "task_types": [
+    "语音识别"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0025.json",
+    "source_id": "synthetic://SYN-0025.wav",
+    "content_summary": "帮我记录这段关于预算的想法",
+    "content_sha256": "d8413befe35770cf11119f6da7050d8bc934e45d4f5bafe00467fd56f2b3682b",
+    "subscene_type": "普通话口述",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "clean_mandarin"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "帮我记录这段关于预算的想法",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "帮我记录这段关于预算的想法",
+    "translation": "-",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0025"
+  }
+}

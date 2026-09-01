@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0052",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0052.json",
+    "source_id": "synthetic://SYN-0052.wav",
+    "content_summary": "为了避免重复采购，请先核对仓库余量，再把确实缺少的办公用品加入下周的采购申请。",
+    "content_sha256": "8853846183994b8dbdf6e3a91bb3ab559c7309ea9449f0a548643235b439191b",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：办公用品采购"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "为了避免重复采购，请先核对仓库余量，再把确实缺少的办公用品加入下周的采购申请。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "为了避免重复采购，请先核对仓库余量，再把确实缺少的办公用品加入下周的采购申请。",
+    "translation": "To avoid duplicate purchasing, check the warehouse balance first, then add the office supplies that are actually missing to next week's purchase request.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "办公用品采购",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "为了",
+    "translation": "To avoid duplicate purchasing, check the warehouse balance first, then add the office supplies that are actually missing to next week's purchase request.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0052"
+  }
+}

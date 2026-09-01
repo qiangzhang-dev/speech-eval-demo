@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0003",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "短句语翻",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0003.json",
+    "source_id": "synthetic://SYN-0003.wav",
+    "content_summary": "请把文件发给王芳",
+    "content_sha256": "966174aa57cdbabf56204c4380aacea1293966d35355b54f3116af560de97a07",
+    "subscene_type": "短句语翻",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "short_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1400,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请把文件发给王芳",
+    "translation": "Please send the file to Wang Fang",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请把文件发给",
+    "translation": "Please send the file to Wang Fang",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0003"
+  }
+}

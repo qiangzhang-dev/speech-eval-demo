@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0070",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0070.json",
+    "source_id": "synthetic://SYN-0070.wav",
+    "content_summary": "这次迁移需要分两个晚上进行，第一晚只复制数据，第二晚再切换入口并观察错误日志。",
+    "content_sha256": "de9cbeb2a18d241aed3775dc7169b3e29cd08e9828816bdf9499c0e054d3464d",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：系统迁移计划"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "这次迁移需要分两个晚上进行，第一晚只复制数据，第二晚再切换入口并观察错误日志。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1800,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "这次迁移需要分两个晚上进行，第一晚只复制数据，第二晚再切换入口并观察错误日志。",
+    "translation": "This migration needs to be done over two nights: copy the data only on the first night, then switch the entry point and watch the error log on the second night.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "系统迁移计划",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "这次迁移需要分两个晚上进行，第一晚只复制数据，第二晚再切换入口并观察错误日志",
+    "translation": "This migration needs to be done over two nights: copy the data only on the first night, then switch the entry point and watch the error log on the second night.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0070"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0081",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "短句语翻",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0081.json",
+    "source_id": "synthetic://SYN-0081.wav",
+    "content_summary": "请保存翻译结果",
+    "content_sha256": "6e0ccb345646d868114a28c4e524e05f2e3131c88ddb4a414d4934f990e07e36",
+    "subscene_type": "短句语翻",
+    "dialogue_turns": "-",
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "short_translation"
+  },
+  "audio_info": {
+    "duration_ms": 2000,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请保存翻译结果",
+    "translation": "Please save the translation result",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请保存翻译结果",
+    "translation": "save the translation result",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0081"
+  }
+}

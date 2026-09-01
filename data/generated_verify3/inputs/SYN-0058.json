@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0058",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0058.json",
+    "source_id": "synthetic://SYN-0058.wav",
+    "content_summary": "如果供应商今晚确认不了发货时间，就把备选方案和成本差异整理成一页说明供负责人决定。",
+    "content_sha256": "3c4787bea59fcb185a52401dc6b6bb1db39e0870d083b19b6c7bd4459e0a8f7d",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：供应商发货决策"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "如果供应商今晚确认不了发货时间，就把备选方案和成本差异整理成一页说明供负责人决定。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1500,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "如果供应商今晚确认不了发货时间，就把备选方案和成本差异整理成一页说明供负责人决定。",
+    "translation": "If the supplier cannot confirm the shipping time tonight, summarize the alternatives and their cost differences on one page for the owner to decide.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "供应商发货决策",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "如果供应商今晚确认不了发货时间，就把备选方案和成本差异整理成一页说明供负责人决定",
+    "translation": "If the supplier cannot confirm the shipping time tonight, summarize the alternatives and their cost differences on one page for the owner to decide.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0058"
+  }
+}

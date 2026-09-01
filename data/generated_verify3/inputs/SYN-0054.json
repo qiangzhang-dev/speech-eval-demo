@@ -1,0 +1,76 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0054",
+  "scene_type": "车载/语音助手交互",
+  "subscene_type": "信息查询/多轮任务",
+  "task_types": [
+    "语音识别",
+    "语义理解",
+    "对话生成"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0054.json",
+    "source_id": "synthetic://SYN-0054.wav",
+    "content_summary": "请查询明天西安的酒店信息",
+    "content_sha256": "37b0a6e82ad5f757ad2bfedab675319899bb88fd3db4d051832ba6d614f9959d",
+    "subscene_type": "信息查询/多轮任务",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "用户",
+        "内容": "我想了解西安的安排。"
+      },
+      {
+        "轮次": 2,
+        "角色": "系统",
+        "内容": "好的，请问你想查询什么？"
+      },
+      {
+        "轮次": 3,
+        "角色": "用户",
+        "内容": "请查询明天西安的酒店信息"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "multi_turn_query"
+  },
+  "audio_info": {
+    "duration_ms": 2000,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "请查询明天西安的酒店信息",
+    "translation": "-",
+    "intent": "信息查询",
+    "slots": {
+      "地点": "西安",
+      "日期": "明天"
+    },
+    "expected_action": "query_hotel",
+    "expected_reply": "西安明天有两家符合条件的酒店",
+    "translation_context": "-",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "请查询明天西安的酒店信",
+    "translation": "-",
+    "intent": "信息查询",
+    "slots": {
+      "地点": "西安",
+      "日期": "明天"
+    },
+    "action": "query_hotel",
+    "reply": "西安明天有两家符合条件的酒店",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0054"
+  }
+}

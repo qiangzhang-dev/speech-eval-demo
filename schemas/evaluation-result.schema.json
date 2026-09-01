@@ -1,0 +1,485 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://speech-eval.local/schemas/evaluation-result.schema.json",
+  "title": "根 README 规定的单条语音评测结果",
+  "description": "严格包含根 README 第6章规定的14个顶层字段，不允许额外顶层字段。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "样例ID",
+    "场景类型",
+    "任务类型",
+    "输入数据",
+    "音频信息",
+    "参考文本/标注",
+    "系统输出",
+    "量化指标",
+    "质量诊断",
+    "证据片段",
+    "影响评估",
+    "优化建议",
+    "人工修订",
+    "最终结论"
+  ],
+  "properties": {
+    "样例ID": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "场景类型": {
+      "type": "string",
+      "enum": [
+        "短语音/录音转写",
+        "会议/办公语音翻译",
+        "车载/语音助手交互"
+      ]
+    },
+    "任务类型": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "语音识别",
+          "语义理解",
+          "对话生成",
+          "机器翻译",
+          "语音合成",
+          "端到端"
+        ]
+      }
+    },
+    "输入数据": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "音频信息": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "参考文本/标注": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "系统输出": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "minProperties": 1,
+          "propertyNames": {
+            "type": "string",
+            "minLength": 1
+          },
+          "additionalProperties": {
+            "not": {
+              "type": "null"
+            }
+          }
+        }
+      ]
+    },
+    "量化指标": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "metric_name",
+            "value",
+            "metric_version",
+            "overall_candidate_status"
+          ],
+          "properties": {
+            "metric_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "value": {
+              "type": "number",
+              "minimum": 0
+            },
+            "metric_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "normalization_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "input_summary_sha256": {
+              "type": "string",
+              "pattern": "^[a-fA-F0-9]{64}$"
+            },
+            "status": {
+              "enum": [
+                "通过",
+                "需关注",
+                "失败",
+                "不判定"
+              ]
+            },
+            "candidate_status": {
+              "enum": [
+                "通过",
+                "需关注",
+                "失败",
+                "证据不足"
+              ]
+            },
+            "overall_candidate_status": {
+              "enum": [
+                "通过",
+                "需关注",
+                "失败",
+                "证据不足"
+              ]
+            },
+            "threshold_version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "threshold_approval_status": {
+              "type": "string",
+              "minLength": 1
+            },
+            "threshold_effective": {
+              "type": "boolean"
+            },
+            "stage_metrics": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "stage",
+                  "metric_name",
+                  "value",
+                  "metric_version",
+                  "reference",
+                  "hypothesis",
+                  "matched",
+                  "applicable",
+                  "candidate_status",
+                  "reproducible",
+                  "input_summary_sha256"
+                ],
+                "properties": {
+                  "stage": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "metric_name": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "value": {
+                    "type": [
+                      "number",
+                      "null"
+                    ],
+                    "minimum": 0
+                  },
+                  "metric_version": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "reference": {
+                    "not": {
+                      "type": "null"
+                    }
+                  },
+                  "hypothesis": {
+                    "not": {
+                      "type": "null"
+                    }
+                  },
+                  "matched": {
+                    "type": [
+                      "boolean",
+                      "null"
+                    ]
+                  },
+                  "applicable": {
+                    "type": "boolean"
+                  },
+                  "candidate_status": {
+                    "enum": [
+                      "通过",
+                      "失败",
+                      "证据不足"
+                    ]
+                  },
+                  "reproducible": {
+                    "type": "boolean"
+                  },
+                  "input_summary_sha256": {
+                    "type": "string",
+                    "pattern": "^[a-fA-F0-9]{64}$"
+                  }
+                }
+              }
+            },
+            "reproducible": {
+              "type": "boolean"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "质量诊断": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_ids"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    },
+    "证据片段": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "evidence_id",
+          "type",
+          "source",
+          "location",
+          "content"
+        ],
+        "properties": {
+          "evidence_id": {
+            "type": "string",
+            "pattern": "^E(?:VID)?-[A-Za-z0-9][A-Za-z0-9._-]*$"
+          },
+          "type": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1
+          },
+          "location": {
+            "type": "string",
+            "minLength": 1
+          },
+          "content": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "object",
+              "array"
+            ]
+          }
+        }
+      }
+    },
+    "影响评估": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "text",
+        "evidence_ids"
+      ],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    },
+    "优化建议": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "text",
+          "evidence_ids"
+        ],
+        "properties": {
+          "text": {
+            "type": "string",
+            "minLength": 1
+          },
+          "evidence_ids": {
+            "$ref": "#/$defs/evidenceIds"
+          }
+        }
+      }
+    },
+    "人工修订": {
+      "oneOf": [
+        {
+          "const": "-"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "revision_id",
+            "sample_id",
+            "field_name",
+            "before",
+            "after",
+            "editor",
+            "edited_at",
+            "reason"
+          ],
+          "properties": {
+            "revision_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sample_id": {
+              "type": "string",
+              "minLength": 1
+            },
+            "field_name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "before": {
+              "not": {
+                "type": "null"
+              }
+            },
+            "after": {
+              "not": {
+                "type": "null"
+              }
+            },
+            "editor": {
+              "type": "string",
+              "minLength": 1
+            },
+            "edited_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "reason": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "最终结论": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "level",
+        "basis",
+        "evidence_ids"
+      ],
+      "properties": {
+        "level": {
+          "enum": [
+            "通过",
+            "需关注",
+            "失败",
+            "证据不足"
+          ]
+        },
+        "basis": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_ids": {
+          "$ref": "#/$defs/evidenceIds"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "evidenceIds": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^E(?:VID)?-[A-Za-z0-9][A-Za-z0-9._-]*$"
+      }
+    }
+  },
+  "x-semantic-rules": [
+    "每个 evidence_id 必须解析到当前样例的证据片段",
+    "证据片段的 evidence_id 在当前样例内唯一",
+    "人工修订为对象时 sample_id 必须等于顶层样例ID",
+    "AI建议结论不得直接覆盖人工最终结论"
+  ]
+}

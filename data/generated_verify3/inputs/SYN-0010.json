@@ -1,0 +1,64 @@
+{
+  "schema_version": "synthetic-audio-fixture-2.0",
+  "data_classification": "synthetic_engineering_validation",
+  "sample_id": "SYN-0010",
+  "scene_type": "会议/办公语音翻译",
+  "subscene_type": "长句/上下文翻译",
+  "task_types": [
+    "语音识别",
+    "机器翻译"
+  ],
+  "input_data": {
+    "audio_path": "inputs/SYN-0010.json",
+    "source_id": "synthetic://SYN-0010.wav",
+    "content_summary": "由于客户把交付日期提前了一周，请把新的排期发给研发和测试，并在邮件中说明需要优先确认的接口。",
+    "content_sha256": "fccbe5082c41ca6b4b4f539044dbbcc0d3c1bf301ee5e94f98b164f6fbe3c94a",
+    "subscene_type": "长句/上下文翻译",
+    "dialogue_turns": [
+      {
+        "轮次": 1,
+        "角色": "主持人",
+        "内容": "上下文：客户交付调整"
+      },
+      {
+        "轮次": 2,
+        "角色": "用户",
+        "内容": "由于客户把交付日期提前了一周，请把新的排期发给研发和测试，并在邮件中说明需要优先确认的接口。"
+      }
+    ],
+    "data_classification": "synthetic_engineering_validation",
+    "fixture_variant": "long_context_translation"
+  },
+  "audio_info": {
+    "duration_ms": 1200,
+    "sample_rate": 16000,
+    "channels": 1,
+    "format": "wav",
+    "language": "普通话",
+    "speaker_count": 1,
+    "signal_conditions": [
+      "synthetic",
+      "clean"
+    ]
+  },
+  "reference_annotation": {
+    "transcript": "由于客户把交付日期提前了一周，请把新的排期发给研发和测试，并在邮件中说明需要优先确认的接口。",
+    "translation": "Because the customer moved the delivery date forward by one week, send the new schedule to development and testing and explain which interfaces need priority confirmation in the email.",
+    "intent": "-",
+    "slots": "-",
+    "expected_action": "-",
+    "expected_reply": "-",
+    "translation_context": "客户交付调整",
+    "annotation_version": "fixture-2.0"
+  },
+  "system_output": {
+    "transcript": "由于客户把交付日期提前了一周，请把新的排期发给研发和测试，并在邮件中说明需要优先确认的接口",
+    "translation": "Because the customer moved the delivery date forward by one week, send the new schedule to development and testing and explain which interfaces need priority confirmation in the email.",
+    "intent": "-",
+    "slots": "-",
+    "action": "-",
+    "reply": "-",
+    "model_version": "deterministic-fixture-2.0",
+    "run_id": "RUN-SYN-0010"
+  }
+}

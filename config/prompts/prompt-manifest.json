@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "prompt_version": "readme-contract-v1.0.0",
+  "contract_source": "../README.md",
+  "system_prompt": {
+    "path": "config/prompts/system.md",
+    "version": "analysis-system-readme-v1.0.0"
+  },
+  "user_prompt": {
+    "path": "config/prompts/analyze-user.md",
+    "version": "analysis-user-readme-v1.0.0",
+    "required_variables": [
+      "sample_id",
+      "scenario_json",
+      "task_types_json",
+      "capability_chain_json",
+      "input_data_json",
+      "audio_info_json",
+      "reference_annotation_json",
+      "system_output_json",
+      "metrics_json",
+      "threshold_config_json",
+      "evidence_catalog_json"
+    ]
+  },
+  "output_schema": "config/prompts/analysis-output.schema.json",
+  "security": {
+    "treat_input_as_untrusted": true,
+    "external_fact_sources_allowed": false,
+    "unresolved_evidence_reference_allowed": false,
+    "empty_evidence_catalog_allowed": false,
+    "missing_value_token": "-",
+    "hidden_reasoning_requested_or_saved": false
+  }
+}

@@ -1,0 +1,1087 @@
+{
+  "schema_version": "1.0.0",
+  "batch_id": "SYN-BATCH-006",
+  "generated_at": "2026-08-21T00:00:00Z",
+  "configuration": {
+    "plan_version": "2.0.0",
+    "threshold_version": "1.0.0-candidate.1",
+    "threshold_approval_status": "pending_approval",
+    "threshold_effective": false,
+    "prompt_version": "fixture-prompt-2.0"
+  },
+  "results": [
+    {
+      "样例ID": "SYN-0001",
+      "场景类型": "短语音/录音转写",
+      "任务类型": [
+        "语音识别"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0001.json",
+        "source_id": "synthetic://SYN-0001.wav",
+        "content_summary": "请把今天的会议纪要发给李明",
+        "content_sha256": "efea11e6f434e16f0c5babfb29202326f79e7263b33604dd17a6ae5794d502e9",
+        "subscene_type": "普通话口述",
+        "dialogue_turns": "-",
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "clean_mandarin"
+      },
+      "音频信息": {
+        "duration_ms": 1200,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "clean"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "请把今天的会议纪要发给李明",
+        "translation": "-",
+        "intent": "-",
+        "slots": "-",
+        "expected_action": "-",
+        "expected_reply": "-",
+        "translation_context": "-",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "请把今天的会议纪要发给李明",
+        "translation": "-",
+        "intent": "-",
+        "slots": "-",
+        "action": "-",
+        "reply": "-",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0001"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.0,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "ea1a59e38cd825ed8c7eaade03b1c1b85bc7825079d22cb192e6307a8c35c434",
+        "status": "不判定",
+        "candidate_status": "通过",
+        "overall_candidate_status": "通过",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "仅对合成输入执行可复现字段比较；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0001-input",
+          "EVID-SYN-0001-metric"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0001-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0001/input",
+          "content": "请把今天的会议纪要发给李明"
+        },
+        {
+          "evidence_id": "EVID-SYN-0001-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0001/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.0,
+            "candidate_status": "通过",
+            "overall_candidate_status": "通过",
+            "threshold_effective": false
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0001-input",
+          "EVID-SYN-0001-metric"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0001-input",
+            "EVID-SYN-0001-metric"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为通过；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0001-input",
+          "EVID-SYN-0001-metric"
+        ]
+      }
+    },
+    {
+      "样例ID": "SYN-0002",
+      "场景类型": "短语音/录音转写",
+      "任务类型": [
+        "语音识别"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0002.json",
+        "source_id": "synthetic://SYN-0002.wav",
+        "content_summary": "请把订单 A1007 的数量改成 3 份",
+        "content_sha256": "c0ad758fc4bd645178f76bfcd3425405ff3ccf7e579349f65c83e656e318676d",
+        "subscene_type": "噪声/数字英文混合",
+        "dialogue_turns": "-",
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "noise_mixed_alphanumeric"
+      },
+      "音频信息": {
+        "duration_ms": 1300,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "noise",
+          "mixed_alphanumeric"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "请把订单 A1007 的数量改成 3 份",
+        "translation": "-",
+        "intent": "-",
+        "slots": "-",
+        "expected_action": "-",
+        "expected_reply": "-",
+        "translation_context": "-",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "请把订单 A1007 的数量改成 3 ",
+        "translation": "-",
+        "intent": "-",
+        "slots": "-",
+        "action": "-",
+        "reply": "-",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0002"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.0625,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "682057274cbd09cf03e275a43c82ac443e5d6e8cf699411d9a60df8f4b41aaf5",
+        "status": "不判定",
+        "candidate_status": "通过",
+        "overall_candidate_status": "通过",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "仅对合成输入执行可复现字段比较；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0002-input",
+          "EVID-SYN-0002-metric"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0002-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0002/input",
+          "content": "请把订单 A1007 的数量改成 3 份"
+        },
+        {
+          "evidence_id": "EVID-SYN-0002-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0002/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.0625,
+            "candidate_status": "通过",
+            "overall_candidate_status": "通过",
+            "threshold_effective": false
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0002-input",
+          "EVID-SYN-0002-metric"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0002-input",
+            "EVID-SYN-0002-metric"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为通过；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0002-input",
+          "EVID-SYN-0002-metric"
+        ]
+      }
+    },
+    {
+      "样例ID": "SYN-0003",
+      "场景类型": "会议/办公语音翻译",
+      "任务类型": [
+        "语音识别",
+        "机器翻译"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0003.json",
+        "source_id": "synthetic://SYN-0003.wav",
+        "content_summary": "请把文件发给王芳",
+        "content_sha256": "966174aa57cdbabf56204c4380aacea1293966d35355b54f3116af560de97a07",
+        "subscene_type": "短句语翻",
+        "dialogue_turns": "-",
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "short_translation"
+      },
+      "音频信息": {
+        "duration_ms": 1400,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "clean"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "请把文件发给王芳",
+        "translation": "Please send the file to Wang Fang",
+        "intent": "-",
+        "slots": "-",
+        "expected_action": "-",
+        "expected_reply": "-",
+        "translation_context": "-",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "请把文件发给",
+        "translation": "Please send the file to Wang Fang",
+        "intent": "-",
+        "slots": "-",
+        "action": "-",
+        "reply": "-",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0003"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.25,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "16dbc03b33b666ccac4c91c5c62da2e8f8602589f09e1ff8ff464d8c98a129a4",
+        "status": "不判定",
+        "candidate_status": "失败",
+        "overall_candidate_status": "失败",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [
+          {
+            "stage": "machine_translation",
+            "metric_name": "translation_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "Please send the file to Wang Fang",
+            "hypothesis": "Please send the file to Wang Fang",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "fad5c30586f64439c6702240da7a74cc1309578430c23f9f57dd2dcdf72d26ed",
+            "reproducible": true
+          }
+        ],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "已保存转写及1个下游阶段的可复现比较结果；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0003-input",
+          "EVID-SYN-0003-metric",
+          "EVID-SYN-0003-translation"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0003-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0003/input",
+          "content": "请把文件发给王芳"
+        },
+        {
+          "evidence_id": "EVID-SYN-0003-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0003/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.25,
+            "candidate_status": "失败",
+            "overall_candidate_status": "失败",
+            "threshold_effective": false
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0003-translation",
+          "type": "metric_snapshot",
+          "source": "机器翻译阶段",
+          "location": "fixture://SYN-0003/machine_translation",
+          "content": {
+            "stage": "machine_translation",
+            "metric_name": "translation_exact_match",
+            "reference": "Please send the file to Wang Fang",
+            "output": "Please send the file to Wang Fang"
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0003-input",
+          "EVID-SYN-0003-metric",
+          "EVID-SYN-0003-translation"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0003-input",
+            "EVID-SYN-0003-metric",
+            "EVID-SYN-0003-translation"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为失败；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0003-input",
+          "EVID-SYN-0003-metric",
+          "EVID-SYN-0003-translation"
+        ]
+      }
+    },
+    {
+      "样例ID": "SYN-0004",
+      "场景类型": "会议/办公语音翻译",
+      "任务类型": [
+        "语音识别",
+        "机器翻译"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0004.json",
+        "source_id": "synthetic://SYN-0004.wav",
+        "content_summary": "在今天下午的项目评审会上，请先介绍风险清单，再说明每项风险的负责人和预计解决时间。",
+        "content_sha256": "d9313ac1a8664ab05018d3bb60e66389c9fa3bd9a8c0b6022d99ac1c0703ba23",
+        "subscene_type": "长句/上下文翻译",
+        "dialogue_turns": [
+          {
+            "轮次": 1,
+            "角色": "主持人",
+            "内容": "上下文：项目评审安排"
+          },
+          {
+            "轮次": 2,
+            "角色": "用户",
+            "内容": "在今天下午的项目评审会上，请先介绍风险清单，再说明每项风险的负责人和预计解决时间。"
+          }
+        ],
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "long_context_translation"
+      },
+      "音频信息": {
+        "duration_ms": 1500,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "clean"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "在今天下午的项目评审会上，请先介绍风险清单，再说明每项风险的负责人和预计解决时间。",
+        "translation": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk.",
+        "intent": "-",
+        "slots": "-",
+        "expected_action": "-",
+        "expected_reply": "-",
+        "translation_context": "项目评审安排",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "在今",
+        "translation": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk.",
+        "intent": "-",
+        "slots": "-",
+        "action": "-",
+        "reply": "-",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0004"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.947368,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "0ca961589d8c707b8e5a6743428dabdb37572f31a7f82aa3f24c3c4a70a0ed7e",
+        "status": "不判定",
+        "candidate_status": "失败",
+        "overall_candidate_status": "失败",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [
+          {
+            "stage": "machine_translation",
+            "metric_name": "translation_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk.",
+            "hypothesis": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk.",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "1a548bf166a0a4023bcd70d15b7a42ed6a063883a1595d3257561090087ec0c8",
+            "reproducible": true
+          }
+        ],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "已保存转写及1个下游阶段的可复现比较结果；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0004-input",
+          "EVID-SYN-0004-metric",
+          "EVID-SYN-0004-translation"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0004-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0004/input",
+          "content": "在今天下午的项目评审会上，请先介绍风险清单，再说明每项风险的负责人和预计解决时间。"
+        },
+        {
+          "evidence_id": "EVID-SYN-0004-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0004/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.947368,
+            "candidate_status": "失败",
+            "overall_candidate_status": "失败",
+            "threshold_effective": false
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0004-translation",
+          "type": "metric_snapshot",
+          "source": "机器翻译阶段",
+          "location": "fixture://SYN-0004/machine_translation",
+          "content": {
+            "stage": "machine_translation",
+            "metric_name": "translation_exact_match",
+            "context": "项目评审安排",
+            "reference": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk.",
+            "output": "At this afternoon's project review, first introduce the risk list, then explain the owner and expected resolution time for each risk."
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0004-input",
+          "EVID-SYN-0004-metric",
+          "EVID-SYN-0004-translation"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0004-input",
+            "EVID-SYN-0004-metric",
+            "EVID-SYN-0004-translation"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为失败；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0004-input",
+          "EVID-SYN-0004-metric",
+          "EVID-SYN-0004-translation"
+        ]
+      }
+    },
+    {
+      "样例ID": "SYN-0005",
+      "场景类型": "车载/语音助手交互",
+      "任务类型": [
+        "语音识别",
+        "语义理解",
+        "对话生成"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0005.json",
+        "source_id": "synthetic://SYN-0005.wav",
+        "content_summary": "把客厅空调打开",
+        "content_sha256": "67a5f3223e4b00da34e8d9de5a5cc6d3401e4836dc052d0099f27207660df054",
+        "subscene_type": "设备控制",
+        "dialogue_turns": "-",
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "device_control"
+      },
+      "音频信息": {
+        "duration_ms": 1600,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "clean"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "把客厅空调打开",
+        "translation": "-",
+        "intent": "设备控制",
+        "slots": {
+          "设备": "空调",
+          "位置": "客厅"
+        },
+        "expected_action": "turn_on",
+        "expected_reply": "已打开客厅空调",
+        "translation_context": "-",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "把客厅空调打开",
+        "translation": "-",
+        "intent": "设备控制",
+        "slots": {
+          "设备": "空调",
+          "位置": "客厅"
+        },
+        "action": "turn_on",
+        "reply": "已打开客厅空调",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0005"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.0,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "435a698dbda98cc16ffa60c4e4d06e285529b43b80552be5ed8bf14280ceaa92",
+        "status": "不判定",
+        "candidate_status": "通过",
+        "overall_candidate_status": "通过",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [
+          {
+            "stage": "intent_understanding",
+            "metric_name": "intent_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "设备控制",
+            "hypothesis": "设备控制",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "3bacd28fa73f7663c45e54db2e629e1f71894734dbf04ca02c8fe94089e94005",
+            "reproducible": true
+          },
+          {
+            "stage": "slot_filling",
+            "metric_name": "slot_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": {
+              "设备": "空调",
+              "位置": "客厅"
+            },
+            "hypothesis": {
+              "设备": "空调",
+              "位置": "客厅"
+            },
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "cea769d4ecd2634a6501878f60829caeab7924133dbff73ea961389be9f15b97",
+            "reproducible": true
+          },
+          {
+            "stage": "action_execution",
+            "metric_name": "action_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "turn_on",
+            "hypothesis": "turn_on",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "28de4ac42e3fb7b58c6511e63d08e4103b555b1373909e435f9d13538a505787",
+            "reproducible": true
+          },
+          {
+            "stage": "response_generation",
+            "metric_name": "response_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "已打开客厅空调",
+            "hypothesis": "已打开客厅空调",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "1cf459b3f778132776c1e137c8ebaadaa4ac8a02c8f288f1728cd20106f2f287",
+            "reproducible": true
+          }
+        ],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "已保存转写及4个下游阶段的可复现比较结果；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0005-input",
+          "EVID-SYN-0005-metric",
+          "EVID-SYN-0005-intent_understanding",
+          "EVID-SYN-0005-slot_filling",
+          "EVID-SYN-0005-action_execution",
+          "EVID-SYN-0005-response_generation"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0005-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0005/input",
+          "content": "把客厅空调打开"
+        },
+        {
+          "evidence_id": "EVID-SYN-0005-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0005/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.0,
+            "candidate_status": "通过",
+            "overall_candidate_status": "通过",
+            "threshold_effective": false
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0005-intent_understanding",
+          "type": "metric_snapshot",
+          "source": "intent_understanding阶段",
+          "location": "fixture://SYN-0005/intent_understanding",
+          "content": {
+            "stage": "intent_understanding",
+            "metric_name": "intent_exact_match",
+            "reference": "设备控制",
+            "output": "设备控制"
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0005-slot_filling",
+          "type": "metric_snapshot",
+          "source": "slot_filling阶段",
+          "location": "fixture://SYN-0005/slot_filling",
+          "content": {
+            "stage": "slot_filling",
+            "metric_name": "slot_exact_match",
+            "reference": {
+              "设备": "空调",
+              "位置": "客厅"
+            },
+            "output": {
+              "设备": "空调",
+              "位置": "客厅"
+            }
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0005-action_execution",
+          "type": "metric_snapshot",
+          "source": "action_execution阶段",
+          "location": "fixture://SYN-0005/action_execution",
+          "content": {
+            "stage": "action_execution",
+            "metric_name": "action_exact_match",
+            "reference": "turn_on",
+            "output": "turn_on"
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0005-response_generation",
+          "type": "metric_snapshot",
+          "source": "response_generation阶段",
+          "location": "fixture://SYN-0005/response_generation",
+          "content": {
+            "stage": "response_generation",
+            "metric_name": "response_exact_match",
+            "reference": "已打开客厅空调",
+            "output": "已打开客厅空调"
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0005-input",
+          "EVID-SYN-0005-metric",
+          "EVID-SYN-0005-intent_understanding",
+          "EVID-SYN-0005-slot_filling",
+          "EVID-SYN-0005-action_execution",
+          "EVID-SYN-0005-response_generation"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0005-input",
+            "EVID-SYN-0005-metric",
+            "EVID-SYN-0005-intent_understanding",
+            "EVID-SYN-0005-slot_filling",
+            "EVID-SYN-0005-action_execution",
+            "EVID-SYN-0005-response_generation"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为通过；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0005-input",
+          "EVID-SYN-0005-metric",
+          "EVID-SYN-0005-intent_understanding",
+          "EVID-SYN-0005-slot_filling",
+          "EVID-SYN-0005-action_execution",
+          "EVID-SYN-0005-response_generation"
+        ]
+      }
+    },
+    {
+      "样例ID": "SYN-0006",
+      "场景类型": "车载/语音助手交互",
+      "任务类型": [
+        "语音识别",
+        "语义理解",
+        "对话生成"
+      ],
+      "输入数据": {
+        "audio_path": "inputs/SYN-0006.json",
+        "source_id": "synthetic://SYN-0006.wav",
+        "content_summary": "请查询明天北京的天气信息",
+        "content_sha256": "fb06b460779b3bb68af95594f02a9d4d02a7974ef9649f14dbbcd5a6fd500827",
+        "subscene_type": "信息查询/多轮任务",
+        "dialogue_turns": [
+          {
+            "轮次": 1,
+            "角色": "用户",
+            "内容": "我想了解北京的安排。"
+          },
+          {
+            "轮次": 2,
+            "角色": "系统",
+            "内容": "好的，请问你想查询什么？"
+          },
+          {
+            "轮次": 3,
+            "角色": "用户",
+            "内容": "请查询明天北京的天气信息"
+          }
+        ],
+        "data_classification": "synthetic_engineering_validation",
+        "fixture_variant": "multi_turn_query"
+      },
+      "音频信息": {
+        "duration_ms": 1700,
+        "sample_rate": 16000,
+        "channels": 1,
+        "format": "wav",
+        "language": "普通话",
+        "speaker_count": 1,
+        "signal_conditions": [
+          "synthetic",
+          "clean"
+        ]
+      },
+      "参考文本/标注": {
+        "transcript": "请查询明天北京的天气信息",
+        "translation": "-",
+        "intent": "信息查询",
+        "slots": {
+          "地点": "北京",
+          "日期": "明天"
+        },
+        "expected_action": "query_weather",
+        "expected_reply": "北京明天晴转多云，最高温度26度",
+        "translation_context": "-",
+        "annotation_version": "fixture-2.0"
+      },
+      "系统输出": {
+        "transcript": "请查询明天北京的天气信",
+        "translation": "-",
+        "intent": "信息查询",
+        "slots": {
+          "地点": "北京",
+          "日期": "明天"
+        },
+        "action": "query_weather",
+        "reply": "北京明天晴转多云，最高温度26度",
+        "model_version": "deterministic-fixture-2.0",
+        "run_id": "RUN-SYN-0006"
+      },
+      "量化指标": {
+        "metric_name": "CER",
+        "value": 0.083333,
+        "metric_version": "cer-normalize-v1",
+        "normalization_version": "cer-normalize-v1",
+        "input_summary_sha256": "948b0f2c1e9d1733cf2c9231a99c1e12047fb038ad1fb410a39f3f022a1b0cd6",
+        "status": "不判定",
+        "candidate_status": "通过",
+        "overall_candidate_status": "通过",
+        "threshold_version": "1.0.0-candidate.1",
+        "threshold_approval_status": "pending_approval",
+        "threshold_effective": false,
+        "stage_metrics": [
+          {
+            "stage": "intent_understanding",
+            "metric_name": "intent_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "信息查询",
+            "hypothesis": "信息查询",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "835be2933dfb1bc6712f344546de0d3e0b0d40ba90ed11fd94a726efe44c9c04",
+            "reproducible": true
+          },
+          {
+            "stage": "slot_filling",
+            "metric_name": "slot_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": {
+              "地点": "北京",
+              "日期": "明天"
+            },
+            "hypothesis": {
+              "地点": "北京",
+              "日期": "明天"
+            },
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "cd6edfbc708ae837d4e96cc6c53b49792db90872b0b5e2caf48f5597ed79a14a",
+            "reproducible": true
+          },
+          {
+            "stage": "action_execution",
+            "metric_name": "action_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "query_weather",
+            "hypothesis": "query_weather",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "0f963c61fc684a0d9d9ad2d6247e590e3a02d0cd66dfcbef8ff20983843f843c",
+            "reproducible": true
+          },
+          {
+            "stage": "response_generation",
+            "metric_name": "response_exact_match",
+            "value": 1.0,
+            "metric_version": "stage-exact-v1",
+            "reference": "北京明天晴转多云，最高温度26度",
+            "hypothesis": "北京明天晴转多云，最高温度26度",
+            "matched": true,
+            "applicable": true,
+            "candidate_status": "通过",
+            "input_summary_sha256": "8af2bae91156c74c1d6d317884fc879008ceffb506d7c488f0f16e142c5580c0",
+            "reproducible": true
+          }
+        ],
+        "reproducible": true
+      },
+      "质量诊断": {
+        "text": "已保存转写及4个下游阶段的可复现比较结果；正式质量原因不判断。",
+        "evidence_ids": [
+          "EVID-SYN-0006-input",
+          "EVID-SYN-0006-metric",
+          "EVID-SYN-0006-intent_understanding",
+          "EVID-SYN-0006-slot_filling",
+          "EVID-SYN-0006-action_execution",
+          "EVID-SYN-0006-response_generation"
+        ]
+      },
+      "证据片段": [
+        {
+          "evidence_id": "EVID-SYN-0006-input",
+          "type": "input_text",
+          "source": "输入文本",
+          "location": "fixture://SYN-0006/input",
+          "content": "请查询明天北京的天气信息"
+        },
+        {
+          "evidence_id": "EVID-SYN-0006-metric",
+          "type": "metric_snapshot",
+          "source": "量化指标",
+          "location": "fixture://SYN-0006/metric/cer-v1",
+          "content": {
+            "metric_name": "CER",
+            "value": 0.083333,
+            "candidate_status": "通过",
+            "overall_candidate_status": "通过",
+            "threshold_effective": false
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0006-intent_understanding",
+          "type": "metric_snapshot",
+          "source": "intent_understanding阶段",
+          "location": "fixture://SYN-0006/intent_understanding",
+          "content": {
+            "stage": "intent_understanding",
+            "metric_name": "intent_exact_match",
+            "reference": "信息查询",
+            "output": "信息查询"
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0006-slot_filling",
+          "type": "metric_snapshot",
+          "source": "slot_filling阶段",
+          "location": "fixture://SYN-0006/slot_filling",
+          "content": {
+            "stage": "slot_filling",
+            "metric_name": "slot_exact_match",
+            "reference": {
+              "地点": "北京",
+              "日期": "明天"
+            },
+            "output": {
+              "地点": "北京",
+              "日期": "明天"
+            }
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0006-action_execution",
+          "type": "metric_snapshot",
+          "source": "action_execution阶段",
+          "location": "fixture://SYN-0006/action_execution",
+          "content": {
+            "stage": "action_execution",
+            "metric_name": "action_exact_match",
+            "reference": "query_weather",
+            "output": "query_weather"
+          }
+        },
+        {
+          "evidence_id": "EVID-SYN-0006-response_generation",
+          "type": "metric_snapshot",
+          "source": "response_generation阶段",
+          "location": "fixture://SYN-0006/response_generation",
+          "content": {
+            "stage": "response_generation",
+            "metric_name": "response_exact_match",
+            "reference": "北京明天晴转多云，最高温度26度",
+            "output": "北京明天晴转多云，最高温度26度"
+          }
+        }
+      ],
+      "影响评估": {
+        "text": "合成样例，仅用于工程链路验证；不代表真实用户影响。",
+        "evidence_ids": [
+          "EVID-SYN-0006-input",
+          "EVID-SYN-0006-metric",
+          "EVID-SYN-0006-intent_understanding",
+          "EVID-SYN-0006-slot_filling",
+          "EVID-SYN-0006-action_execution",
+          "EVID-SYN-0006-response_generation"
+        ]
+      },
+      "优化建议": [
+        {
+          "text": "保留当前证据并在来源合规的真实或人工标注数据上复核；本样例不判断原因。",
+          "evidence_ids": [
+            "EVID-SYN-0006-input",
+            "EVID-SYN-0006-metric",
+            "EVID-SYN-0006-intent_understanding",
+            "EVID-SYN-0006-slot_filling",
+            "EVID-SYN-0006-action_execution",
+            "EVID-SYN-0006-response_generation"
+          ]
+        }
+      ],
+      "人工修订": "-",
+      "最终结论": {
+        "level": "证据不足",
+        "basis": "候选CER状态为通过；阈值尚未审批生效，不能形成正式结论。",
+        "evidence_ids": [
+          "EVID-SYN-0006-input",
+          "EVID-SYN-0006-metric",
+          "EVID-SYN-0006-intent_understanding",
+          "EVID-SYN-0006-slot_filling",
+          "EVID-SYN-0006-action_execution",
+          "EVID-SYN-0006-response_generation"
+        ]
+      }
+    }
+  ]
+}

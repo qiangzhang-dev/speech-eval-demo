@@ -1,0 +1,27 @@
+{
+  "synthetic": true,
+  "data_classification": "synthetic_engineering_validation",
+  "formal_acceptance_claim": false,
+  "count": 6,
+  "unique_reference_texts": 6,
+  "typical_scenarios": [
+    "会议/办公语音翻译",
+    "短语音/录音转写",
+    "车载/语音助手交互"
+  ],
+  "subscenarios": [
+    "信息查询/多轮任务",
+    "噪声/数字英文混合",
+    "普通话口述",
+    "短句语翻",
+    "设备控制",
+    "长句/上下文翻译"
+  ],
+  "capability_chains": [
+    "C01",
+    "C02",
+    "C03"
+  ],
+  "field_count": 14,
+  "source_of_truth": "scripts/generate_samples.py"
+}
