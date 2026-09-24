@@ -1,10 +1,10 @@
 # speech-eval-demo
 
-一个可离线运行的多场景语音评测与问题分析 Demo，提供样例校验、CER 指标、证据约束诊断、受控修订、SQLite 持久化、JSONL/CSV 导出和本地 Web 工作台。
+把参考文本和识别结果放在一起，计算字符错误率（CER），再看具体漏了、错了或多了哪些字。结果可以在本地网页里筛选、复核，也可以导出为 CSV 或 JSONL。
 
 **[浏览六条样例的结果](https://qiangzhang-dev.github.io/speech-eval/)** · [下载示例 JSONL](docs/demo/evaluation-results.jsonl) · [架构图](docs/architecture.svg)
 
-这是个人工程项目。演示使用预设的合成参考文本和识别输出，不调用 ASR/LLM，也不运行真实音频识别。它展示如何把评分、错误证据和复核过程串起来。
+演示包含六条合成文本样例。识别输出是预设的，不调用 ASR 或 LLM；页面中的分数用于检查工具行为，不是模型测评成绩。
 
 ## 一条命令运行
 
@@ -33,7 +33,7 @@ python scripts/demo.py --output exports/my-first-demo
 
 ## 看懂这次结果
 
-以下数据来自上述命令对仓库合成样例的实际运行，**不是模型性能或真实业务指标**。
+运行上面的命令，会得到以下结果：
 
 | 样例 | 合成场景 | CER |
 | --- | --- | ---: |
@@ -121,6 +121,6 @@ tests/        自动化测试
 web/          本地工作台
 ```
 
-## 数据边界
+## 样例数据
 
-仓库中的 `data/fixtures` 和 `data/generated_verify3` 是合成工程样例，仅用于演示和可复现测试，不代表真实用户数据、真实业务效果或正式业务验收。任何真实数据接入、阈值审批、人工抽检和在线发布都应由相应责任人按组织流程完成。
+`data/fixtures` 是六条入门样例，`data/generated_verify3` 是较大的合成集。它们都不包含真实用户录音。
