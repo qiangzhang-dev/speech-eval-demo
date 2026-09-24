@@ -1,0 +1,90 @@
+{
+  "report_version": "1.0.0",
+  "generated_at": "2026-09-24T07:15:07+00:00",
+  "batch_id": "synthetic-demo",
+  "run_id": "synthetic-demo",
+  "data_classification": "synthetic_engineering_validation",
+  "formal_acceptance_claim": false,
+  "counts": {
+    "results": 6,
+    "unique_sample_ids": 6,
+    "completed": 6,
+    "failed": 0,
+    "current_valid_metrics": 6,
+    "invalidated_results": 0,
+    "pending_recompute": 0,
+    "evidence": 56,
+    "evidence_references": 56,
+    "revisions": 0,
+    "logs": 13
+  },
+  "status_counts": {
+    "COMPLETED": 6
+  },
+  "scene_counts": {
+    "会议/办公语音翻译": 2,
+    "短语音/录音转写": 2,
+    "车载/语音助手交互": 2
+  },
+  "subscene_counts": {
+    "信息查询/多轮任务": 1,
+    "噪声/数字英文混合": 1,
+    "普通话口述": 1,
+    "短句语翻": 1,
+    "设备控制": 1,
+    "长句/上下文翻译": 1
+  },
+  "task_type_counts": {
+    "对话生成": 2,
+    "机器翻译": 2,
+    "语义理解": 2,
+    "语音识别": 6
+  },
+  "conclusion_counts": {
+    "证据不足": 6
+  },
+  "metric_summary": {
+    "name": "CER",
+    "count": 6,
+    "execution_count": 6,
+    "current_metric_count": 6,
+    "invalidated_result_count": 0,
+    "pending_recompute_count": 0,
+    "pending_recompute_sample_ids": [],
+    "min": 0.0,
+    "max": 0.9473684210526315,
+    "mean": 0.2238669590643275
+  },
+  "stage_metric_counts": {
+    "action_execution": 2,
+    "intent_understanding": 2,
+    "machine_translation": 2,
+    "response_generation": 2,
+    "slot_filling": 2
+  },
+  "stage_match_counts": {
+    "matched": 10
+  },
+  "stage_mismatch_cases": [],
+  "threshold": {
+    "version": "1.0.0-candidate.1",
+    "approval_status": "pending_approval",
+    "effective": false
+  },
+  "reproduction": {
+    "command": "python scripts/demo.py",
+    "provider": "rules",
+    "network_used": false,
+    "python_version": "3.12.14",
+    "input_sha256": {
+      "data/fixtures/manifest.csv": "3062daaf17f46cf80789b4621a5dda6727d5322c1a5757e0877aa1eac8914c69",
+      "config/thresholds.json": "f9332caaf4acc05c25fbd3280182786ba748fb333191956b55821bad14a8c9e7",
+      "data/fixtures/inputs/SYN-0001.json": "f051a8a96efbdf1f1feecb0ba5154b4dcec1cf71c5e94f0f738be620b8fc2fc2",
+      "data/fixtures/inputs/SYN-0002.json": "18bd3bb9fe82c28b234c7f4f030d76ccd80df282bc86651217a029db924d5b89",
+      "data/fixtures/inputs/SYN-0003.json": "7ea460d6cdd2ab8ea3c96f098157dfc97224221dddb4d1650e3f753e977f0efb",
+      "data/fixtures/inputs/SYN-0004.json": "d959599f45485fc86b099741f0d3be426360f7b8aa6b2c92fbdf083b7b4bd132",
+      "data/fixtures/inputs/SYN-0005.json": "64e8ee97e9eb5f250154d4a15e346872b70e12e83440112f448fff162ea6ace8",
+      "data/fixtures/inputs/SYN-0006.json": "d985e8c527d807e7a9bc8e4ac4a628b2824b4aa4efb989245bbd08de5d4c3bc8"
+    }
+  }
+}
