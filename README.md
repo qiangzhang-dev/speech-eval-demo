@@ -4,6 +4,8 @@
 
 **[浏览六条样例的结果](https://qiangzhang-dev.github.io/speech-eval/)** · [下载示例 JSONL](docs/demo/evaluation-results.jsonl) · [架构图](docs/architecture.svg)
 
+**[对比两个版本的转写](https://qiangzhang-dev.github.io/speech-eval/compare/)**：筛出 CER 升高的句子，查看旧版和新版分别错在哪里。
+
 演示包含六条合成文本样例。识别输出是预设的，不调用 ASR 或 LLM；页面中的分数用于检查工具行为，不是模型测评成绩。
 
 ## 一条命令运行
@@ -51,6 +53,38 @@ python scripts/demo.py --output exports/my-first-demo
 计算口径：`cer-v1` 使用字符级 Levenshtein 距离；`cer-normalize-v1` 先 NFKC/casefold，再只保留汉字、拉丁字母和十进制数字。下游阶段使用字段精确匹配，不等同于语义裁判。仓库阈值仍是未生效的候选配置，因此“运行完成”不意味着“质量通过”。
 
 公开预览与 [docs/demo](docs/demo) 使用同一批运行结果。重跑的指标与 JSONL 应一致，生成时间、Python 版本和本地目录可以不同。
+
+## 对比两个版本，或导入自己的转写
+
+```sh
+python scripts/compare.py
+```
+
+这会生成另一份离线报告。默认输入是 [六条配对合成文本](data/comparison/pairs.csv)：新版刻意修复了两条、改坏了两条，另外两条保留原样。两个版本都是预设输出，不是模型实验。
+
+报告同时显示逐句等权的**样例平均 CER**、按参考字符数加权的**语料级 CER**及两版差值。可以筛选 CER 升高、降低、不变的句子，也可以搜索样例 ID 或文本，再展开两版的字符编辑记录。
+
+导入自己的数据时，用 UTF-8 CSV 保存以下四列。一行就是同一个样例的配对结果，不按文件顺序猜测对应关系：
+
+```csv
+sample_id,reference,baseline,candidate
+sample-001,把客厅空调打开,把客厅空调打开,把客厅空调关闭
+sample-002,请把数量改成3份,请把数量改成3,请把数量改成3份
+```
+
+```sh
+python scripts/compare.py --input your-pairs.csv --output exports/my-comparison --baseline-name v1 --candidate-name v2
+```
+
+打开输出目录中的 `index.html`。目录还包含原始 `input.csv`、带编辑证据和输入 SHA-256 的 `comparison.json`，以及逐句分数 `comparison.csv`。只使用本地 Python 标准库，不上传输入、不调用模型。线上页面用于浏览示例；导入在本地通过上述命令完成。
+
+导入与解释约定：
+
+- `sample_id` 不能为空或重复；CSV 支持 UTF-8 BOM、带引号的逗号和换行。缺列或缺单元格会报错。
+- 空输出是有效结果；归一化后为空的参考文本标为“未计入”，不参与两版均值。每个文本字段最多 1000 个归一化字符，较长录音请先分段。
+- 差值是“新版 − 旧版”，以百分点显示；负值表示 CER 降低。CER 可以超过 100%，同分也可能错在不同位置。
+- 用相同测试集、参考标注和可比的推理设置。工具只比较提供的文本，不能从 CER 判断关键语义、任务成功率或统计显著性。
+- 输出目录必须尚不存在。汇总 CSV 对疑似公式的文本加前置单引号；JSON 与原始输入保留原文，原始 CSV 打开时请按文本导入。
 
 ## 本地交互工作台
 
