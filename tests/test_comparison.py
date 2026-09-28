@@ -99,6 +99,31 @@ class ComparisonTests(unittest.TestCase):
             self.assertNotEqual(result.returncode,0)
             self.assertEqual((output/'comparison.json').read_bytes(),saved)
 
+    def test_check_only_and_invalid_input_leave_no_output(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            work = Path(tmp)
+            source = work/'my pairs.csv'
+            source.write_bytes((ROOT/'data/comparison/starter.csv').read_bytes())
+            command = [sys.executable, str(ROOT/'scripts/compare.py'), '--input', str(source)]
+            result = subprocess.run(command+['--check'], cwd=tmp, capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIn('3 samples', result.stdout)
+            self.assertEqual(list(work.iterdir()), [source])
+            source.write_text('sample_id,reference,baseline,candidate\nx,one,one,one\nx,two,two,two\n')
+            result = subprocess.run(command+['--output', str(work/'report')], cwd=tmp, capture_output=True, text=True)
+            self.assertNotEqual(result.returncode, 0)
+            self.assertIn('unique', result.stderr)
+            self.assertFalse((work/'report').exists())
+
+    def test_open_failure_keeps_successful_report(self):
+        sys.path.insert(0, str(ROOT))
+        from scripts.compare import main
+        with tempfile.TemporaryDirectory() as tmp, patch('scripts.compare.webbrowser.open', return_value=False) as launch:
+            dest = Path(tmp)/'report with spaces'
+            self.assertEqual(main(['--input', str(ROOT/'data/comparison/starter.csv'), '--output', str(dest), '--open']), 0)
+            launch.assert_called_once_with((dest/'index.html').as_uri())
+            self.assertTrue((dest/'comparison.json').exists())
+
 
 if __name__ == '__main__':
     unittest.main()

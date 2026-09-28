@@ -1,0 +1,4 @@
+sample_id,reference,baseline,candidate
+example-001,请把数量改成3份,请把数量改成3,请把数量改成3份
+example-002,把客厅空调打开,把客厅空调打开,把客厅空调关闭
+example-003,明天上午十点开会,,明天上午十点开会

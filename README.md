@@ -10,7 +10,13 @@
 
 演示包含六条合成文本样例。识别输出是预设的，不调用 ASR 或 LLM；页面中的分数用于检查工具行为，不是模型测评成绩。
 
-## 一条命令运行
+| 你想做什么 | 从这里开始 |
+| --- | --- |
+| 先看看效果 | [浏览版本对比](https://qiangzhang-dev.github.io/speech-eval/compare/) |
+| 比较自己的两版转写 | [下载 CSV 模板](https://raw.githubusercontent.com/qiangzhang-dev/speech-eval-demo/main/data/comparison/starter.csv)，按下方「导入自己的转写」操作 |
+| 核对真实模型的输出 | [Whisper 的 40 条逐句结果](https://qiangzhang-dev.github.io/notes/whisper-beam/report/)，包含 CER、WER 和分词明细 |
+
+## 下载并运行示例
 
 需要 **Python 3.11+**；核心仅依赖标准库，无需 pip 安装、API 密钥或 GPU。以下命令适用于 Windows PowerShell、macOS 和 Linux（后两者也可用 `python3`）：
 
@@ -56,27 +62,41 @@ python scripts/demo.py --output exports/my-first-demo
 
 公开预览与 [docs/demo](docs/demo) 使用同一批运行结果。重跑的指标与 JSONL 应一致，生成时间、Python 版本和本地目录可以不同。
 
-## 对比两个版本，或导入自己的转写
+## 对比两个版本
 
 ```sh
-python scripts/compare.py
+python scripts/compare.py --open
 ```
 
 这会生成另一份离线报告。默认输入是 [六条配对合成文本](data/comparison/pairs.csv)：新版刻意修复了两条、改坏了两条，另外两条保留原样。两个版本都是预设输出，不是模型实验。
 
+`--open` 会用默认浏览器打开已生成的本地报告；没有桌面浏览器时，仍会保存报告并打印路径。省略 `--open` 则只生成文件。每次默认使用新的输出目录，可以重复运行。
+
 报告同时显示逐句等权的**样例平均 CER**、按参考字符数加权的**语料级 CER**及两版差值。可以筛选 CER 升高、降低、不变的句子，也可以搜索样例 ID 或文本，再展开两版的字符编辑记录。
 
-导入自己的数据时，用 UTF-8 CSV 保存以下四列。一行就是同一个样例的配对结果，不按文件顺序猜测对应关系：
+## 导入自己的转写
+
+1. [下载 starter.csv](https://raw.githubusercontent.com/qiangzhang-dev/speech-eval-demo/main/data/comparison/starter.csv)，另存为仓库根目录的 `my-pairs.csv`。
+2. 保留表头，用自己的数据替换全部三行示例。Excel 或 WPS 请选择「CSV UTF-8（逗号分隔）」格式；不要把 `.xlsx` 直接改名。
+3. 先检查格式，再生成并打开报告：
+
+```sh
+python scripts/compare.py --input my-pairs.csv --check
+python scripts/compare.py --input my-pairs.csv --baseline-name v1 --candidate-name v2 --open
+```
+
+`--check` 只检查文件，不创建报告。成功时会打印样本数和归一化后为空的参考文本数量；这只表示格式可用，不表示识别质量合格。
+
+四列分别是唯一的样本 ID、参考文本、旧版输出、新版输出。一行就是同一个样例的配对结果，不按文件顺序猜测对应关系。第三行演示旧版完全没有输出的情况：
 
 ```csv
 sample_id,reference,baseline,candidate
-sample-001,把客厅空调打开,把客厅空调打开,把客厅空调关闭
-sample-002,请把数量改成3份,请把数量改成3,请把数量改成3份
+example-001,请把数量改成3份,请把数量改成3,请把数量改成3份
+example-002,把客厅空调打开,把客厅空调打开,把客厅空调关闭
+example-003,明天上午十点开会,,明天上午十点开会
 ```
 
-```sh
-python scripts/compare.py --input your-pairs.csv --output exports/my-comparison --baseline-name v1 --candidate-name v2
-```
+如需指定位置，可加 `--output exports/my-comparison`，该目录必须尚不存在。路径含空格时加引号，例如 `--input "my data/my-pairs.csv"`。
 
 打开输出目录中的 `index.html`。目录还包含原始 `input.csv`、带编辑证据和输入 SHA-256 的 `comparison.json`，以及逐句分数 `comparison.csv`。只使用本地 Python 标准库，不上传输入、不调用模型。线上页面用于浏览示例；导入在本地通过上述命令完成。
 
@@ -87,6 +107,19 @@ python scripts/compare.py --input your-pairs.csv --output exports/my-comparison 
 - 差值是“新版 − 旧版”，以百分点显示；负值表示 CER 降低。CER 可以超过 100%，同分也可能错在不同位置。
 - 用相同测试集、参考标注和可比的推理设置。工具只比较提供的文本，不能从 CER 判断关键语义、任务成功率或统计显著性。
 - 输出目录必须尚不存在。汇总 CSV 对疑似公式的文本加前置单引号；JSON 与原始输入保留原文，原始 CSV 打开时请按文本导入。
+
+### CSV 常见问题
+
+| 提示或现象 | 处理方法 |
+| --- | --- |
+| 找不到输入文件 | 在仓库根目录运行，或给 `--input` 完整路径；有空格时加引号 |
+| 编码错误、乱码 | 从 Excel / WPS 重新另存为 CSV UTF-8；支持带 BOM 的 UTF-8 |
+| 缺列、缺单元格或多出单元格 | 保留四列表头；空输出也要保留对应的逗号；文本中有英文逗号或换行时，用双引号包住整个单元格 |
+| 样本 ID 重复 | 给每条录音或分段独立 ID；两版结果放在同一行 |
+| 输出目录已存在 | 去掉 `--output` 自动生成新目录，或换一个目录名 |
+| 报告已生成但浏览器没打开 | 按终端打印的绝对路径找到 `index.html`，双击或用浏览器打开 |
+
+这条通用 CSV 流程计算 CER；Whisper 实验报告中的英文 WER 使用单独声明的分词规则，不会自动应用到任意语言的输入。
 
 ## 本地交互工作台
 
