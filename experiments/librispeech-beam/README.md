@@ -2,7 +2,7 @@
 
 固定 LibriSpeech test-clean 的 40 条真实录音，比较相同模型权重下两种解码设置。每位说话人选一条，选择规则在推理前固定：对 `nate-asr-v1:<utterance_id>` 计算 SHA-256，取该说话人哈希值最小的样本；按说话人编号排列。没有根据识别结果挑选输入。
 
-实际结果：3 条 CER 降低、37 条不变、0 条升高。语料级 CER 为 2.82% → 2.48%；这是固定小样本的描述统计。[阅读实验记录](https://qiangzhang-dev.github.io/notes/whisper-beam/) · [逐句对照](https://qiangzhang-dev.github.io/notes/whisper-beam/report/)。
+实际结果：3 条 CER 降低、37 条不变、0 条升高。语料级 CER 为 2.82% → 2.48%；这是固定小样本的描述统计。[阅读实验记录](https://qiangzhang-dev.github.io/notes/whisper-beam/) · [逐句对照](https://qiangzhang-dev.github.io/notes/whisper-beam/report/) · [知乎文章](https://zhuanlan.zhihu.com/p/2087855815839560000)。
 
 ## 复现
 
