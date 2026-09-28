@@ -22,7 +22,7 @@ class ExperimentMetricTests(unittest.TestCase):
     def test_word_boundaries_and_reference_spelling(self):
         # Same normalized characters, different tokens; WER alone is not semantic correctness.
         for reference, hypothesis, expected in [('YOU ARE ACUTE', 'You are a cute.', 2/3),
-                                                 ('TO-DAY I SHOUTED', 'Today I shouted.', .5)]:
+                                                 ('TO DAY I SHOUTED', 'Today I shouted.', .5)]:
             row = compare_pairs([{'sample_id': 'case', 'reference': reference,
                                   'baseline': hypothesis, 'candidate': hypothesis}])['samples'][0]
             self.assertEqual(row['baseline_metric']['value'], 0)

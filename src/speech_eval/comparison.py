@@ -100,7 +100,7 @@ def render_comparison(report):
     if 'word_summary' in report:
         words = report['word_summary']
         metric_rows += f'<tr><th>语料级 WER（本文分词规则）</th><td>{pct(words["baseline"]["corpus_wer"])}</td><td>{pct(words["candidate"]["corpus_wer"])}</td><td>{pp(words["candidate"]["corpus_wer"] - words["baseline"]["corpus_wer"])}</td></tr>'
-        word_notice = '<p class="notice">CER 去掉空格，可能漏掉单词分界错误。选择下方「CER 为 0、WER 大于 0」可找到字符指标未体现的词级差异，展开「查看分词」核对原因。差异不一定是识别错误：参考中的 TO-DAY 与输出 today 也会被当前分词规则计错。WER 按 NFKC、casefold 和保留词内撇号的英文词与数字计算，不展开数字或缩写；不是 LibriSpeech 官方评分流程。重新导入 CSV 的通用工具仅计算 CER。</p>'
+        word_notice = '<p class="notice">CER 去掉空格，可能漏掉单词分界错误。选择下方「CER 为 0、WER 大于 0」可找到字符指标未体现的词级差异，展开「查看分词」核对原因。差异不一定是识别错误：参考中的 TO DAY 与输出 today 也会被当前分词规则计错。WER 按 NFKC、casefold 和保留词内撇号的英文词与数字计算，不展开数字或缩写；不是 LibriSpeech 官方评分流程。重新导入 CSV 的通用工具仅计算 CER。</p>'
         word_option = '<option value="word-error">CER 为 0、WER 大于 0（任一版本）</option>'
     return '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>转写版本对比 · Nate Zhang</title>
 <style>
