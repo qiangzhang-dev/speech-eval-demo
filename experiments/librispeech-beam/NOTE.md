@@ -12,7 +12,7 @@
 
 数据来自 LibriSpeech test-clean。对每位说话人的 utterance ID 加上固定前缀后计算 SHA-256，选哈希值最小的一条，共 40 位说话人、40 条录音，总长约 5 分 24 秒。选择规则不看识别结果；全部样本 ID、参考文本和音频校验和都已公开。
 
-两次使用相同的 tiny.en 转换权重、CPU int8、4 个线程，temperature 固定为 0，关闭 VAD、跨片段文本条件和温度回退。只改变 beam size。具体参数与模型提交版本见 [实验协议](https://qiangzhang-dev.github.io/notes/whisper-beam/protocol.json)。推理在当前工作环境执行，使用公开数据，不涉及内部业务模型或录音。
+两次使用相同的 tiny.en 转换权重、CPU int8、4 个线程，temperature 固定为 0，关闭 VAD、跨片段文本条件和温度回退。只改变 beam size。具体参数与模型提交版本见 [实验协议](https://qiangzhang-dev.github.io/notes/whisper-beam/protocol.json)。本次全部使用公开数据。
 
 ## 总分变化不大，先看改对了什么
 
@@ -41,7 +41,9 @@
 
 这里使用的 CER 会去掉标点和空格。7 条文本不同的样本里，4 条的 CER 不变：其中 3 条主要是标点位置变化，另 1 条包括 `high readgrass` 变成 `high-read grass`。去掉空格和连字符后，两者的字符序列相同。
 
-这不是计分程序漏算，而是这个指标本来就不保留这些信息。它适合看字符层面的错误，却不能告诉我们停顿是否合理、单词分界是否正确，更不能代替语义或任务成功率。
+还有一条更直观的例子：`121-127105-0014` 的参考是 `YOU ARE ACUTE`，两个设置都输出了 `You are a cute.`，CER 却都是 0。去掉空格后，`acute` 与 `a cute` 的字符完全一样，词的分界已经变了。
+
+这个指标本来就不保留空格和标点信息。它适合看字符层面的错误，却不能告诉我们停顿是否合理、单词分界是否正确，更不能代替语义或任务成功率。
 
 英文 WER 因而单独计算。本文的规则是 NFKC、casefold，再按保留词内撇号的英文词与数字分词；不展开数字和缩写。**这不是 LibriSpeech 官方评分流程，不能拿这个 WER 与排行榜直接比较。** 完整口径与原始输出见 [仓库记录](https://github.com/qiangzhang-dev/speech-eval-demo/tree/main/experiments/librispeech-beam/results)。
 
