@@ -6,6 +6,8 @@
 
 **[对比两个版本的转写](https://qiangzhang-dev.github.io/speech-eval/compare/)**：筛出 CER 升高的句子，查看旧版和新版分别错在哪里。
 
+**[真实音频实验：Whisper tiny.en，beam 1 vs 5](https://qiangzhang-dev.github.io/notes/whisper-beam/)** · [40 条逐句结果](https://qiangzhang-dev.github.io/notes/whisper-beam/report/) · [复现脚本与协议](experiments/librispeech-beam/README.md)
+
 演示包含六条合成文本样例。识别输出是预设的，不调用 ASR 或 LLM；页面中的分数用于检查工具行为，不是模型测评成绩。
 
 ## 一条命令运行

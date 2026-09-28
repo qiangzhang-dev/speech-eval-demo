@@ -1,0 +1,322 @@
+[
+  {
+    "sample_id": "61-70968-0043",
+    "speaker_id": "61",
+    "reference": "FRIENDS SAID MONTFICHET FAINTLY TO THE WRESTLERS BEAR US ESCORT SO FAR AS THE SHERIFF'S HOUSE",
+    "selection_hash": "010913448ecc6a5900514df72cee049aace5d4a354d7e73833e03c8f0a31dccf",
+    "archive_member": "LibriSpeech/test-clean/61/70968/61-70968-0043.flac",
+    "audio_sha256": "92cde1bfb6bab32cd1428505868f1ca27db04ed17bec9e47e7cbb24e34dc09c3"
+  },
+  {
+    "sample_id": "121-127105-0014",
+    "speaker_id": "121",
+    "reference": "YOU ARE ACUTE",
+    "selection_hash": "004a15c0e8133a26f286b563ce17cb1401154d09746908816916714649d5e889",
+    "archive_member": "LibriSpeech/test-clean/121/127105/121-127105-0014.flac",
+    "audio_sha256": "c29b1c984e3e9003118bcec1fca271f71b0393a32fed7d59662aa0232c028a3f"
+  },
+  {
+    "sample_id": "237-126133-0008",
+    "speaker_id": "237",
+    "reference": "ASKED PHRONSIE WITH HER LITTLE FACE CLOSE TO POLLY'S OWN",
+    "selection_hash": "075b9ce69d32616fcb1e11c25354c144c55becd6f1c5d13eb6a3488b52ff4876",
+    "archive_member": "LibriSpeech/test-clean/237/126133/237-126133-0008.flac",
+    "audio_sha256": "274f9733bf02f7e3d25f28148f15308c1aab9fb16c4016ffa21d5833387daf71"
+  },
+  {
+    "sample_id": "260-123288-0006",
+    "speaker_id": "260",
+    "reference": "THE ATMOSPHERE IS EVIDENTLY CHARGED AND SURCHARGED WITH ELECTRICITY",
+    "selection_hash": "05d844f4546ed0c4e7725cd3c3042d369923d638be074fa86fba5dd4d02f4c52",
+    "archive_member": "LibriSpeech/test-clean/260/123288/260-123288-0006.flac",
+    "audio_sha256": "1dc77141c7f583aa984b7ef50e079ab289eda23790d497b695174557ee559bd5"
+  },
+  {
+    "sample_id": "672-122797-0023",
+    "speaker_id": "672",
+    "reference": "HE WELL KNEW THAT HE SHOULD NEVER SEE HIS DEAR OLD COMRADES THE LITTLE BUSHES AND FLOWERS AROUND HIM ANYMORE PERHAPS NOT EVEN THE BIRDS",
+    "selection_hash": "02c053bf8a3823b6cc14c7103f88d92fcaef2df833770e47588fa7358615b49c",
+    "archive_member": "LibriSpeech/test-clean/672/122797/672-122797-0023.flac",
+    "audio_sha256": "5ffcf4498e10949db25f83c4065f30a71207575e8bcdf276c1b799249f16424a"
+  },
+  {
+    "sample_id": "908-157963-0027",
+    "speaker_id": "908",
+    "reference": "AND LAY ME DOWN IN THY COLD BED AND LEAVE MY SHINING LOT",
+    "selection_hash": "029a56a745d726e6cfe71fc039dd8fb766a760cb7174150cda08f56064e4b54d",
+    "archive_member": "LibriSpeech/test-clean/908/157963/908-157963-0027.flac",
+    "audio_sha256": "6cd35de9433d6eb361d7c8f2d718d6b5c2cae349a7980b057010638d64a6e5f9"
+  },
+  {
+    "sample_id": "1089-134691-0007",
+    "speaker_id": "1089",
+    "reference": "SOON THE WHOLE BRIDGE WAS TREMBLING AND RESOUNDING",
+    "selection_hash": "0506a071e3e8b2f581f935a5a410653fecb6075ea4632254705f0777ceb117f7",
+    "archive_member": "LibriSpeech/test-clean/1089/134691/1089-134691-0007.flac",
+    "audio_sha256": "1a83af5a11bd5355195766726a444d9d25278f01405078f0b7811943ce96f595"
+  },
+  {
+    "sample_id": "1188-133604-0028",
+    "speaker_id": "1188",
+    "reference": "WELL THEN LAST HERE IS TURNER'S GREEK SCHOOL OF THE HIGHEST CLASS AND YOU DEFINE HIS ART ABSOLUTELY AS FIRST THE DISPLAYING INTENSELY AND WITH THE STERNEST INTELLECT OF NATURAL FORM AS IT IS AND THEN THE ENVELOPMENT OF IT WITH CLOUD AND FIRE",
+    "selection_hash": "079ddacff10c6a7e3b9a2978e59168d239316d9a31506e4a8c0e33e1aaebdf4c",
+    "archive_member": "LibriSpeech/test-clean/1188/133604/1188-133604-0028.flac",
+    "audio_sha256": "9796764cc991f9f0c3daa90c75d464260c0a3ffc4d282171df4696ce0963d5a7"
+  },
+  {
+    "sample_id": "1221-135767-0017",
+    "speaker_id": "1221",
+    "reference": "ON THE TABLE IN TOKEN THAT THE SENTIMENT OF OLD ENGLISH HOSPITALITY HAD NOT BEEN LEFT BEHIND STOOD A LARGE PEWTER TANKARD AT THE BOTTOM OF WHICH HAD HESTER OR PEARL PEEPED INTO IT THEY MIGHT HAVE SEEN THE FROTHY REMNANT OF A RECENT DRAUGHT OF ALE",
+    "selection_hash": "06558e3c0a73ec1e82abc8e0661c9748b6f31b9b443e12aa96b33ef2cab75feb",
+    "archive_member": "LibriSpeech/test-clean/1221/135767/1221-135767-0017.flac",
+    "audio_sha256": "f76711d131b0ccd3ae9043c1cbf459582174039c11dd8a5ccd77a59f26e51212"
+  },
+  {
+    "sample_id": "1284-1180-0013",
+    "speaker_id": "1284",
+    "reference": "AND YOU MUST BE OJO THE UNLUCKY SHE ADDED",
+    "selection_hash": "0ef3ef1c201f7f02d4147a1e2cc5ce2471ea250eafe4d33464c6711b57557cfd",
+    "archive_member": "LibriSpeech/test-clean/1284/1180/1284-1180-0013.flac",
+    "audio_sha256": "17f38d0094def713b03624c9eb6224b798a362ab29ba541e535ed71933ed98bb"
+  },
+  {
+    "sample_id": "1320-122617-0009",
+    "speaker_id": "1320",
+    "reference": "I GREATLY MOURN THAT ONE SO WELL DISPOSED SHOULD DIE IN HIS IGNORANCE AND I HAVE SOUGHT A GOODLY HYMN CAN YOU LEAD ME TO HIM",
+    "selection_hash": "0277e79d96609f0dec885c56ec0afb621495ac6d55b37bc8011e53368f69084d",
+    "archive_member": "LibriSpeech/test-clean/1320/122617/1320-122617-0009.flac",
+    "audio_sha256": "c99126dab3989f3025c33b2cfd4df9983508f77223106c11c20557144441c258"
+  },
+  {
+    "sample_id": "1580-141083-0023",
+    "speaker_id": "1580",
+    "reference": "ONE COULD HARDLY HOPE FOR ANY UPON SO DRY A DAY",
+    "selection_hash": "0000e22e56e5e2c21d7149f846222b791dd9d655c99b6f9767e6168d6da11933",
+    "archive_member": "LibriSpeech/test-clean/1580/141083/1580-141083-0023.flac",
+    "audio_sha256": "60602507df0bb9b139ef13d9299b563492ce931fddb629b8ba94c9bd0d22aa4e"
+  },
+  {
+    "sample_id": "1995-1837-0009",
+    "speaker_id": "1995",
+    "reference": "THE LAGOON HAD BEEN LEVEL WITH THE DYKES A WEEK AGO AND NOW",
+    "selection_hash": "0150e6e65dcf984159b5760f4199c4569f59746699dd9429d2df9b875aca74ec",
+    "archive_member": "LibriSpeech/test-clean/1995/1837/1995-1837-0009.flac",
+    "audio_sha256": "49440fe5723751ea40630e1c69e2a02b4d35d209b05754463f705c5b292b18ce"
+  },
+  {
+    "sample_id": "2094-142345-0035",
+    "speaker_id": "2094",
+    "reference": "BUT NOT MORE THAN WHAT'S IN THE BIBLE AUNT SAID DINAH",
+    "selection_hash": "0135e33a504304c1d729f6c2b4063475c78292c180377170954c10b9398cec09",
+    "archive_member": "LibriSpeech/test-clean/2094/142345/2094-142345-0035.flac",
+    "audio_sha256": "c1277448b1c3339de6b384c72e52375935d3079131a92b6ac85649c4a38b3471"
+  },
+  {
+    "sample_id": "2300-131720-0016",
+    "speaker_id": "2300",
+    "reference": "THEN AGAIN THERE WAS NO KNOWN WAY TO LUBRICATE AN ENGINE FOR CONTINUOUS RUNNING AND MISTER EDISON INFORMED ME THAT AS A MARINE ENGINE STARTED BEFORE THE SHIP LEFT NEW YORK AND CONTINUED RUNNING UNTIL IT REACHED ITS HOME PORT SO AN ENGINE FOR HIS PURPOSES MUST PRODUCE LIGHT AT ALL TIMES",
+    "selection_hash": "07b661a24cba217df89debed9963adcd77d0d375309ba6f965b78214a68d87c7",
+    "archive_member": "LibriSpeech/test-clean/2300/131720/2300-131720-0016.flac",
+    "audio_sha256": "ac6a027edcddceac3515d65554e92eaea2ff330c6a8207243d80484dccb5a4af"
+  },
+  {
+    "sample_id": "2830-3980-0020",
+    "speaker_id": "2830",
+    "reference": "THIS IS NO SINFUL PRIDE IT IS HOLY PRIDE",
+    "selection_hash": "080f6eb08ef9c823a699098bfb97c4f9a16aabac3e4eb0785aecb17ebef33e14",
+    "archive_member": "LibriSpeech/test-clean/2830/3980/2830-3980-0020.flac",
+    "audio_sha256": "058f5878256854603305408127284aaf82204fd73c2f98b15999e98e7da5f312"
+  },
+  {
+    "sample_id": "2961-961-0016",
+    "speaker_id": "2961",
+    "reference": "I WILL BRIEFLY DESCRIBE THEM TO YOU AND YOU SHALL READ THE ACCOUNT OF THEM AT YOUR LEISURE IN THE SACRED REGISTERS",
+    "selection_hash": "023ef9b3f947c9a800081fae07dbbe228c6fd9fd64aa7214b1f593c28673e291",
+    "archive_member": "LibriSpeech/test-clean/2961/961/2961-961-0016.flac",
+    "audio_sha256": "a83b7700a1e82ee543915828890d0abb16d7ea24010cca13cd2058cbebca25c7"
+  },
+  {
+    "sample_id": "3570-5694-0007",
+    "speaker_id": "3570",
+    "reference": "IT HAS EVEN HAPPENED THAT THE NAME FOR CERTAIN DISEASED CONDITIONS OF THE BODY ARISING FROM SUCH AN ORIGIN HAS PASSED INTO EVERYDAY SPEECH AS A SYNONYM FOR NOBLE OR GENTLE",
+    "selection_hash": "065539e27f2cc5578a685e25a9a1042d0babaa032bab6596da6d39b43200a33e",
+    "archive_member": "LibriSpeech/test-clean/3570/5694/3570-5694-0007.flac",
+    "audio_sha256": "563a9b35dbf8b2eacdd21aac9835874bf471841174d938a2838586de55c3d970"
+  },
+  {
+    "sample_id": "3575-170457-0019",
+    "speaker_id": "3575",
+    "reference": "I HAD NOT VENTURED TO HOPE FOR SUCH A REPLY SO CONSIDERATE IN ITS TONE SO NOBLE IN ITS SPIRIT",
+    "selection_hash": "0393b1196a19247f9b95caef9ee3016f86d1af2e8a6d5681209f9fba802693f7",
+    "archive_member": "LibriSpeech/test-clean/3575/170457/3575-170457-0019.flac",
+    "audio_sha256": "b1d25f63bf1290afba4b6e9914e0230c4e2be67b16b3ea28cebccfebd571d3a5"
+  },
+  {
+    "sample_id": "3729-6852-0042",
+    "speaker_id": "3729",
+    "reference": "I AM A VERY UNPLEASANT PUPIL ALWAYS ASKING QUESTIONS CURIOUS TROUBLESOME INSATIABLE AND EVEN SUPPOSING THAT I COULD MEET WITH THE TEACHER I REQUIRE I AM AFRAID I AM NOT RICH ENOUGH TO PAY HIM",
+    "selection_hash": "05817d308123200960caa55b6b4bb011e96339f167f75119b98d4bdfec015628",
+    "archive_member": "LibriSpeech/test-clean/3729/6852/3729-6852-0042.flac",
+    "audio_sha256": "4ba37404ae68ba9202ec251c310a4d36b823300505512034d37d838706d7adce"
+  },
+  {
+    "sample_id": "4077-13751-0010",
+    "speaker_id": "4077",
+    "reference": "TO THE FERVENT LATTER DAY SAINT A TEMPLE IS NOT SIMPLY A CHURCH BUILDING A HOUSE FOR RELIGIOUS ASSEMBLY",
+    "selection_hash": "0452bd59f552d02f250b6306b3427c7b1a7d6cabb0c85a7cccc1762c994b718b",
+    "archive_member": "LibriSpeech/test-clean/4077/13751/4077-13751-0010.flac",
+    "audio_sha256": "af0ba8bf78675dde17fab65aa2b8e76c795387456d6a5c462b05ef33f0dc9e1d"
+  },
+  {
+    "sample_id": "4446-2271-0006",
+    "speaker_id": "4446",
+    "reference": "HE'S BEEN WANTING TO MARRY HILDA THESE THREE YEARS AND MORE",
+    "selection_hash": "013f994708008a91758afc84c3a2c278ea5ec9b2fe32cc0db9b38376a8c7cf2e",
+    "archive_member": "LibriSpeech/test-clean/4446/2271/4446-2271-0006.flac",
+    "audio_sha256": "3200c0a32ca92ebec7843fa7679299aae7a9bd0836b6c5b7a7b62255b2ad467a"
+  },
+  {
+    "sample_id": "4507-16021-0030",
+    "speaker_id": "4507",
+    "reference": "ASSUREDLY IF THE TONGUE WHICH A NATION OR A PROVINCE HAS SPOKEN IS WORTHY OF INTEREST THE LANGUAGE WHICH HAS BEEN SPOKEN BY A MISERY IS STILL MORE WORTHY OF ATTENTION AND STUDY",
+    "selection_hash": "03cc1cb80f5fd2e1e3f66d4dd4e0f424f084d3bfbc4918112d0831f5682d9866",
+    "archive_member": "LibriSpeech/test-clean/4507/16021/4507-16021-0030.flac",
+    "audio_sha256": "51d9859fa2b55263a7200e9318951f53d5cbc7a520e0631bd9fc187461fc82fd"
+  },
+  {
+    "sample_id": "4970-29095-0015",
+    "speaker_id": "4970",
+    "reference": "IF I CAN GET PATIENTS",
+    "selection_hash": "0173c38af59acd83b44db3e83d97716ef74433a3f540df284e03171743e080a7",
+    "archive_member": "LibriSpeech/test-clean/4970/29095/4970-29095-0015.flac",
+    "audio_sha256": "dfa74ba8c44d0e34483dbccf85b80762034144deceed65aa5e724b44ca90ef30"
+  },
+  {
+    "sample_id": "4992-41797-0001",
+    "speaker_id": "4992",
+    "reference": "WELL AS I SAY IT'S AN AWFUL QUEER WORLD THEY CLAP ALL THE BURGLARS INTO JAIL AND THE MURDERERS AND THE WIFE BEATERS I'VE ALLERS THOUGHT A GENTLE REPROOF WOULD BE ENOUGH PUNISHMENT FOR A WIFE BEATER CAUSE HE PROBABLY HAS A LOT O PROVOCATION THAT NOBODY KNOWS AND THE FIREBUGS CAN'T THINK O THE RIGHT NAME SOMETHING LIKE CENDENARIES AN THE BREAKERS O THE PEACE AN WHAT NOT AN YET THE LAW HAS NOTHIN TO SAY TO A MAN LIKE HEN LORD",
+    "selection_hash": "00c1133670427bc45be5d19bb71871b597051a9fed38e79db6b2e1701dfd4117",
+    "archive_member": "LibriSpeech/test-clean/4992/41797/4992-41797-0001.flac",
+    "audio_sha256": "09c24f770860e694fb782ff968b1dbde8d1816a40857996895777c799a546f18"
+  },
+  {
+    "sample_id": "5105-28240-0022",
+    "speaker_id": "5105",
+    "reference": "IT WAS ON THE LAST DAY OF JANUARY THAT THE REPAIRS OF THE SCHOONER WERE COMPLETED",
+    "selection_hash": "0ac7d97149863ebdd6e1b52c7d87f526e1e4a7d77d5f587fa2504d149cf86862",
+    "archive_member": "LibriSpeech/test-clean/5105/28240/5105-28240-0022.flac",
+    "audio_sha256": "ba22adab23b26cd2cfa9eef01535070dcecff011067ee910274bb151ff1214ea"
+  },
+  {
+    "sample_id": "5142-36377-0005",
+    "speaker_id": "5142",
+    "reference": "THE DOOR OPENED AGAIN WHILE I WAS STILL STUDYING THE TWO BROTHERS WITHOUT I HONESTLY CONFESS BEING VERY FAVORABLY IMPRESSED BY EITHER OF THEM",
+    "selection_hash": "036086da1aaf52eb4a954e92c81af69696fc700a766290daa9eb37048e74d082",
+    "archive_member": "LibriSpeech/test-clean/5142/36377/5142-36377-0005.flac",
+    "audio_sha256": "8d87505e5f26ea39f96b63e3cff62f96b6848d08d55a7b75487528ad090c030e"
+  },
+  {
+    "sample_id": "5639-40744-0032",
+    "speaker_id": "5639",
+    "reference": "FOR GOD'S SAKE MY LADY MOTHER GIVE ME A WIFE WHO WOULD BE AN AGREEABLE COMPANION NOT ONE WHO WILL DISGUST ME SO THAT WE MAY BOTH BEAR EVENLY AND WITH MUTUAL GOOD WILL THE YOKE IMPOSED ON US BY HEAVEN INSTEAD OF PULLING THIS WAY AND THAT WAY AND FRETTING EACH OTHER TO DEATH",
+    "selection_hash": "0266406db2a271a1e6c47652f8c80dcfd93dcebce703a89544845e5b6e2fa56e",
+    "archive_member": "LibriSpeech/test-clean/5639/40744/5639-40744-0032.flac",
+    "audio_sha256": "ecba1c65406f3d2fdfe383a22385dfe19cc117b71b126817f5e20df791f22a50"
+  },
+  {
+    "sample_id": "5683-32866-0003",
+    "speaker_id": "5683",
+    "reference": "IN THE MEANTIME I HAD FORMED A NEW IDEA OF HER",
+    "selection_hash": "0015fdd395a8ba8483ceb9415253053cabcef179d982e8a03352e0fd86745b5e",
+    "archive_member": "LibriSpeech/test-clean/5683/32866/5683-32866-0003.flac",
+    "audio_sha256": "94e85a37b6c916701d33a032a92472548bb03a91a0fea130040612f6fe8bb111"
+  },
+  {
+    "sample_id": "6829-68769-0037",
+    "speaker_id": "6829",
+    "reference": "I'VE SEEN LOTS OF THAT KIND IN MY DAY",
+    "selection_hash": "01343eba69a87a9e50a9be2e6dd67d6f24d8700468eceeffc22a0ae27aa0ba72",
+    "archive_member": "LibriSpeech/test-clean/6829/68769/6829-68769-0037.flac",
+    "audio_sha256": "afb65abbe622442276b7caa3fd3442ce1a214d86c1790978eccb8f1dd2a5e3c2"
+  },
+  {
+    "sample_id": "6930-81414-0024",
+    "speaker_id": "6930",
+    "reference": "MY TONGUE REFUSED TO ARTICULATE MY POWER OF SPEECH LEFT ME",
+    "selection_hash": "018d2100bc6facdfc471d6818f3ccb7b9baecf48357fd488fe10dd6e2a7f2474",
+    "archive_member": "LibriSpeech/test-clean/6930/81414/6930-81414-0024.flac",
+    "audio_sha256": "0d6ef5551c0db2d5034161a56b3c5f9172066c34b4fa92a38f94be86e6099d31"
+  },
+  {
+    "sample_id": "7021-85628-0012",
+    "speaker_id": "7021",
+    "reference": "BUT YOU MUST NOT EAT WITH YOUR CAP ON YOUR HEAD SHE SAID AND WAS GOING TO TAKE IT OFF",
+    "selection_hash": "00738dd4ec73a42ceffbcf27ede2c3f10ef717b211ee15d787995bab48011d92",
+    "archive_member": "LibriSpeech/test-clean/7021/85628/7021-85628-0012.flac",
+    "audio_sha256": "3b4df5fc93c00f17af491b641ee42e8086a88fd911afa54e7e3e7db34382ad2d"
+  },
+  {
+    "sample_id": "7127-75947-0028",
+    "speaker_id": "7127",
+    "reference": "QUICK QUICK THEN AMONG THE HIGH REED GRASS SAID MONTALAIS STOOP ATHENAIS YOU ARE SO TALL",
+    "selection_hash": "01cef3b804ca09db33980f0982f04c283c407d402807e154db21030d457d3f8e",
+    "archive_member": "LibriSpeech/test-clean/7127/75947/7127-75947-0028.flac",
+    "audio_sha256": "f0d9e6496cb9b1c83f070d6c82386c651c6243c852cd10654e6ba66b39f70403"
+  },
+  {
+    "sample_id": "7176-92135-0002",
+    "speaker_id": "7176",
+    "reference": "BUT EVEN THE UNSUCCESSFUL DRAMATIST HAS HIS MOMENTS",
+    "selection_hash": "018d57fa4ca8135930c65822fcd53ec5e3b8815a98287937b8f3a2b5f619a103",
+    "archive_member": "LibriSpeech/test-clean/7176/92135/7176-92135-0002.flac",
+    "audio_sha256": "097bc7e8963d5fd12512dac0a950a93747b0de2dd41aa3f8bb597bad1c052b5e"
+  },
+  {
+    "sample_id": "7729-102255-0029",
+    "speaker_id": "7729",
+    "reference": "TEN DAYS WERE CONSUMED IN THESE NEGOTIATIONS BUT THE SPIRIT OF VENGEANCE REFUSED TO YIELD",
+    "selection_hash": "0b0a77551cd76418fb557b1349376ef83671c6f69ea9c9b0582437f2d912d1a5",
+    "archive_member": "LibriSpeech/test-clean/7729/102255/7729-102255-0029.flac",
+    "audio_sha256": "c2de8ed696b84e941bd0c95176c11cde1b5ed87a606288775215868c1250141e"
+  },
+  {
+    "sample_id": "8224-274381-0015",
+    "speaker_id": "8224",
+    "reference": "THOUGH THE DISCIPLINE OF THE FORMER PARLIAMENTARY ARMY WAS NOT CONTEMPTIBLE A MORE EXACT PLAN WAS INTRODUCED AND RIGOROUSLY EXECUTED BY THESE NEW COMMANDERS",
+    "selection_hash": "066fe6746d67b91dfb62cf0211f1270bdc91800589747ad1e473f823c799c71d",
+    "archive_member": "LibriSpeech/test-clean/8224/274381/8224-274381-0015.flac",
+    "audio_sha256": "e92a6af76cb81b16f071caad82d162f33685212a97b6995c690a9a7d0832d51e"
+  },
+  {
+    "sample_id": "8230-279154-0016",
+    "speaker_id": "8230",
+    "reference": "IN ACTUAL FACT THERE ARE DOUBTLESS VARIOUS FACTORS THAT CONCUR IN GIVING US THE FEELING OF GREATER OR LESS REMOTENESS IN SOME REMEMBERED EVENT",
+    "selection_hash": "03aa768382a422a011a612fd425aafd7734121632411df6fa4b9e9fcc5c03daf",
+    "archive_member": "LibriSpeech/test-clean/8230/279154/8230-279154-0016.flac",
+    "audio_sha256": "c6756dfa0db4e0b5e41cb5fa8b19832f73545c812451e2dcd7238b03534a2af4"
+  },
+  {
+    "sample_id": "8455-210777-0063",
+    "speaker_id": "8455",
+    "reference": "TO DAY I SHOUTED",
+    "selection_hash": "007a52cf6110ac9ccaed85333ab5ea376562e05603495040a01618ee7f96e27f",
+    "archive_member": "LibriSpeech/test-clean/8455/210777/8455-210777-0063.flac",
+    "audio_sha256": "956cb79779ee1775b2c9935604a7ed876e4a38566f006749189ecf378359fd61"
+  },
+  {
+    "sample_id": "8463-294828-0035",
+    "speaker_id": "8463",
+    "reference": "AND SO IF I'D BEEN DELAYED BY A QUARTER OF AN HOUR OR EVEN LESS THE FRIGATE WOULD HAVE GONE WITHOUT ME AND I WOULD HAVE MISSED OUT ON THIS UNEARTHLY EXTRAORDINARY AND INCONCEIVABLE EXPEDITION WHOSE TRUE STORY MIGHT WELL MEET WITH SOME SKEPTICISM",
+    "selection_hash": "02c60d1d0d82855766c2bbdaeb97f8d81aa9e40fe3562b501c64cbee87e595f3",
+    "archive_member": "LibriSpeech/test-clean/8463/294828/8463-294828-0035.flac",
+    "audio_sha256": "3e3002f8ad3dc7b9e2daaf5469c82bebc5c608944df3bdc8dee76e69c8fb0d7d"
+  },
+  {
+    "sample_id": "8555-284447-0014",
+    "speaker_id": "8555",
+    "reference": "THE IDEA OF PATCHING CAP'N BILL TO A GOAT WAS VASTLY AMUSING TO HIM AND THE MORE HE THOUGHT OF IT THE MORE HE ROARED WITH LAUGHTER",
+    "selection_hash": "0a94aee381eab7b37e4d35eb01f1b1173d3334159e01ea234d7bc92251f36789",
+    "archive_member": "LibriSpeech/test-clean/8555/284447/8555-284447-0014.flac",
+    "audio_sha256": "7c3da00437162cf18618ad50066c8e901a79bd4b06c80bb454417e43bc470080"
+  }
+]

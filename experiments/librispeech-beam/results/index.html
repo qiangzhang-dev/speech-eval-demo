@@ -1,0 +1,112 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>beam 从 1 改成 5：40 条录音里，哪些结果变了？ · Nate Zhang</title>
+<meta name="description" content="Whisper tiny.en 在 LibriSpeech 40 条真实录音上的解码对比：3 条 CER 改善、37 条不变，附固定协议、原始输出和复现脚本。">
+<link rel="canonical" href="https://qiangzhang-dev.github.io/notes/whisper-beam/">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#fff;color:#30343b;font:17px/1.85 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}main{max-width:820px;padding:42px 28px 70px;margin:auto}nav{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;margin-bottom:40px}a{color:#1766aa;text-underline-offset:4px}a:focus-visible{outline:2px solid #1766aa;outline-offset:4px}h1{font-size:clamp(28px,5vw,36px);line-height:1.45;letter-spacing:-.025em;color:#181b20;margin:0 0 18px}h1+p{color:#717983;font-size:14px;margin-bottom:32px}h2{font-size:23px;line-height:1.5;margin:36px 0 14px;color:#242a32}p{margin:16px 0}strong{font-weight:600}table{display:block;overflow:auto;border-collapse:collapse;width:100%;font-size:15px;margin:24px 0}th,td{padding:12px 14px;border-bottom:1px solid #e4e8ed;text-align:left;min-width:95px;vertical-align:top}thead{background:#f5f7fa}code{font-size:.88em;background:#f3f5f7;padding:2px 4px;border-radius:3px;overflow-wrap:anywhere}pre{overflow:auto;padding:18px;background:#f3f5f7}pre code{padding:0}ul{padding-left:24px}li{margin:12px 0}footer{border-top:1px solid #e4e8ed;padding-top:20px;margin-top:38px;color:#717983;font-size:13px}@media(max-width:600px){main{padding:26px 18px 50px}body{font-size:16px}nav{margin-bottom:30px}th,td{padding:10px 8px}table{font-size:14px}h2{font-size:21px}}@media print{nav,footer{display:none}main{max-width:none;padding:0}body{font-size:11pt}table{display:table}}
+</style></head><body><main><nav aria-label="文章导航"><a href="/">Nate / 个人网站</a><a href="/speech-eval/">评测工具</a><a href="report/">逐句结果</a><a href="https://github.com/qiangzhang-dev/speech-eval-demo/tree/main/experiments/librispeech-beam">复现代码 ↗</a></nav><article>
+<h1>beam 从 1 改成 5：40 条录音里，哪些结果变了？</h1>
+
+<p>2026-09-28 · Qiang (Nate) Zhang</p>
+
+<p>前一版评测页面用的是合成文本，适合检查工具能不能算对，却回答不了模型换个设置会发生什么。这次固定 Whisper tiny.en 的权重，用真实录音比较 beam size 1 和 5。</p>
+
+<p>结果是：<strong>40 条里，3 条的 CER 降低，37 条不变，没有 CER 升高的样例。</strong> 语料级 CER 从 2.82% 降到 2.48%。但两版原始文本实际有 7 条不同，这两个数字之间的差别，比只报一个平均分更值得看。</p>
+
+<p><a href="https://qiangzhang-dev.github.io/notes/whisper-beam/report/">逐条查看结果</a> · <a href="https://qiangzhang-dev.github.io/notes/whisper-beam/report/input.csv">下载配对文本</a> · <a href="https://github.com/qiangzhang-dev/speech-eval-demo/tree/main/experiments/librispeech-beam">复现方法和源码</a></p>
+
+<h2>先固定输入，再跑模型</h2>
+
+<p>数据来自 LibriSpeech test-clean。对每位说话人的 utterance ID 加上固定前缀后计算 SHA-256，选哈希值最小的一条，共 40 位说话人、40 条录音，总长约 5 分 24 秒。选择规则不看识别结果；全部样本 ID、参考文本和音频校验和都已公开。</p>
+
+<p>两次使用相同的 tiny.en 转换权重、CPU int8、4 个线程，temperature 固定为 0，关闭 VAD、跨片段文本条件和温度回退。只改变 beam size。具体参数与模型提交版本见 <a href="https://qiangzhang-dev.github.io/notes/whisper-beam/protocol.json">实验协议</a>。推理在当前工作环境执行，使用公开数据，不涉及内部业务模型或录音。</p>
+
+<h2>总分变化不大，先看改对了什么</h2>
+
+<table>
+<thead>
+<tr>
+  <th>指标</th>
+  <th style="text-align:right;">beam 1</th>
+  <th style="text-align:right;">beam 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>样例平均 CER</td>
+  <td style="text-align:right;">2.91%</td>
+  <td style="text-align:right;">2.47%</td>
+</tr>
+<tr>
+  <td>语料级 CER</td>
+  <td style="text-align:right;">2.82%</td>
+  <td style="text-align:right;">2.48%</td>
+</tr>
+<tr>
+  <td>字符编辑总数</td>
+  <td style="text-align:right;">106</td>
+  <td style="text-align:right;">93</td>
+</tr>
+<tr>
+  <td>语料级 WER（本文分词规则）</td>
+  <td style="text-align:right;">7.67%</td>
+  <td style="text-align:right;">6.76%</td>
+</tr>
+</tbody>
+</table>
+
+<p>样例平均 CER 对每句话等权；语料级 CER 用全部字符编辑次数除以全部参考字符数。这次有 3,754 个参考字符、873 个参考词。表里的差值是描述统计，没有做显著性检验。</p>
+
+<p>最明显的一条是 <code>1284-1180-0013</code>：</p>
+
+<table>
+<thead>
+<tr>
+  <th>来源</th>
+  <th>文本</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>参考</td>
+  <td>AND YOU MUST BE OJO THE UNLUCKY SHE ADDED</td>
+</tr>
+<tr>
+  <td>beam 1</td>
+  <td>And you must be Ojodia and Lucky, she added.</td>
+</tr>
+<tr>
+  <td>beam 5</td>
+  <td>And you must be Ojo the unlucky, she added.</td>
+</tr>
+</tbody>
+</table>
+
+<p>这条的 CER 从 15.15% 降到了 0。更宽的搜索在这个样本上找到了与参考一致的输出；仅凭结果，不能判断差异具体来自哪个候选路径，也不能推出专名识别整体得到改善。</p>
+
+<p>另一个样本 <code>5639-40744-0032</code> 中，<code>in agreeable companion</code> 变成了与参考一致的 <code>an agreeable companion</code>。同一句里，参考的 <code>disgust me</code> 仍被识别成 <code>discuss me</code>。分数下降了，错误也确实还在。</p>
+
+<h2>文本变了，CER 为什么没变？</h2>
+
+<p>这里使用的 CER 会去掉标点和空格。7 条文本不同的样本里，4 条的 CER 不变：其中 3 条主要是标点位置变化，另 1 条包括 <code>high readgrass</code> 变成 <code>high-read grass</code>。去掉空格和连字符后，两者的字符序列相同。</p>
+
+<p>这不是计分程序漏算，而是这个指标本来就不保留这些信息。它适合看字符层面的错误，却不能告诉我们停顿是否合理、单词分界是否正确，更不能代替语义或任务成功率。</p>
+
+<p>英文 WER 因而单独计算。本文的规则是 NFKC、casefold，再按保留词内撇号的英文词与数字分词；不展开数字和缩写。<strong>这不是 LibriSpeech 官方评分流程，不能拿这个 WER 与排行榜直接比较。</strong> 完整口径与原始输出见 <a href="https://github.com/qiangzhang-dev/speech-eval-demo/tree/main/experiments/librispeech-beam/results">仓库记录</a>。</p>
+
+<h2>这次能说明到哪里</h2>
+
+<p>在这 40 条固定录音和这一套运行条件下，beam 5 减少了 13 次字符编辑，改善集中在 3 条录音。没有观察到 CER 回退，是这次样本的结果，不是“beam 越大越好”的保证。</p>
+
+<p>这只是英语有声书朗读的一个小切片，不能代表完整 test-clean，更不能外推到中文对话、噪声环境或语音交互。没有在这里比较实时性能；单次耗时已留在原始记录中。</p>
+
+<p>下一次如果扩大实验，我会先增加样本覆盖，再看改善和退步分别落在哪些句子上。只把 beam 从 1 改成 5、看到平均分降低，还不够作出部署选择。</p>
+
+<h2>数据来源与复现</h2>
+
+<ul>
+<li><a href="https://www.openslr.org/12/">LibriSpeech / OpenSLR 12</a>：Vassil Panayotov、Guoguo Chen、Daniel Povey、Sanjeev Khudanpur，2015；<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>。所选参考文本和派生识别结果保留此来源说明；未修改或重新托管原始音频。</li>
+<li>模型为 <a href="https://huggingface.co/Systran/faster-whisper-tiny.en">Systran 转换的 Whisper tiny.en</a>，运行工具为 <a href="https://github.com/SYSTRAN/faster-whisper">faster-whisper</a>。版本和参数已固定。</li>
+<li><a href="https://qiangzhang-dev.github.io/notes/whisper-beam/manifest.json">样本清单</a> · <a href="https://qiangzhang-dev.github.io/notes/whisper-beam/raw-results.jsonl">原始输出</a> · <a href="https://qiangzhang-dev.github.io/notes/whisper-beam/summary.json">统计结果</a> · <a href="https://github.com/qiangzhang-dev/speech-eval-demo/tree/main/experiments/librispeech-beam#复现">完整复现步骤</a>。</li>
+</ul>
+</article><footer>Qiang (Nate) Zhang · <a href="/">返回个人网站</a></footer></main></body></html>

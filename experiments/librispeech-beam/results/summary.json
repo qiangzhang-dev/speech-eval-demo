@@ -1,0 +1,49 @@
+{
+  "cer": {
+    "total": 40,
+    "paired": 40,
+    "counts": {
+      "improved": 3,
+      "regressed": 0,
+      "unchanged": 37,
+      "excluded": 0
+    },
+    "reference_characters": 3754,
+    "metric_version": "cer-v1",
+    "normalization_version": "cer-normalize-v1",
+    "baseline": {
+      "macro_cer": 0.02911948394143125,
+      "corpus_cer": 0.02823654768247203,
+      "character_errors": 106
+    },
+    "candidate": {
+      "macro_cer": 0.024703729773531476,
+      "corpus_cer": 0.024773574853489612,
+      "character_errors": 93
+    },
+    "delta": {
+      "macro_cer": -0.004415754167899775,
+      "corpus_cer": -0.003462972828982419
+    }
+  },
+  "wer": {
+    "tokenizer": "NFKC + casefold; regex [a-z0-9]+(?:'[a-z0-9]+)*; no number/contraction expansion; not the official LibriSpeech scoring recipe",
+    "baseline": {
+      "errors": 67,
+      "reference_words": 873,
+      "corpus_wer": 0.07674684994272624
+    },
+    "candidate": {
+      "errors": 59,
+      "reference_words": 873,
+      "corpus_wer": 0.06758304696449026
+    }
+  },
+  "audio_seconds": 324.1250625,
+  "transcription_seconds": {
+    "baseline": 12.610516633000316,
+    "candidate": 14.735618735000344
+  },
+  "outputs_identical": 33,
+  "finished_at_utc": "2026-09-28T02:23:51.824086+00:00"
+}

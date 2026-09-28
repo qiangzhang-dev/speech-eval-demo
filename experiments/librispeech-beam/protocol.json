@@ -1,0 +1,33 @@
+{
+  "experiment_id": "librispeech-tiny-en-beam-v1",
+  "dataset": "LibriSpeech test-clean",
+  "dataset_url": "https://www.openslr.org/resources/12/test-clean.tar.gz",
+  "dataset_sha256": "39fde525e59672dc6d1551919b1478f724438a95aa55f874b576be21967e6c23",
+  "dataset_license": "CC BY 4.0",
+  "selection": "One utterance per speaker: minimum SHA256 of UTF-8 string nate-asr-v1:<utterance_id>, speakers sorted numerically. Fixed before inference; no output-based selection.",
+  "model": "Systran/faster-whisper-tiny.en",
+  "model_revision": "0d3d19a32d3338f10357c0889762bd8d64bbdeba",
+  "device": "cpu",
+  "compute_type": "int8",
+  "cpu_threads": 4,
+  "num_workers": 1,
+  "baseline_beam_size": 1,
+  "candidate_beam_size": 5,
+  "transcribe": {
+    "language": "en",
+    "task": "transcribe",
+    "temperature": 0.0,
+    "best_of": 1,
+    "patience": 1.0,
+    "length_penalty": 1.0,
+    "condition_on_previous_text": false,
+    "vad_filter": false,
+    "word_timestamps": false,
+    "without_timestamps": true,
+    "initial_prompt": null,
+    "compression_ratio_threshold": null,
+    "log_prob_threshold": null,
+    "no_speech_threshold": null
+  },
+  "timing": "Single run, alternating beam order by sample index; wall time includes decoding and segment consumption, excludes model loading. Not a benchmark."
+}

@@ -1,0 +1,3073 @@
+{
+  "summary": {
+    "total": 40,
+    "paired": 40,
+    "counts": {
+      "improved": 3,
+      "regressed": 0,
+      "unchanged": 37,
+      "excluded": 0
+    },
+    "reference_characters": 3754,
+    "metric_version": "cer-v1",
+    "normalization_version": "cer-normalize-v1",
+    "baseline": {
+      "macro_cer": 0.02911948394143125,
+      "corpus_cer": 0.02823654768247203,
+      "character_errors": 106
+    },
+    "candidate": {
+      "macro_cer": 0.024703729773531476,
+      "corpus_cer": 0.024773574853489612,
+      "character_errors": 93
+    },
+    "delta": {
+      "macro_cer": -0.004415754167899775,
+      "corpus_cer": -0.003462972828982419
+    }
+  },
+  "samples": [
+    {
+      "sample_id": "61-70968-0043",
+      "reference": "FRIENDS SAID MONTFICHET FAINTLY TO THE WRESTLERS BEAR US ESCORT SO FAR AS THE SHERIFF'S HOUSE",
+      "baseline": "Friends said Montfiche faintly to the wrestlers. Bear us escort so far as the sheriff's house.",
+      "candidate": "Friends said Montfiche faintly to the wrestlers. Bear us escort so far as the sheriff's house.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.012987012987012988,
+        "substitutions": 0,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 77,
+        "normalized_reference": "friendssaidmontfichetfaintlytothewrestlersbearusescortsofarasthesheriffshouse",
+        "normalized_hypothesis": "friendssaidmontfichefaintlytothewrestlersbearusescortsofarasthesheriffshouse",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 20,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.012987012987012988,
+        "substitutions": 0,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 77,
+        "normalized_reference": "friendssaidmontfichetfaintlytothewrestlersbearusescortsofarasthesheriffshouse",
+        "normalized_hypothesis": "friendssaidmontfichefaintlytothewrestlersbearusescortsofarasthesheriffshouse",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 20,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "121-127105-0014",
+      "reference": "YOU ARE ACUTE",
+      "baseline": "You are a cute.",
+      "candidate": "You are a cute.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 11,
+        "normalized_reference": "youareacute",
+        "normalized_hypothesis": "youareacute",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 11,
+        "normalized_reference": "youareacute",
+        "normalized_hypothesis": "youareacute",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "237-126133-0008",
+      "reference": "ASKED PHRONSIE WITH HER LITTLE FACE CLOSE TO POLLY'S OWN",
+      "baseline": "asked Fronsey with her little face close to Polly's own.",
+      "candidate": "asked Fronsey with her little face close to Polly's own.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.08695652173913043,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 46,
+        "normalized_reference": "askedphronsiewithherlittlefaceclosetopollysown",
+        "normalized_hypothesis": "askedfronseywithherlittlefaceclosetopollysown",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 5,
+            "reference": "p",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 6,
+            "reference": "h",
+            "hypothesis_index": 5,
+            "hypothesis": "f"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 11,
+            "reference": "i",
+            "hypothesis_index": 10,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 12,
+            "reference": "e",
+            "hypothesis_index": 11,
+            "hypothesis": "y"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.08695652173913043,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 46,
+        "normalized_reference": "askedphronsiewithherlittlefaceclosetopollysown",
+        "normalized_hypothesis": "askedfronseywithherlittlefaceclosetopollysown",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 5,
+            "reference": "p",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 6,
+            "reference": "h",
+            "hypothesis_index": 5,
+            "hypothesis": "f"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 11,
+            "reference": "i",
+            "hypothesis_index": 10,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 12,
+            "reference": "e",
+            "hypothesis_index": 11,
+            "hypothesis": "y"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "260-123288-0006",
+      "reference": "THE ATMOSPHERE IS EVIDENTLY CHARGED AND SURCHARGED WITH ELECTRICITY",
+      "baseline": "The atmosphere has evidently charged and surcharged with electricity.",
+      "candidate": "The atmosphere has evidently charged and surcharged with electricity.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.03389830508474576,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 1,
+        "reference_length": 59,
+        "normalized_reference": "theatmosphereisevidentlychargedandsurchargedwithelectricity",
+        "normalized_hypothesis": "theatmospherehasevidentlychargedandsurchargedwithelectricity",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 13,
+            "reference": "-",
+            "hypothesis_index": 13,
+            "hypothesis": "h"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 13,
+            "reference": "i",
+            "hypothesis_index": 14,
+            "hypothesis": "a"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.03389830508474576,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 1,
+        "reference_length": 59,
+        "normalized_reference": "theatmosphereisevidentlychargedandsurchargedwithelectricity",
+        "normalized_hypothesis": "theatmospherehasevidentlychargedandsurchargedwithelectricity",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 13,
+            "reference": "-",
+            "hypothesis_index": 13,
+            "hypothesis": "h"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 13,
+            "reference": "i",
+            "hypothesis_index": 14,
+            "hypothesis": "a"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "672-122797-0023",
+      "reference": "HE WELL KNEW THAT HE SHOULD NEVER SEE HIS DEAR OLD COMRADES THE LITTLE BUSHES AND FLOWERS AROUND HIM ANYMORE PERHAPS NOT EVEN THE BIRDS",
+      "baseline": "He will knew that he should never see his dear old comrades, the little bushes and flowers around him anymore. Perhaps not even the birds.",
+      "candidate": "He will knew that he should never see his dear old comrades, the little bushes and flowers around him anymore. Perhaps not even the birds.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.009009009009009009,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 111,
+        "normalized_reference": "hewellknewthatheshouldneverseehisdearoldcomradesthelittlebushesandflowersaroundhimanymoreperhapsnoteventhebirds",
+        "normalized_hypothesis": "hewillknewthatheshouldneverseehisdearoldcomradesthelittlebushesandflowersaroundhimanymoreperhapsnoteventhebirds",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 3,
+            "reference": "e",
+            "hypothesis_index": 3,
+            "hypothesis": "i"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.009009009009009009,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 111,
+        "normalized_reference": "hewellknewthatheshouldneverseehisdearoldcomradesthelittlebushesandflowersaroundhimanymoreperhapsnoteventhebirds",
+        "normalized_hypothesis": "hewillknewthatheshouldneverseehisdearoldcomradesthelittlebushesandflowersaroundhimanymoreperhapsnoteventhebirds",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 3,
+            "reference": "e",
+            "hypothesis_index": 3,
+            "hypothesis": "i"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "908-157963-0027",
+      "reference": "AND LAY ME DOWN IN THY COLD BED AND LEAVE MY SHINING LOT",
+      "baseline": "and lay me down and I cold bed and leave my shining lot.",
+      "candidate": "and lay me down and I cold bed and leave my shining lot.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.09090909090909091,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 44,
+        "normalized_reference": "andlaymedowninthycoldbedandleavemyshininglot",
+        "normalized_hypothesis": "andlaymedownandicoldbedandleavemyshininglot",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 12,
+            "reference": "i",
+            "hypothesis_index": 12,
+            "hypothesis": "a"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 14,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 15,
+            "reference": "h",
+            "hypothesis_index": 14,
+            "hypothesis": "d"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 16,
+            "reference": "y",
+            "hypothesis_index": 15,
+            "hypothesis": "i"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.09090909090909091,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 44,
+        "normalized_reference": "andlaymedowninthycoldbedandleavemyshininglot",
+        "normalized_hypothesis": "andlaymedownandicoldbedandleavemyshininglot",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 12,
+            "reference": "i",
+            "hypothesis_index": 12,
+            "hypothesis": "a"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 14,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 15,
+            "reference": "h",
+            "hypothesis_index": 14,
+            "hypothesis": "d"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 16,
+            "reference": "y",
+            "hypothesis_index": 15,
+            "hypothesis": "i"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1089-134691-0007",
+      "reference": "SOON THE WHOLE BRIDGE WAS TREMBLING AND RESOUNDING",
+      "baseline": "Soon the whole bridge was trembling and resounding.",
+      "candidate": "Soon the whole bridge was trembling and resounding.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 43,
+        "normalized_reference": "soonthewholebridgewastremblingandresounding",
+        "normalized_hypothesis": "soonthewholebridgewastremblingandresounding",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 43,
+        "normalized_reference": "soonthewholebridgewastremblingandresounding",
+        "normalized_hypothesis": "soonthewholebridgewastremblingandresounding",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1188-133604-0028",
+      "reference": "WELL THEN LAST HERE IS TURNER'S GREEK SCHOOL OF THE HIGHEST CLASS AND YOU DEFINE HIS ART ABSOLUTELY AS FIRST THE DISPLAYING INTENSELY AND WITH THE STERNEST INTELLECT OF NATURAL FORM AS IT IS AND THEN THE ENVELOPMENT OF IT WITH CLOUD AND FIRE",
+      "baseline": "Well then, last, here is Turner's. Greek school of the highest class. And you define his art absolutely, as first the displaying intensely and with the sternest intellect of natural form as it is. And then the envelopment of it with cloud and fire.",
+      "candidate": "Well then, last, here is Turner's. Greek school of the highest class. And you define his art absolutely as first the displaying intensely and with the sternest intellect of natural form as it is. And then the envelopment of it with cloud and fire.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 197,
+        "normalized_reference": "wellthenlasthereisturnersgreekschoolofthehighestclassandyoudefinehisartabsolutelyasfirstthedisplayingintenselyandwiththesternestintellectofnaturalformasitisandthentheenvelopmentofitwithcloudandfire",
+        "normalized_hypothesis": "wellthenlasthereisturnersgreekschoolofthehighestclassandyoudefinehisartabsolutelyasfirstthedisplayingintenselyandwiththesternestintellectofnaturalformasitisandthentheenvelopmentofitwithcloudandfire",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 197,
+        "normalized_reference": "wellthenlasthereisturnersgreekschoolofthehighestclassandyoudefinehisartabsolutelyasfirstthedisplayingintenselyandwiththesternestintellectofnaturalformasitisandthentheenvelopmentofitwithcloudandfire",
+        "normalized_hypothesis": "wellthenlasthereisturnersgreekschoolofthehighestclassandyoudefinehisartabsolutelyasfirstthedisplayingintenselyandwiththesternestintellectofnaturalformasitisandthentheenvelopmentofitwithcloudandfire",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1221-135767-0017",
+      "reference": "ON THE TABLE IN TOKEN THAT THE SENTIMENT OF OLD ENGLISH HOSPITALITY HAD NOT BEEN LEFT BEHIND STOOD A LARGE PEWTER TANKARD AT THE BOTTOM OF WHICH HAD HESTER OR PEARL PEEPED INTO IT THEY MIGHT HAVE SEEN THE FROTHY REMNANT OF A RECENT DRAUGHT OF ALE",
+      "baseline": "On the table, in token that the sentiment of old English hospitality had not been left behind, stood a large pewter tankard at the bottom of which had hester or pearl peeped into it, they might have seen the frothy remnant of a recent draft of ale.",
+      "candidate": "On the table, in token that the sentiment of old English hospitality had not been left behind, stood a large pewter tankard, at the bottom of which had hester or pearl peeped into it, they might have seen the frothy remnant of a recent draft of ale.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.015,
+        "substitutions": 1,
+        "deletions": 2,
+        "insertions": 0,
+        "reference_length": 200,
+        "normalized_reference": "onthetableintokenthatthesentimentofoldenglishhospitalityhadnotbeenleftbehindstoodalargepewtertankardatthebottomofwhichhadhesterorpearlpeepedintoittheymighthaveseenthefrothyremnantofarecentdraughtofale",
+        "normalized_hypothesis": "onthetableintokenthatthesentimentofoldenglishhospitalityhadnotbeenleftbehindstoodalargepewtertankardatthebottomofwhichhadhesterorpearlpeepedintoittheymighthaveseenthefrothyremnantofarecentdraftofale",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 191,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 192,
+            "reference": "g",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 193,
+            "reference": "h",
+            "hypothesis_index": 191,
+            "hypothesis": "f"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.015,
+        "substitutions": 1,
+        "deletions": 2,
+        "insertions": 0,
+        "reference_length": 200,
+        "normalized_reference": "onthetableintokenthatthesentimentofoldenglishhospitalityhadnotbeenleftbehindstoodalargepewtertankardatthebottomofwhichhadhesterorpearlpeepedintoittheymighthaveseenthefrothyremnantofarecentdraughtofale",
+        "normalized_hypothesis": "onthetableintokenthatthesentimentofoldenglishhospitalityhadnotbeenleftbehindstoodalargepewtertankardatthebottomofwhichhadhesterorpearlpeepedintoittheymighthaveseenthefrothyremnantofarecentdraftofale",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 191,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 192,
+            "reference": "g",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 193,
+            "reference": "h",
+            "hypothesis_index": 191,
+            "hypothesis": "f"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1284-1180-0013",
+      "reference": "AND YOU MUST BE OJO THE UNLUCKY SHE ADDED",
+      "baseline": "And you must be Ojodia and Lucky, she added.",
+      "candidate": "And you must be Ojo the unlucky, she added.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.15151515151515152,
+        "substitutions": 4,
+        "deletions": 0,
+        "insertions": 1,
+        "reference_length": 33,
+        "normalized_reference": "andyoumustbeojotheunluckysheadded",
+        "normalized_hypothesis": "andyoumustbeojodiaandluckysheadded",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 15,
+            "reference": "t",
+            "hypothesis_index": 15,
+            "hypothesis": "d"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 16,
+            "reference": "h",
+            "hypothesis_index": 16,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 17,
+            "reference": "e",
+            "hypothesis_index": 17,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 18,
+            "reference": "u",
+            "hypothesis_index": 18,
+            "hypothesis": "a"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 20,
+            "reference": "-",
+            "hypothesis_index": 20,
+            "hypothesis": "d"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 33,
+        "normalized_reference": "andyoumustbeojotheunluckysheadded",
+        "normalized_hypothesis": "andyoumustbeojotheunluckysheadded",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": -0.15151515151515152,
+      "status": "improved"
+    },
+    {
+      "sample_id": "1320-122617-0009",
+      "reference": "I GREATLY MOURN THAT ONE SO WELL DISPOSED SHOULD DIE IN HIS IGNORANCE AND I HAVE SOUGHT A GOODLY HYMN CAN YOU LEAD ME TO HIM",
+      "baseline": "I greatly mourn that one so well disposed should die in his ignorance, and I have sought a goodly him. Can you lead me to him?",
+      "candidate": "I greatly mourn that one so well disposed should die in his ignorance, and I have sought a goodly him. Can you lead me to him?",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.020202020202020204,
+        "substitutions": 1,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 99,
+        "normalized_reference": "igreatlymournthatonesowelldisposedshoulddieinhisignoranceandihavesoughtagoodlyhymncanyouleadmetohim",
+        "normalized_hypothesis": "igreatlymournthatonesowelldisposedshoulddieinhisignoranceandihavesoughtagoodlyhimcanyouleadmetohim",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 79,
+            "reference": "y",
+            "hypothesis_index": 79,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 81,
+            "reference": "n",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.020202020202020204,
+        "substitutions": 1,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 99,
+        "normalized_reference": "igreatlymournthatonesowelldisposedshoulddieinhisignoranceandihavesoughtagoodlyhymncanyouleadmetohim",
+        "normalized_hypothesis": "igreatlymournthatonesowelldisposedshoulddieinhisignoranceandihavesoughtagoodlyhimcanyouleadmetohim",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 79,
+            "reference": "y",
+            "hypothesis_index": 79,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 81,
+            "reference": "n",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1580-141083-0023",
+      "reference": "ONE COULD HARDLY HOPE FOR ANY UPON SO DRY A DAY",
+      "baseline": "One could hardly hope for any upon so dry a day.",
+      "candidate": "One could hardly hope for any upon so dry a day.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 37,
+        "normalized_reference": "onecouldhardlyhopeforanyuponsodryaday",
+        "normalized_hypothesis": "onecouldhardlyhopeforanyuponsodryaday",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 37,
+        "normalized_reference": "onecouldhardlyhopeforanyuponsodryaday",
+        "normalized_hypothesis": "onecouldhardlyhopeforanyuponsodryaday",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "1995-1837-0009",
+      "reference": "THE LAGOON HAD BEEN LEVEL WITH THE DYKES A WEEK AGO AND NOW",
+      "baseline": "The lagoon had been level with the dykes a week ago, and now...",
+      "candidate": "The lagoon had been level with the dykes a week ago, and now...",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 47,
+        "normalized_reference": "thelagoonhadbeenlevelwiththedykesaweekagoandnow",
+        "normalized_hypothesis": "thelagoonhadbeenlevelwiththedykesaweekagoandnow",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 47,
+        "normalized_reference": "thelagoonhadbeenlevelwiththedykesaweekagoandnow",
+        "normalized_hypothesis": "thelagoonhadbeenlevelwiththedykesaweekagoandnow",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "2094-142345-0035",
+      "reference": "BUT NOT MORE THAN WHAT'S IN THE BIBLE AUNT SAID DINAH",
+      "baseline": "But not more than what's in the Bible and said Dina.",
+      "candidate": "But not more than what's in the Bible and said Dina.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.07142857142857142,
+        "substitutions": 1,
+        "deletions": 2,
+        "insertions": 0,
+        "reference_length": 42,
+        "normalized_reference": "butnotmorethanwhatsinthebibleauntsaiddinah",
+        "normalized_hypothesis": "butnotmorethanwhatsinthebibleandsaiddina",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 30,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 32,
+            "reference": "t",
+            "hypothesis_index": 31,
+            "hypothesis": "d"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 41,
+            "reference": "h",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.07142857142857142,
+        "substitutions": 1,
+        "deletions": 2,
+        "insertions": 0,
+        "reference_length": 42,
+        "normalized_reference": "butnotmorethanwhatsinthebibleauntsaiddinah",
+        "normalized_hypothesis": "butnotmorethanwhatsinthebibleandsaiddina",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 30,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 32,
+            "reference": "t",
+            "hypothesis_index": 31,
+            "hypothesis": "d"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 41,
+            "reference": "h",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "2300-131720-0016",
+      "reference": "THEN AGAIN THERE WAS NO KNOWN WAY TO LUBRICATE AN ENGINE FOR CONTINUOUS RUNNING AND MISTER EDISON INFORMED ME THAT AS A MARINE ENGINE STARTED BEFORE THE SHIP LEFT NEW YORK AND CONTINUED RUNNING UNTIL IT REACHED ITS HOME PORT SO AN ENGINE FOR HIS PURPOSES MUST PRODUCE LIGHT AT ALL TIMES",
+      "baseline": "Then again there was no known way to lubricate an engine for continuous running. And Mr. Edison informed me that, as a marine engine started before the ship left New York and continued running until it reached its home port, so an engine for his purposes must produce light at all times.",
+      "candidate": "Then again there was no known way to lubricate an engine for continuous running. And Mr. Edison informed me that, as a marine engine started before the ship left New York and continued running until it reached its home port, so an engine for his purposes must produce light at all times.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.01702127659574468,
+        "substitutions": 0,
+        "deletions": 4,
+        "insertions": 0,
+        "reference_length": 235,
+        "normalized_reference": "thenagaintherewasnoknownwaytolubricateanengineforcontinuousrunningandmisteredisoninformedmethatasamarineenginestartedbeforetheshipleftnewyorkandcontinuedrunninguntilitreacheditshomeportsoanengineforhispurposesmustproducelightatalltimes",
+        "normalized_hypothesis": "thenagaintherewasnoknownwaytolubricateanengineforcontinuousrunningandmredisoninformedmethatasamarineenginestartedbeforetheshipleftnewyorkandcontinuedrunninguntilitreacheditshomeportsoanengineforhispurposesmustproducelightatalltimes",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 70,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 71,
+            "reference": "s",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 72,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 73,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.01702127659574468,
+        "substitutions": 0,
+        "deletions": 4,
+        "insertions": 0,
+        "reference_length": 235,
+        "normalized_reference": "thenagaintherewasnoknownwaytolubricateanengineforcontinuousrunningandmisteredisoninformedmethatasamarineenginestartedbeforetheshipleftnewyorkandcontinuedrunninguntilitreacheditshomeportsoanengineforhispurposesmustproducelightatalltimes",
+        "normalized_hypothesis": "thenagaintherewasnoknownwaytolubricateanengineforcontinuousrunningandmredisoninformedmethatasamarineenginestartedbeforetheshipleftnewyorkandcontinuedrunninguntilitreacheditshomeportsoanengineforhispurposesmustproducelightatalltimes",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 70,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 71,
+            "reference": "s",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 72,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 73,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "2830-3980-0020",
+      "reference": "THIS IS NO SINFUL PRIDE IT IS HOLY PRIDE",
+      "baseline": "This is no sinful pride. It is holy pride.",
+      "candidate": "This is no sinful pride. It is holy pride.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 32,
+        "normalized_reference": "thisisnosinfulprideitisholypride",
+        "normalized_hypothesis": "thisisnosinfulprideitisholypride",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 32,
+        "normalized_reference": "thisisnosinfulprideitisholypride",
+        "normalized_hypothesis": "thisisnosinfulprideitisholypride",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "2961-961-0016",
+      "reference": "I WILL BRIEFLY DESCRIBE THEM TO YOU AND YOU SHALL READ THE ACCOUNT OF THEM AT YOUR LEISURE IN THE SACRED REGISTERS",
+      "baseline": "I will briefly describe them to you and shall read the account of them at your leisure in the sacred registers.",
+      "candidate": "I will briefly describe them to you and shall read the account of them at your leisure in the sacred registers.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.03225806451612903,
+        "substitutions": 0,
+        "deletions": 3,
+        "insertions": 0,
+        "reference_length": 93,
+        "normalized_reference": "iwillbrieflydescribethemtoyouandyoushallreadtheaccountofthematyourleisureinthesacredregisters",
+        "normalized_hypothesis": "iwillbrieflydescribethemtoyouandshallreadtheaccountofthematyourleisureinthesacredregisters",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 32,
+            "reference": "y",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 33,
+            "reference": "o",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 34,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.03225806451612903,
+        "substitutions": 0,
+        "deletions": 3,
+        "insertions": 0,
+        "reference_length": 93,
+        "normalized_reference": "iwillbrieflydescribethemtoyouandyoushallreadtheaccountofthematyourleisureinthesacredregisters",
+        "normalized_hypothesis": "iwillbrieflydescribethemtoyouandshallreadtheaccountofthematyourleisureinthesacredregisters",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 32,
+            "reference": "y",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 33,
+            "reference": "o",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 34,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "3570-5694-0007",
+      "reference": "IT HAS EVEN HAPPENED THAT THE NAME FOR CERTAIN DISEASED CONDITIONS OF THE BODY ARISING FROM SUCH AN ORIGIN HAS PASSED INTO EVERYDAY SPEECH AS A SYNONYM FOR NOBLE OR GENTLE",
+      "baseline": "It has even happened that the name for certain diseased conditions of the body arising from such an origin has passed into everyday speech as a synonym for noble or gentle.",
+      "candidate": "It has even happened that the name for certain diseased conditions of the body arising from such an origin has passed into everyday speech as a synonym for noble or gentle.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 141,
+        "normalized_reference": "ithasevenhappenedthatthenameforcertaindiseasedconditionsofthebodyarisingfromsuchanoriginhaspassedintoeverydayspeechasasynonymfornobleorgentle",
+        "normalized_hypothesis": "ithasevenhappenedthatthenameforcertaindiseasedconditionsofthebodyarisingfromsuchanoriginhaspassedintoeverydayspeechasasynonymfornobleorgentle",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 141,
+        "normalized_reference": "ithasevenhappenedthatthenameforcertaindiseasedconditionsofthebodyarisingfromsuchanoriginhaspassedintoeverydayspeechasasynonymfornobleorgentle",
+        "normalized_hypothesis": "ithasevenhappenedthatthenameforcertaindiseasedconditionsofthebodyarisingfromsuchanoriginhaspassedintoeverydayspeechasasynonymfornobleorgentle",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "3575-170457-0019",
+      "reference": "I HAD NOT VENTURED TO HOPE FOR SUCH A REPLY SO CONSIDERATE IN ITS TONE SO NOBLE IN ITS SPIRIT",
+      "baseline": "I have not ventured to hope for such a reply, so consider it in its tone, so noble in its spirit.",
+      "candidate": "I have not ventured to hope for such a reply, so consider it in its tone, so noble in its spirit.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.05405405405405406,
+        "substitutions": 2,
+        "deletions": 1,
+        "insertions": 1,
+        "reference_length": 74,
+        "normalized_reference": "ihadnotventuredtohopeforsuchareplysoconsiderateinitstonesonobleinitsspirit",
+        "normalized_hypothesis": "ihavenotventuredtohopeforsuchareplysoconsideritinitstonesonobleinitsspirit",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 3,
+            "reference": "-",
+            "hypothesis_index": 3,
+            "hypothesis": "v"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 3,
+            "reference": "d",
+            "hypothesis_index": 4,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 44,
+            "reference": "a",
+            "hypothesis_index": 45,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 46,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.05405405405405406,
+        "substitutions": 2,
+        "deletions": 1,
+        "insertions": 1,
+        "reference_length": 74,
+        "normalized_reference": "ihadnotventuredtohopeforsuchareplysoconsiderateinitstonesonobleinitsspirit",
+        "normalized_hypothesis": "ihavenotventuredtohopeforsuchareplysoconsideritinitstonesonobleinitsspirit",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 3,
+            "reference": "-",
+            "hypothesis_index": 3,
+            "hypothesis": "v"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 3,
+            "reference": "d",
+            "hypothesis_index": 4,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 44,
+            "reference": "a",
+            "hypothesis_index": 45,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 46,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "3729-6852-0042",
+      "reference": "I AM A VERY UNPLEASANT PUPIL ALWAYS ASKING QUESTIONS CURIOUS TROUBLESOME INSATIABLE AND EVEN SUPPOSING THAT I COULD MEET WITH THE TEACHER I REQUIRE I AM AFRAID I AM NOT RICH ENOUGH TO PAY HIM",
+      "baseline": "I am a very unpleasant pupil, always asking questions, curious, troublesome, insatiable, and even supposing that I couldn't meet with the teacher I require. I am afraid I am not rich enough to pay him.\"",
+      "candidate": "I am a very unpleasant pupil, always asking questions, curious, troublesome, insatiable, and even supposing that I couldn't meet with the teacher I require. I am afraid I am not rich enough to pay him.\"",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.012738853503184714,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 157,
+        "normalized_reference": "iamaveryunpleasantpupilalwaysaskingquestionscurioustroublesomeinsatiableandevensupposingthaticouldmeetwiththeteacherirequireiamafraidiamnotrichenoughtopayhim",
+        "normalized_hypothesis": "iamaveryunpleasantpupilalwaysaskingquestionscurioustroublesomeinsatiableandevensupposingthaticouldntmeetwiththeteacherirequireiamafraidiamnotrichenoughtopayhim",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 98,
+            "reference": "-",
+            "hypothesis_index": 98,
+            "hypothesis": "n"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 98,
+            "reference": "-",
+            "hypothesis_index": 99,
+            "hypothesis": "t"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.012738853503184714,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 157,
+        "normalized_reference": "iamaveryunpleasantpupilalwaysaskingquestionscurioustroublesomeinsatiableandevensupposingthaticouldmeetwiththeteacherirequireiamafraidiamnotrichenoughtopayhim",
+        "normalized_hypothesis": "iamaveryunpleasantpupilalwaysaskingquestionscurioustroublesomeinsatiableandevensupposingthaticouldntmeetwiththeteacherirequireiamafraidiamnotrichenoughtopayhim",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 98,
+            "reference": "-",
+            "hypothesis_index": 98,
+            "hypothesis": "n"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 98,
+            "reference": "-",
+            "hypothesis_index": 99,
+            "hypothesis": "t"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "4077-13751-0010",
+      "reference": "TO THE FERVENT LATTER DAY SAINT A TEMPLE IS NOT SIMPLY A CHURCH BUILDING A HOUSE FOR RELIGIOUS ASSEMBLY",
+      "baseline": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly.",
+      "candidate": "To the fervent Latter-day Saint, a temple is not simply a church building, a house for religious assembly.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 85,
+        "normalized_reference": "totheferventlatterdaysaintatempleisnotsimplyachurchbuildingahouseforreligiousassembly",
+        "normalized_hypothesis": "totheferventlatterdaysaintatempleisnotsimplyachurchbuildingahouseforreligiousassembly",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 85,
+        "normalized_reference": "totheferventlatterdaysaintatempleisnotsimplyachurchbuildingahouseforreligiousassembly",
+        "normalized_hypothesis": "totheferventlatterdaysaintatempleisnotsimplyachurchbuildingahouseforreligiousassembly",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "4446-2271-0006",
+      "reference": "HE'S BEEN WANTING TO MARRY HILDA THESE THREE YEARS AND MORE",
+      "baseline": "He's been wanting to marry Hilda these three years and more.",
+      "candidate": "He's been wanting to marry Hilda these three years and more.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 48,
+        "normalized_reference": "hesbeenwantingtomarryhildathesethreeyearsandmore",
+        "normalized_hypothesis": "hesbeenwantingtomarryhildathesethreeyearsandmore",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 48,
+        "normalized_reference": "hesbeenwantingtomarryhildathesethreeyearsandmore",
+        "normalized_hypothesis": "hesbeenwantingtomarryhildathesethreeyearsandmore",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "4507-16021-0030",
+      "reference": "ASSUREDLY IF THE TONGUE WHICH A NATION OR A PROVINCE HAS SPOKEN IS WORTHY OF INTEREST THE LANGUAGE WHICH HAS BEEN SPOKEN BY A MISERY IS STILL MORE WORTHY OF ATTENTION AND STUDY",
+      "baseline": "assuredly. If the tongue, which a nation or a province, has spoken, is worthy of interest, the language which has been spoken by a misery is still more worthy of attention and study.",
+      "candidate": "assuredly. If the tongue which a nation or a province has spoken is worthy of interest, the language which has been spoken by a misery is still more worthy of attention and study.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 144,
+        "normalized_reference": "assuredlyifthetonguewhichanationoraprovincehasspokenisworthyofinterestthelanguagewhichhasbeenspokenbyamiseryisstillmoreworthyofattentionandstudy",
+        "normalized_hypothesis": "assuredlyifthetonguewhichanationoraprovincehasspokenisworthyofinterestthelanguagewhichhasbeenspokenbyamiseryisstillmoreworthyofattentionandstudy",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 144,
+        "normalized_reference": "assuredlyifthetonguewhichanationoraprovincehasspokenisworthyofinterestthelanguagewhichhasbeenspokenbyamiseryisstillmoreworthyofattentionandstudy",
+        "normalized_hypothesis": "assuredlyifthetonguewhichanationoraprovincehasspokenisworthyofinterestthelanguagewhichhasbeenspokenbyamiseryisstillmoreworthyofattentionandstudy",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "4970-29095-0015",
+      "reference": "IF I CAN GET PATIENTS",
+      "baseline": "If I can get patients.",
+      "candidate": "If I can get patients.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 17,
+        "normalized_reference": "ificangetpatients",
+        "normalized_hypothesis": "ificangetpatients",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 17,
+        "normalized_reference": "ificangetpatients",
+        "normalized_hypothesis": "ificangetpatients",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "4992-41797-0001",
+      "reference": "WELL AS I SAY IT'S AN AWFUL QUEER WORLD THEY CLAP ALL THE BURGLARS INTO JAIL AND THE MURDERERS AND THE WIFE BEATERS I'VE ALLERS THOUGHT A GENTLE REPROOF WOULD BE ENOUGH PUNISHMENT FOR A WIFE BEATER CAUSE HE PROBABLY HAS A LOT O PROVOCATION THAT NOBODY KNOWS AND THE FIREBUGS CAN'T THINK O THE RIGHT NAME SOMETHING LIKE CENDENARIES AN THE BREAKERS O THE PEACE AN WHAT NOT AN YET THE LAW HAS NOTHIN TO SAY TO A MAN LIKE HEN LORD",
+      "baseline": "Well, as I say, it's an awful queer world. They clap all the burglars and jail and the murderers and the wife beaters. I all are thought a jail will be proof of enough punishment for a wife beater, because he probably has a lot of provocation that nobody knows. And the fire bugs can't think of the right name something like cendiaries. And the breakers of the piece and whatnot, and yet the law has nothing to say to a man like hand lord.",
+      "candidate": "Well, as I say, it's an awful queer world. They clap all the burglars in jail and the murderers and the wife-beaters. I all are thought a general reprieve would be enough punishment for a wife-beater, because he probably has a lot of provocation that nobody knows. And the fire bugs can't think of the right name something like cendiaries. And the breakers of the piece and whatnot, and yet the law has nothing to say to a man like him, Lord.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.10557184750733138,
+        "substitutions": 15,
+        "deletions": 9,
+        "insertions": 12,
+        "reference_length": 341,
+        "normalized_reference": "wellasisayitsanawfulqueerworldtheyclapalltheburglarsintojailandthemurderersandthewifebeatersiveallersthoughtagentlereproofwouldbeenoughpunishmentforawifebeatercauseheprobablyhasalotoprovocationthatnobodyknowsandthefirebugscantthinkotherightnamesomethinglikecendenariesanthebreakersothepeaceanwhatnotanyetthelawhasnothintosaytoamanlikehenlord",
+        "normalized_hypothesis": "wellasisayitsanawfulqueerworldtheyclapalltheburglarsandjailandthemurderersandthewifebeatersiallarethoughtajailwillbeproofofenoughpunishmentforawifebeaterbecauseheprobablyhasalotofprovocationthatnobodyknowsandthefirebugscantthinkoftherightnamesomethinglikecendiariesandthebreakersofthepieceandwhatnotandyetthelawhasnothingtosaytoamanlikehandlord",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 52,
+            "reference": "i",
+            "hypothesis_index": 52,
+            "hypothesis": "a"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 54,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 55,
+            "reference": "o",
+            "hypothesis_index": 54,
+            "hypothesis": "d"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 93,
+            "reference": "v",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 94,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 98,
+            "reference": "e",
+            "hypothesis_index": 95,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 100,
+            "reference": "s",
+            "hypothesis_index": 97,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 108,
+            "reference": "-",
+            "hypothesis_index": 105,
+            "hypothesis": "a"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 108,
+            "reference": "-",
+            "hypothesis_index": 106,
+            "hypothesis": "j"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 109,
+            "reference": "g",
+            "hypothesis_index": 108,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 110,
+            "reference": "e",
+            "hypothesis_index": 109,
+            "hypothesis": "l"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 111,
+            "reference": "n",
+            "hypothesis_index": 110,
+            "hypothesis": "w"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 112,
+            "reference": "t",
+            "hypothesis_index": 111,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 114,
+            "reference": "e",
+            "hypothesis_index": 113,
+            "hypothesis": "l"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 115,
+            "reference": "r",
+            "hypothesis_index": 114,
+            "hypothesis": "b"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 122,
+            "reference": "w",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 124,
+            "reference": "u",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 125,
+            "reference": "l",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 126,
+            "reference": "d",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 127,
+            "reference": "b",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 128,
+            "reference": "e",
+            "hypothesis_index": 122,
+            "hypothesis": "f"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 159,
+            "reference": "-",
+            "hypothesis_index": 153,
+            "hypothesis": "b"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 159,
+            "reference": "-",
+            "hypothesis_index": 154,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 182,
+            "reference": "-",
+            "hypothesis_index": 178,
+            "hypothesis": "f"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 232,
+            "reference": "-",
+            "hypothesis_index": 229,
+            "hypothesis": "f"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 261,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 262,
+            "reference": "n",
+            "hypothesis_index": 259,
+            "hypothesis": "i"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 270,
+            "reference": "-",
+            "hypothesis_index": 267,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 282,
+            "reference": "-",
+            "hypothesis_index": 280,
+            "hypothesis": "f"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 286,
+            "reference": "e",
+            "hypothesis_index": 285,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 287,
+            "reference": "a",
+            "hypothesis_index": 286,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 292,
+            "reference": "-",
+            "hypothesis_index": 291,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 301,
+            "reference": "-",
+            "hypothesis_index": 301,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 319,
+            "reference": "-",
+            "hypothesis_index": 320,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 335,
+            "reference": "e",
+            "hypothesis_index": 337,
+            "hypothesis": "a"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 337,
+            "reference": "-",
+            "hypothesis_index": 339,
+            "hypothesis": "d"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.08504398826979472,
+        "substitutions": 13,
+        "deletions": 5,
+        "insertions": 11,
+        "reference_length": 341,
+        "normalized_reference": "wellasisayitsanawfulqueerworldtheyclapalltheburglarsintojailandthemurderersandthewifebeatersiveallersthoughtagentlereproofwouldbeenoughpunishmentforawifebeatercauseheprobablyhasalotoprovocationthatnobodyknowsandthefirebugscantthinkotherightnamesomethinglikecendenariesanthebreakersothepeaceanwhatnotanyetthelawhasnothintosaytoamanlikehenlord",
+        "normalized_hypothesis": "wellasisayitsanawfulqueerworldtheyclapalltheburglarsinjailandthemurderersandthewifebeatersiallarethoughtageneralreprievewouldbeenoughpunishmentforawifebeaterbecauseheprobablyhasalotofprovocationthatnobodyknowsandthefirebugscantthinkoftherightnamesomethinglikecendiariesandthebreakersofthepieceandwhatnotandyetthelawhasnothingtosaytoamanlikehimlord",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 54,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 55,
+            "reference": "o",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 93,
+            "reference": "v",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 94,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 98,
+            "reference": "e",
+            "hypothesis_index": 94,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 100,
+            "reference": "s",
+            "hypothesis_index": 96,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 112,
+            "reference": "-",
+            "hypothesis_index": 108,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 112,
+            "reference": "t",
+            "hypothesis_index": 109,
+            "hypothesis": "r"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 113,
+            "reference": "l",
+            "hypothesis_index": 110,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 114,
+            "reference": "e",
+            "hypothesis_index": 111,
+            "hypothesis": "l"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 119,
+            "reference": "-",
+            "hypothesis_index": 116,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 119,
+            "reference": "o",
+            "hypothesis_index": 117,
+            "hypothesis": "e"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 120,
+            "reference": "o",
+            "hypothesis_index": 118,
+            "hypothesis": "v"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 121,
+            "reference": "f",
+            "hypothesis_index": 119,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 159,
+            "reference": "-",
+            "hypothesis_index": 157,
+            "hypothesis": "b"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 159,
+            "reference": "-",
+            "hypothesis_index": 158,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 182,
+            "reference": "-",
+            "hypothesis_index": 182,
+            "hypothesis": "f"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 232,
+            "reference": "-",
+            "hypothesis_index": 233,
+            "hypothesis": "f"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 261,
+            "reference": "e",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 262,
+            "reference": "n",
+            "hypothesis_index": 263,
+            "hypothesis": "i"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 270,
+            "reference": "-",
+            "hypothesis_index": 271,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 282,
+            "reference": "-",
+            "hypothesis_index": 284,
+            "hypothesis": "f"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 286,
+            "reference": "e",
+            "hypothesis_index": 289,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 287,
+            "reference": "a",
+            "hypothesis_index": 290,
+            "hypothesis": "e"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 292,
+            "reference": "-",
+            "hypothesis_index": 295,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 301,
+            "reference": "-",
+            "hypothesis_index": 305,
+            "hypothesis": "d"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 319,
+            "reference": "-",
+            "hypothesis_index": 324,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 335,
+            "reference": "e",
+            "hypothesis_index": 341,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 336,
+            "reference": "n",
+            "hypothesis_index": 342,
+            "hypothesis": "m"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": -0.020527859237536666,
+      "status": "improved"
+    },
+    {
+      "sample_id": "5105-28240-0022",
+      "reference": "IT WAS ON THE LAST DAY OF JANUARY THAT THE REPAIRS OF THE SCHOONER WERE COMPLETED",
+      "baseline": "It was on the last day of January that the repairs of the schooner were completed.",
+      "candidate": "It was on the last day of January that the repairs of the schooner were completed.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 66,
+        "normalized_reference": "itwasonthelastdayofjanuarythattherepairsoftheschoonerwerecompleted",
+        "normalized_hypothesis": "itwasonthelastdayofjanuarythattherepairsoftheschoonerwerecompleted",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 66,
+        "normalized_reference": "itwasonthelastdayofjanuarythattherepairsoftheschoonerwerecompleted",
+        "normalized_hypothesis": "itwasonthelastdayofjanuarythattherepairsoftheschoonerwerecompleted",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "5142-36377-0005",
+      "reference": "THE DOOR OPENED AGAIN WHILE I WAS STILL STUDYING THE TWO BROTHERS WITHOUT I HONESTLY CONFESS BEING VERY FAVORABLY IMPRESSED BY EITHER OF THEM",
+      "baseline": "The door opened again while I was still studying the two brothers. Without, I honestly confess, being very favorably impressed by either of them.",
+      "candidate": "The door opened again while I was still studying the two brothers. Without, I honestly confess, being very favorably impressed by either of them.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 118,
+        "normalized_reference": "thedooropenedagainwhileiwasstillstudyingthetwobrotherswithoutihonestlyconfessbeingveryfavorablyimpressedbyeitherofthem",
+        "normalized_hypothesis": "thedooropenedagainwhileiwasstillstudyingthetwobrotherswithoutihonestlyconfessbeingveryfavorablyimpressedbyeitherofthem",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 118,
+        "normalized_reference": "thedooropenedagainwhileiwasstillstudyingthetwobrotherswithoutihonestlyconfessbeingveryfavorablyimpressedbyeitherofthem",
+        "normalized_hypothesis": "thedooropenedagainwhileiwasstillstudyingthetwobrotherswithoutihonestlyconfessbeingveryfavorablyimpressedbyeitherofthem",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "5639-40744-0032",
+      "reference": "FOR GOD'S SAKE MY LADY MOTHER GIVE ME A WIFE WHO WOULD BE AN AGREEABLE COMPANION NOT ONE WHO WILL DISGUST ME SO THAT WE MAY BOTH BEAR EVENLY AND WITH MUTUAL GOOD WILL THE YOKE IMPOSED ON US BY HEAVEN INSTEAD OF PULLING THIS WAY AND THAT WAY AND FRETTING EACH OTHER TO DEATH",
+      "baseline": "For God's sake, my lady mother gave me a wife who would be in agreeable companion. Not one who will discuss me so that we may both bear evenly and with mutual goodwill, the yoke imposed on us by heaven. Instead of pulling this way and that way, I am fretting each other to death.",
+      "candidate": "For God's sake, my lady mother gave me a wife who would be an agreeable companion. Not one who will discuss me so that we may both bear evenly and with mutual goodwill, the yoke imposed on us by heaven. Instead of pulling this way and that way, I am fretting each other to death.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.03211009174311927,
+        "substitutions": 7,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 218,
+        "normalized_reference": "forgodssakemyladymothergivemeawifewhowouldbeanagreeablecompanionnotonewhowilldisgustmesothatwemaybothbearevenlyandwithmutualgoodwilltheyokeimposedonusbyheaveninsteadofpullingthiswayandthatwayandfrettingeachothertodeath",
+        "normalized_hypothesis": "forgodssakemyladymothergavemeawifewhowouldbeinagreeablecompanionnotonewhowilldiscussmesothatwemaybothbearevenlyandwithmutualgoodwilltheyokeimposedonusbyheaveninsteadofpullingthiswayandthatwayiamfrettingeachothertodeath",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 24,
+            "reference": "i",
+            "hypothesis_index": 24,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 44,
+            "reference": "a",
+            "hypothesis_index": 44,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 80,
+            "reference": "g",
+            "hypothesis_index": 80,
+            "hypothesis": "c"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 83,
+            "reference": "t",
+            "hypothesis_index": 83,
+            "hypothesis": "s"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 191,
+            "reference": "a",
+            "hypothesis_index": 191,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 192,
+            "reference": "n",
+            "hypothesis_index": 192,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 193,
+            "reference": "d",
+            "hypothesis_index": 193,
+            "hypothesis": "m"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.027522935779816515,
+        "substitutions": 6,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 218,
+        "normalized_reference": "forgodssakemyladymothergivemeawifewhowouldbeanagreeablecompanionnotonewhowilldisgustmesothatwemaybothbearevenlyandwithmutualgoodwilltheyokeimposedonusbyheaveninsteadofpullingthiswayandthatwayandfrettingeachothertodeath",
+        "normalized_hypothesis": "forgodssakemyladymothergavemeawifewhowouldbeanagreeablecompanionnotonewhowilldiscussmesothatwemaybothbearevenlyandwithmutualgoodwilltheyokeimposedonusbyheaveninsteadofpullingthiswayandthatwayiamfrettingeachothertodeath",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 24,
+            "reference": "i",
+            "hypothesis_index": 24,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 80,
+            "reference": "g",
+            "hypothesis_index": 80,
+            "hypothesis": "c"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 83,
+            "reference": "t",
+            "hypothesis_index": 83,
+            "hypothesis": "s"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 191,
+            "reference": "a",
+            "hypothesis_index": 191,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 192,
+            "reference": "n",
+            "hypothesis_index": 192,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 193,
+            "reference": "d",
+            "hypothesis_index": 193,
+            "hypothesis": "m"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": -0.0045871559633027525,
+      "status": "improved"
+    },
+    {
+      "sample_id": "5683-32866-0003",
+      "reference": "IN THE MEANTIME I HAD FORMED A NEW IDEA OF HER",
+      "baseline": "In the meantime, I had formed a new idea of her.",
+      "candidate": "In the meantime, I had formed a new idea of her.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 36,
+        "normalized_reference": "inthemeantimeihadformedanewideaofher",
+        "normalized_hypothesis": "inthemeantimeihadformedanewideaofher",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 36,
+        "normalized_reference": "inthemeantimeihadformedanewideaofher",
+        "normalized_hypothesis": "inthemeantimeihadformedanewideaofher",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "6829-68769-0037",
+      "reference": "I'VE SEEN LOTS OF THAT KIND IN MY DAY",
+      "baseline": "I've seen lots of that going to my day.",
+      "candidate": "I've seen lots of that going to my day.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.17857142857142858,
+        "substitutions": 4,
+        "deletions": 0,
+        "insertions": 1,
+        "reference_length": 28,
+        "normalized_reference": "iveseenlotsofthatkindinmyday",
+        "normalized_hypothesis": "iveseenlotsofthatgoingtomyday",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 17,
+            "reference": "-",
+            "hypothesis_index": 17,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 17,
+            "reference": "k",
+            "hypothesis_index": 18,
+            "hypothesis": "o"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 20,
+            "reference": "d",
+            "hypothesis_index": 21,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 21,
+            "reference": "i",
+            "hypothesis_index": 22,
+            "hypothesis": "t"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 22,
+            "reference": "n",
+            "hypothesis_index": 23,
+            "hypothesis": "o"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.17857142857142858,
+        "substitutions": 4,
+        "deletions": 0,
+        "insertions": 1,
+        "reference_length": 28,
+        "normalized_reference": "iveseenlotsofthatkindinmyday",
+        "normalized_hypothesis": "iveseenlotsofthatgoingtomyday",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 17,
+            "reference": "-",
+            "hypothesis_index": 17,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 17,
+            "reference": "k",
+            "hypothesis_index": 18,
+            "hypothesis": "o"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 20,
+            "reference": "d",
+            "hypothesis_index": 21,
+            "hypothesis": "g"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 21,
+            "reference": "i",
+            "hypothesis_index": 22,
+            "hypothesis": "t"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 22,
+            "reference": "n",
+            "hypothesis_index": 23,
+            "hypothesis": "o"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "6930-81414-0024",
+      "reference": "MY TONGUE REFUSED TO ARTICULATE MY POWER OF SPEECH LEFT ME",
+      "baseline": "My tongue refused to articulate my power of speech left me.",
+      "candidate": "My tongue refused to articulate my power of speech left me.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 48,
+        "normalized_reference": "mytonguerefusedtoarticulatemypowerofspeechleftme",
+        "normalized_hypothesis": "mytonguerefusedtoarticulatemypowerofspeechleftme",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 48,
+        "normalized_reference": "mytonguerefusedtoarticulatemypowerofspeechleftme",
+        "normalized_hypothesis": "mytonguerefusedtoarticulatemypowerofspeechleftme",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "7021-85628-0012",
+      "reference": "BUT YOU MUST NOT EAT WITH YOUR CAP ON YOUR HEAD SHE SAID AND WAS GOING TO TAKE IT OFF",
+      "baseline": "But you must not eat with your cap on your head, she said, and was going to dig it off.",
+      "candidate": "But you must not eat with your cap on your head, she said, and was going to dig it off.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.06060606060606061,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 66,
+        "normalized_reference": "butyoumustnoteatwithyourcaponyourheadshesaidandwasgoingtotakeitoff",
+        "normalized_hypothesis": "butyoumustnoteatwithyourcaponyourheadshesaidandwasgoingtodigitoff",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 57,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 58,
+            "reference": "a",
+            "hypothesis_index": 57,
+            "hypothesis": "d"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 59,
+            "reference": "k",
+            "hypothesis_index": 58,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 60,
+            "reference": "e",
+            "hypothesis_index": 59,
+            "hypothesis": "g"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.06060606060606061,
+        "substitutions": 3,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 66,
+        "normalized_reference": "butyoumustnoteatwithyourcaponyourheadshesaidandwasgoingtotakeitoff",
+        "normalized_hypothesis": "butyoumustnoteatwithyourcaponyourheadshesaidandwasgoingtodigitoff",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 57,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 58,
+            "reference": "a",
+            "hypothesis_index": 57,
+            "hypothesis": "d"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 59,
+            "reference": "k",
+            "hypothesis_index": 58,
+            "hypothesis": "i"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 60,
+            "reference": "e",
+            "hypothesis_index": 59,
+            "hypothesis": "g"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "7127-75947-0028",
+      "reference": "QUICK QUICK THEN AMONG THE HIGH REED GRASS SAID MONTALAIS STOOP ATHENAIS YOU ARE SO TALL",
+      "baseline": "Quick, quick then, among the high readgrass said Montile. Stoop, Athenae, you are so tall.",
+      "candidate": "Quick, quick, then, among the high-read grass said Montile. Stoop, Athenae, you are so tall.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0958904109589041,
+        "substitutions": 4,
+        "deletions": 3,
+        "insertions": 0,
+        "reference_length": 73,
+        "normalized_reference": "quickquickthenamongthehighreedgrasssaidmontalaisstoopathenaisyouaresotall",
+        "normalized_hypothesis": "quickquickthenamongthehighreadgrasssaidmontilestoopathenaeyouaresotall",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 28,
+            "reference": "e",
+            "hypothesis_index": 28,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 43,
+            "reference": "a",
+            "hypothesis_index": 43,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 45,
+            "reference": "a",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 46,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 47,
+            "reference": "s",
+            "hypothesis_index": 45,
+            "hypothesis": "e"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 59,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 60,
+            "reference": "s",
+            "hypothesis_index": 57,
+            "hypothesis": "e"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0958904109589041,
+        "substitutions": 4,
+        "deletions": 3,
+        "insertions": 0,
+        "reference_length": 73,
+        "normalized_reference": "quickquickthenamongthehighreedgrasssaidmontalaisstoopathenaisyouaresotall",
+        "normalized_hypothesis": "quickquickthenamongthehighreadgrasssaidmontilestoopathenaeyouaresotall",
+        "operations": [
+          {
+            "op": "substitution",
+            "reference_index": 28,
+            "reference": "e",
+            "hypothesis_index": 28,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 43,
+            "reference": "a",
+            "hypothesis_index": 43,
+            "hypothesis": "i"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 45,
+            "reference": "a",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 46,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 47,
+            "reference": "s",
+            "hypothesis_index": 45,
+            "hypothesis": "e"
+          },
+          {
+            "op": "deletion",
+            "reference_index": 59,
+            "reference": "i",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 60,
+            "reference": "s",
+            "hypothesis_index": 57,
+            "hypothesis": "e"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "7176-92135-0002",
+      "reference": "BUT EVEN THE UNSUCCESSFUL DRAMATIST HAS HIS MOMENTS",
+      "baseline": "But even the unsuccessful dramatist has his moments.",
+      "candidate": "But even the unsuccessful dramatist has his moments.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 44,
+        "normalized_reference": "buteventheunsuccessfuldramatisthashismoments",
+        "normalized_hypothesis": "buteventheunsuccessfuldramatisthashismoments",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 44,
+        "normalized_reference": "buteventheunsuccessfuldramatisthashismoments",
+        "normalized_hypothesis": "buteventheunsuccessfuldramatisthashismoments",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "7729-102255-0029",
+      "reference": "TEN DAYS WERE CONSUMED IN THESE NEGOTIATIONS BUT THE SPIRIT OF VENGEANCE REFUSED TO YIELD",
+      "baseline": "10 days were consumed in these negotiations, but the spirit of vengeance refused to yield.",
+      "candidate": "10 days were consumed in these negotiations, but the spirit of vengeance refused to yield.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.04,
+        "substitutions": 2,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 75,
+        "normalized_reference": "tendayswereconsumedinthesenegotiationsbutthespiritofvengeancerefusedtoyield",
+        "normalized_hypothesis": "10dayswereconsumedinthesenegotiationsbutthespiritofvengeancerefusedtoyield",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 0,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 1,
+            "reference": "e",
+            "hypothesis_index": 0,
+            "hypothesis": "1"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 2,
+            "reference": "n",
+            "hypothesis_index": 1,
+            "hypothesis": "0"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.04,
+        "substitutions": 2,
+        "deletions": 1,
+        "insertions": 0,
+        "reference_length": 75,
+        "normalized_reference": "tendayswereconsumedinthesenegotiationsbutthespiritofvengeancerefusedtoyield",
+        "normalized_hypothesis": "10dayswereconsumedinthesenegotiationsbutthespiritofvengeancerefusedtoyield",
+        "operations": [
+          {
+            "op": "deletion",
+            "reference_index": 0,
+            "reference": "t",
+            "hypothesis_index": "-",
+            "hypothesis": "-"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 1,
+            "reference": "e",
+            "hypothesis_index": 0,
+            "hypothesis": "1"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 2,
+            "reference": "n",
+            "hypothesis_index": 1,
+            "hypothesis": "0"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "8224-274381-0015",
+      "reference": "THOUGH THE DISCIPLINE OF THE FORMER PARLIAMENTARY ARMY WAS NOT CONTEMPTIBLE A MORE EXACT PLAN WAS INTRODUCED AND RIGOROUSLY EXECUTED BY THESE NEW COMMANDERS",
+      "baseline": "Though the discipline of the former parliamentary army was not contemptible, a more exact plan was introduced and rigorously executed by these new commanders.",
+      "candidate": "Though the discipline of the former parliamentary army was not contemptible, a more exact plan was introduced and rigorously executed by these new commanders.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 133,
+        "normalized_reference": "thoughthedisciplineoftheformerparliamentaryarmywasnotcontemptibleamoreexactplanwasintroducedandrigorouslyexecutedbythesenewcommanders",
+        "normalized_hypothesis": "thoughthedisciplineoftheformerparliamentaryarmywasnotcontemptibleamoreexactplanwasintroducedandrigorouslyexecutedbythesenewcommanders",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 133,
+        "normalized_reference": "thoughthedisciplineoftheformerparliamentaryarmywasnotcontemptibleamoreexactplanwasintroducedandrigorouslyexecutedbythesenewcommanders",
+        "normalized_hypothesis": "thoughthedisciplineoftheformerparliamentaryarmywasnotcontemptibleamoreexactplanwasintroducedandrigorouslyexecutedbythesenewcommanders",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "8230-279154-0016",
+      "reference": "IN ACTUAL FACT THERE ARE DOUBTLESS VARIOUS FACTORS THAT CONCUR IN GIVING US THE FEELING OF GREATER OR LESS REMOTENESS IN SOME REMEMBERED EVENT",
+      "baseline": "In actual fact, there are doubtless various factors that concur in giving us the feeling of greater or less remoteness in some remembered event.",
+      "candidate": "In actual fact, there are doubtless various factors that concur in giving us the feeling of greater or less remoteness in some remembered event.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 119,
+        "normalized_reference": "inactualfacttherearedoubtlessvariousfactorsthatconcuringivingusthefeelingofgreaterorlessremotenessinsomerememberedevent",
+        "normalized_hypothesis": "inactualfacttherearedoubtlessvariousfactorsthatconcuringivingusthefeelingofgreaterorlessremotenessinsomerememberedevent",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 119,
+        "normalized_reference": "inactualfacttherearedoubtlessvariousfactorsthatconcuringivingusthefeelingofgreaterorlessremotenessinsomerememberedevent",
+        "normalized_hypothesis": "inactualfacttherearedoubtlessvariousfactorsthatconcuringivingusthefeelingofgreaterorlessremotenessinsomerememberedevent",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "8455-210777-0063",
+      "reference": "TO DAY I SHOUTED",
+      "baseline": "Today I shouted.",
+      "candidate": "Today I shouted.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 13,
+        "normalized_reference": "todayishouted",
+        "normalized_hypothesis": "todayishouted",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.0,
+        "substitutions": 0,
+        "deletions": 0,
+        "insertions": 0,
+        "reference_length": 13,
+        "normalized_reference": "todayishouted",
+        "normalized_hypothesis": "todayishouted",
+        "operations": [],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "完全一致"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "8463-294828-0035",
+      "reference": "AND SO IF I'D BEEN DELAYED BY A QUARTER OF AN HOUR OR EVEN LESS THE FRIGATE WOULD HAVE GONE WITHOUT ME AND I WOULD HAVE MISSED OUT ON THIS UNEARTHLY EXTRAORDINARY AND INCONCEIVABLE EXPEDITION WHOSE TRUE STORY MIGHT WELL MEET WITH SOME SKEPTICISM",
+      "baseline": "And so, if I had been delayed by a quarter of an hour or even less, the frigate would have gone without me, and I would have messed out on this unearthly, extraordinary and inconceivable expedition, whose true story might well meet with some skepticism.",
+      "candidate": "And so, if I had been delayed by a quarter of an hour or even less, the frigate would have gone without me, and I would have messed out on this unearthly, extraordinary and inconceivable expedition, whose true story might well meet with some skepticism.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.014925373134328358,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 201,
+        "normalized_reference": "andsoifidbeendelayedbyaquarterofanhourorevenlessthefrigatewouldhavegonewithoutmeandiwouldhavemissedoutonthisunearthlyextraordinaryandinconceivableexpeditionwhosetruestorymightwellmeetwithsomeskepticism",
+        "normalized_hypothesis": "andsoifihadbeendelayedbyaquarterofanhourorevenlessthefrigatewouldhavegonewithoutmeandiwouldhavemessedoutonthisunearthlyextraordinaryandinconceivableexpeditionwhosetruestorymightwellmeetwithsomeskepticism",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 8,
+            "reference": "-",
+            "hypothesis_index": 8,
+            "hypothesis": "h"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 8,
+            "reference": "-",
+            "hypothesis_index": 9,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 94,
+            "reference": "i",
+            "hypothesis_index": 96,
+            "hypothesis": "e"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.014925373134328358,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 201,
+        "normalized_reference": "andsoifidbeendelayedbyaquarterofanhourorevenlessthefrigatewouldhavegonewithoutmeandiwouldhavemissedoutonthisunearthlyextraordinaryandinconceivableexpeditionwhosetruestorymightwellmeetwithsomeskepticism",
+        "normalized_hypothesis": "andsoifihadbeendelayedbyaquarterofanhourorevenlessthefrigatewouldhavegonewithoutmeandiwouldhavemessedoutonthisunearthlyextraordinaryandinconceivableexpeditionwhosetruestorymightwellmeetwithsomeskepticism",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 8,
+            "reference": "-",
+            "hypothesis_index": 8,
+            "hypothesis": "h"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 8,
+            "reference": "-",
+            "hypothesis_index": 9,
+            "hypothesis": "a"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 94,
+            "reference": "i",
+            "hypothesis_index": 96,
+            "hypothesis": "e"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    },
+    {
+      "sample_id": "8555-284447-0014",
+      "reference": "THE IDEA OF PATCHING CAP'N BILL TO A GOAT WAS VASTLY AMUSING TO HIM AND THE MORE HE THOUGHT OF IT THE MORE HE ROARED WITH LAUGHTER",
+      "baseline": "The idea of patching Cat and Bill to a goat was vastly amusing to him. And the more he thought of it, the more he roared with laughter.",
+      "candidate": "The idea of patching Cat and Bill to a goat was vastly amusing to him. And the more he thought of it, the more he roared with laughter.",
+      "baseline_metric": {
+        "name": "CER",
+        "value": 0.02912621359223301,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 103,
+        "normalized_reference": "theideaofpatchingcapnbilltoagoatwasvastlyamusingtohimandthemorehethoughtofitthemoreheroaredwithlaughter",
+        "normalized_hypothesis": "theideaofpatchingcatandbilltoagoatwasvastlyamusingtohimandthemorehethoughtofitthemoreheroaredwithlaughter",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 19,
+            "reference": "-",
+            "hypothesis_index": 19,
+            "hypothesis": "t"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 19,
+            "reference": "p",
+            "hypothesis_index": 20,
+            "hypothesis": "a"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 21,
+            "reference": "-",
+            "hypothesis_index": 22,
+            "hypothesis": "d"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "candidate_metric": {
+        "name": "CER",
+        "value": 0.02912621359223301,
+        "substitutions": 1,
+        "deletions": 0,
+        "insertions": 2,
+        "reference_length": 103,
+        "normalized_reference": "theideaofpatchingcapnbilltoagoatwasvastlyamusingtohimandthemorehethoughtofitthemoreheroaredwithlaughter",
+        "normalized_hypothesis": "theideaofpatchingcatandbilltoagoatwasvastlyamusingtohimandthemorehethoughtofitthemoreheroaredwithlaughter",
+        "operations": [
+          {
+            "op": "insertion",
+            "reference_index": 19,
+            "reference": "-",
+            "hypothesis_index": 19,
+            "hypothesis": "t"
+          },
+          {
+            "op": "substitution",
+            "reference_index": 19,
+            "reference": "p",
+            "hypothesis_index": 20,
+            "hypothesis": "a"
+          },
+          {
+            "op": "insertion",
+            "reference_index": 21,
+            "reference": "-",
+            "hypothesis_index": 22,
+            "hypothesis": "d"
+          }
+        ],
+        "metric_version": "cer-v1",
+        "normalization_version": "cer-normalize-v1",
+        "applicable": true,
+        "reason": null,
+        "interpretation": "存在字符级差异"
+      },
+      "delta": 0.0,
+      "status": "unchanged"
+    }
+  ],
+  "provenance": {
+    "input_sha256": "ac264299f3d6b50678cc73d783a89157c28c70812accc64f41e07cf5b55804c9",
+    "baseline_name": "beam 1",
+    "candidate_name": "beam 5",
+    "synthetic": false,
+    "network_used": false,
+    "experiment": "LibriSpeech test-clean · 40 speakers / 40 utterances · Whisper tiny.en · CPU int8 · beam 1 vs 5"
+  }
+}

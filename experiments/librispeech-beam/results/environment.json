@@ -1,0 +1,41 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "packages": {
+    "httpx": "0.28.1",
+    "packaging": "26.3",
+    "pip": "25.0.1",
+    "click": "8.5.0",
+    "socksio": "1.0.0",
+    "flatbuffers": "25.12.19",
+    "av": "16.1.0",
+    "tokenizers": "0.23.2",
+    "certifi": "2026.7.22",
+    "h11": "0.16.0",
+    "fsspec": "2026.9.0",
+    "huggingface_hub": "1.33.0",
+    "hf-xet": "1.6.0",
+    "typing_extensions": "4.16.0",
+    "faster-whisper": "1.2.1",
+    "filelock": "4.0.4",
+    "idna": "3.20",
+    "protobuf": "7.36.2",
+    "ctranslate2": "4.8.2",
+    "PyYAML": "6.0.3",
+    "anyio": "4.15.1",
+    "httpcore": "1.0.9",
+    "tqdm": "4.70.1",
+    "onnxruntime": "1.30.0",
+    "numpy": "2.5.3"
+  },
+  "model_file_sha256": {
+    "config.json": "14b1b421a90349bc551b881461426b561a874049cb9e4c4864f2ca384f6a7cc5",
+    "model.bin": "1a5afae06a4db91c975c9a9d78be5cc110ee4ea022ad57d55492e4550e936b2a",
+    "tokenizer.json": "929c5252409436dce1b38a75d1abbcb5e132d170d8e324e4e04ed915fa2d22df",
+    "vocabulary.txt": "ff77588746d3a2595d32ab5b69ffd7b95ce2441ac57533cb66fc3eb575a115cf"
+  },
+  "protocol_sha256": "49bedce7700389a740ecb968435ba445fc353b77249d1f53b09403208e607014",
+  "manifest_sha256": "f3d0318da199e11846b19db51bba8a81d5b0e0a14e12f0b6928486f3e1c75e59",
+  "started_at_utc": "2026-09-28T02:23:23.285549+00:00",
+  "inference_network_used": false
+}
