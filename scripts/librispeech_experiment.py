@@ -93,12 +93,40 @@ def summarize_words(records):
     return {'tokenizer': "NFKC + casefold; regex [a-z0-9]+(?:'[a-z0-9]+)*; no number/contraction expansion; not the official LibriSpeech scoring recipe", **totals}
 
 
+def render_experiment_report(output):
+    """Rebuild display metrics from saved transcripts, without running inference."""
+    report = json.loads((output / 'report/comparison.json').read_text(encoding='utf-8'))
+    records = [json.loads(line) for line in (output / 'raw-results.jsonl').read_text(encoding='utf-8').splitlines()]
+    lookup = {record['sample_id']: record for record in records}
+    if len(lookup) != len(records) or set(lookup) != {row['sample_id'] for row in report['samples']}:
+        raise ValueError('Raw outputs and comparison sample IDs must match')
+    for row in report['samples']:
+        raw = lookup[row['sample_id']]
+        for side in ('baseline', 'candidate'):
+            if row['reference'] != raw['reference'] or row[side] != raw[side]['text']:
+                raise ValueError('Saved comparison does not match raw outputs')
+            row[side + '_word_metric'] = {**word_error(row['reference'], row[side]),
+                'reference_tokens': word_tokens(row['reference']), 'hypothesis_tokens': word_tokens(row[side])}
+    report['word_summary'] = summarize_words(records)
+    report['provenance']['experiment'] = 'LibriSpeech test-clean · 40 speakers / 40 utterances · Whisper tiny.en · CPU int8 · beam 1 vs 5'
+    write_json(output / 'report/comparison.json', report)
+    page = render_comparison(report)
+    page = page.replace('本报告根据导入的参考文本和两个版本输出计算。请确认两版使用相同测试集、参考标注和可比的推理设置；工具不验证输入来源。',
+                        '真实音频实验：LibriSpeech test-clean，每位说话人按固定哈希规则选一条，共 40 条。相同 Whisper tiny.en 权重、CPU int8，比较 beam 1 与 beam 5。此小样本不代表完整测试集成绩。<br><a href="https://qiangzhang-dev.github.io/notes/whisper-beam/">阅读实验记录、数据来源与复现方法</a>。')
+    (output / 'report/index.html').write_text(page, encoding='utf-8')
+    return report
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--cache', type=Path, default=ROOT / 'exports/asr-cache')
     parser.add_argument('--output', type=Path, required=True, help='New directory for manifest, raw outputs and report')
+    parser.add_argument('--render-only', action='store_true', help='Rebuild an existing results report from saved transcripts; no model or download')
     parser.add_argument('--download', action='store_true', help='Download public dataset (~347 MB) and pinned model (~76 MB)')
     args = parser.parse_args(argv)
+    if args.render_only:
+        render_experiment_report(args.output.resolve())
+        return 0
     protocol_path = ROOT / 'experiments/librispeech-beam/protocol.json'
     protocol = json.loads(protocol_path.read_text())
     cache, output = args.cache.resolve(), args.output.resolve()
@@ -159,12 +187,7 @@ def main(argv=None):
         writer.writerow(['sample_id', 'reference', 'baseline', 'candidate'])
         writer.writerows([r['sample_id'], r['reference'], r['baseline']['text'], r['candidate']['text']] for r in records)
     report = write_comparison(output / 'pairs.csv', output / 'report', baseline_name='beam 1', candidate_name='beam 5')
-    report['provenance']['experiment'] = 'LibriSpeech test-clean · 40 speakers / 40 utterances · Whisper tiny.en · CPU int8 · beam 1 vs 5'
-    write_json(output / 'report/comparison.json', report)
-    page = render_comparison(report)
-    page = page.replace('本报告根据导入的参考文本和两个版本输出计算。请确认两版使用相同测试集、参考标注和可比的推理设置；工具不验证输入来源。',
-                        '真实音频实验：LibriSpeech test-clean，每位说话人按固定哈希规则选一条，共 40 条。相同 Whisper tiny.en 权重、CPU int8，比较 beam 1 与 beam 5。此小样本不代表完整测试集成绩。<br><a href="https://qiangzhang-dev.github.io/notes/whisper-beam/">阅读实验记录、数据来源与复现方法</a>。')
-    (output / 'report/index.html').write_text(page, encoding='utf-8')
+    report = render_experiment_report(output)
     summary = {'cer': report['summary'], 'wer': summarize_words(records),
                'audio_seconds': sum(r['baseline']['audio_seconds'] for r in records),
                'transcription_seconds': {side: sum(r[side]['seconds'] for r in records) for side in ('baseline', 'candidate')},

@@ -8,7 +8,7 @@ import unittest
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from scripts.librispeech_experiment import word_error, word_tokens, summarize_words
-from speech_eval.comparison import compare_pairs, load_pairs
+from speech_eval.comparison import compare_pairs, load_pairs, render_comparison
 
 
 class ExperimentMetricTests(unittest.TestCase):
@@ -18,6 +18,15 @@ class ExperimentMetricTests(unittest.TestCase):
         self.assertIsNone(word_error('', 'one')['wer'])
         self.assertEqual(word_tokens("Ｉ can't, 12."), ['i', "can't", '12'])
         self.assertNotEqual(word_tokens('twelve'), word_tokens('12'))
+
+    def test_word_boundaries_and_reference_spelling(self):
+        # Same normalized characters, different tokens; WER alone is not semantic correctness.
+        for reference, hypothesis, expected in [('YOU ARE ACUTE', 'You are a cute.', 2/3),
+                                                 ('TO-DAY I SHOUTED', 'Today I shouted.', .5)]:
+            row = compare_pairs([{'sample_id': 'case', 'reference': reference,
+                                  'baseline': hypothesis, 'candidate': hypothesis}])['samples'][0]
+            self.assertEqual(row['baseline_metric']['value'], 0)
+            self.assertEqual(word_error(reference, hypothesis)['wer'], expected)
 
     def test_corpus_weighting(self):
         records = [{'reference': 'one', 'baseline': {'text': ''}, 'candidate': {'text': 'one'}},
@@ -44,6 +53,19 @@ class ExperimentMetricTests(unittest.TestCase):
             self.assertEqual(pair['candidate'], raw['candidate']['text'])
         self.assertEqual(compare_pairs(pairs)['summary'], summary['cer'])
         self.assertEqual(summarize_words(records), summary['wer'])
+        report = json.loads((directory/'report/comparison.json').read_text())
+        flagged = []
+        for row in report['samples']:
+            for side in ('baseline', 'candidate'):
+                self.assertEqual({key: row[side+'_word_metric'][key] for key in ('errors', 'reference_words', 'wer')},
+                                 word_error(row['reference'], row[side]))
+            if any(row[side+'_metric']['value'] == 0 and row[side+'_word_metric']['errors'] > 0 for side in ('baseline', 'candidate')):
+                flagged.append(row['sample_id'])
+        self.assertEqual(flagged, ['121-127105-0014', '8455-210777-0063'])
+        page = render_comparison(report)
+        self.assertEqual(page.count('data-word-error="true"'), 2)
+        self.assertIn('WER 66.67%', page)
+        self.assertEqual(report['word_summary'], summary['wer'])
         provenance = json.loads((directory/'environment.json').read_text())
         self.assertEqual(hashlib.sha256((directory/'manifest.json').read_bytes()).hexdigest(), provenance['manifest_sha256'])
         self.assertEqual((directory/'protocol.json').read_bytes(), (directory.parent/'protocol.json').read_bytes())

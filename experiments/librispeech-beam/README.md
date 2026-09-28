@@ -36,3 +36,11 @@ CER 沿用仓库的 `cer-v1 / cer-normalize-v1`。英文 WER 使用另行声明�
 本实验是个人公开项目，与雇主业务数据或内部模型无关。
 
 文章源文件是 `NOTE.md`。如需重新渲染静态文章页，另行安装 `markdown2==2.5.4`，再运行 `python scripts/render_experiment_note.py`；它不是模型推理依赖。
+
+逐句报告也显示按本文规则计算的 WER、词编辑次数和分词结果，可筛选「CER 为 0、WER 大于 0」的样本。该筛选只标出指标差异；参考拼写（如 `TO-DAY` 与 `today`）也可能产生词编辑，不应直接等同于语义错误。
+
+仅用已保存的输出重建报告（不运行模型、不下载数据）：
+
+```sh
+python scripts/librispeech_experiment.py --render-only --output experiments/librispeech-beam/results
+```
