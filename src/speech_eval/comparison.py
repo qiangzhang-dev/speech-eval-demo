@@ -73,9 +73,22 @@ def pp(value):
     return '不适用' if value is None else f'{value * 100:+.2f} 个百分点'
 
 
-def render_comparison(report):
+def render_comparison(report, *, title=None, description=None, canonical_url=None):
     esc = lambda value: html.escape(str(value), quote=True)
     summary, provenance = report['summary'], report['provenance']
+    if title is None:
+        title = (f'{summary["total"]} 条合成样例转写对比 · Nate Zhang'
+                 if provenance['synthetic'] else '转写版本对比 · Nate Zhang')
+    if description is None:
+        description = (
+            f'{summary["total"]} 条预设合成转写文本的双版本对比，展示 CER、字符差异与筛选。'
+            '未运行真实语音模型，分数仅用于工具演示。'
+            if provenance['synthetic'] else
+            f'{summary["total"]} 条导入转写文本的双版本对比，展示 CER 与字符差异；工具不验证输入来源。'
+        )
+    metadata = f'<title>{esc(title)}</title>\n<meta name="description" content="{esc(description)}">\n'
+    if canonical_url is not None:
+        metadata += f'<link rel="canonical" href="{esc(canonical_url)}">\n'
     baseline_name, candidate_name = esc(provenance['baseline_name']), esc(provenance['candidate_name'])
     cards = []
     for row in report['samples']:
@@ -102,11 +115,11 @@ def render_comparison(report):
         metric_rows += f'<tr><th>语料级 WER（本文分词规则）</th><td>{pct(words["baseline"]["corpus_wer"])}</td><td>{pct(words["candidate"]["corpus_wer"])}</td><td>{pp(words["candidate"]["corpus_wer"] - words["baseline"]["corpus_wer"])}</td></tr>'
         word_notice = '<p class="notice">CER 去掉空格，可能漏掉单词分界错误。选择下方「CER 为 0、WER 大于 0」可找到字符指标未体现的词级差异，展开「查看分词」核对原因。差异不一定是识别错误：参考中的 TO DAY 与输出 today 也会被当前分词规则计错。WER 按 NFKC、casefold 和保留词内撇号的英文词与数字计算，不展开数字或缩写；不是 LibriSpeech 官方评分流程。重新导入 CSV 的通用工具仅计算 CER。</p>'
         word_option = '<option value="word-error">CER 为 0、WER 大于 0（任一版本）</option>'
-    return '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>转写版本对比 · Nate Zhang</title>
+    return '''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">''' + metadata + '''
 <style>
 :root{color-scheme:light;--ink:#202a35;--muted:#627080;--line:#dfe5eb;--accent:#17665a}*{box-sizing:border-box}body{margin:0;background:#f7f8fa;color:var(--ink);font:16px/1.75 system-ui,-apple-system,"Segoe UI",sans-serif}main{max-width:1050px;margin:auto;padding:40px 24px 64px}a{color:var(--accent);text-underline-offset:4px}nav{display:flex;flex-wrap:wrap;gap:20px;font-size:14px;margin-bottom:44px}h1{font-size:clamp(28px,5vw,42px);line-height:1.3;letter-spacing:-.035em;margin:12px 0 18px}h2{font-size:24px;margin:36px 0 14px}h3,h4{margin:0;font-size:17px}p{margin:10px 0}.eyebrow,.label{font-size:12px;color:var(--accent);font-weight:600}.muted{color:var(--muted);font-size:14px}.notice{border-left:3px solid #bf7433;padding:12px 18px;background:#fff6e9;margin:24px 0}.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.stat{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}.stat strong{display:block;font-size:30px;font-weight:600}.stat span{font-size:13px;color:var(--muted)}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;text-align:left;font-size:14px}th,td{padding:12px;border-bottom:1px solid var(--line)}.case{background:white;border:1px solid var(--line);border-radius:14px;padding:24px;margin:18px 0}.case-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}.badge{border-radius:4px;background:#edf0f3;padding:3px 10px;font-size:13px}.improved{background:#e7f3eb;color:#236744}.regressed{background:#fff0e5;color:#96451d}.pair{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:20px;padding-top:18px;border-top:1px solid var(--line)}.pair section{min-width:0}.transcript{white-space:pre-wrap;overflow-wrap:anywhere}.muted{overflow-wrap:anywhere}summary{color:var(--accent);cursor:pointer;font-size:14px;margin-top:14px}pre{overflow:auto;border-radius:8px;background:#eaf0f3;padding:18px;font-size:14px}select,input{font:inherit;padding:8px;border:1px solid #bdc8d1;border-radius:6px;background:white;max-width:100%}.filters{display:flex;gap:18px;flex-wrap:wrap;align-items:end}.filters label{display:flex;flex-direction:column;font-size:14px;gap:5px}a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #bf7433;outline-offset:3px}footer{border-top:1px solid var(--line);margin-top:38px;padding-top:18px;color:var(--muted);font-size:13px}[hidden]{display:none!important}@media(max-width:620px){main{padding:24px 16px 40px}.stats{grid-template-columns:repeat(2,1fr)}.pair{grid-template-columns:1fr;gap:20px}.case{padding:18px}.stat{padding:14px}th,td{padding:8px}nav{margin-bottom:30px}}@media print{.filters,nav{display:none}.case{break-inside:avoid}body{background:white}}
 </style></head><body><main>
-<nav><a href="https://qiangzhang-dev.github.io/">Nate / 个人网站</a><a href="https://qiangzhang-dev.github.io/speech-eval/">单版本结果</a><a href="https://github.com/qiangzhang-dev/speech-eval-demo">源代码 ↗</a></nav>
+<nav><a href="https://qiangzhang-dev.github.io/">Nate / 个人网站</a><a href="https://qiangzhang-dev.github.io/speech-eval/">合成样例演示</a><a href="https://github.com/qiangzhang-dev/speech-eval-demo">源代码 ↗</a></nav>
 <header><span class="eyebrow">SPEECH EVALUATION / COMPARE</span><h1>换了版本，哪些句子变了？</h1><p>对照同一份参考文本，查看两个版本的字符错误率与具体差异。</p></header>
 ''' + f'<p class="notice">{notice}</p><div class="stats">{stats}</div><p class="muted">共 {summary["total"]} 条；{summary["paired"]} 条纳入配对统计。归一化后为空的参考文本不计入任何均值。</p><div class="table-wrap"><table><thead><tr><th>计算口径</th><th>{baseline_name}</th><th>{candidate_name}</th><th>新版 − 旧版</th></tr></thead><tbody>{metric_rows}</tbody></table></div>' + '''
 <p class="muted">样例平均 CER 对每句等权；语料级 CER = 全部字符编辑次数 / 全部参考字符数。差值为负表示 CER 降低；CER 可以超过 100%。同分可能对应不同错误，不代表语义或任务效果相同。</p>
@@ -130,7 +143,8 @@ def spreadsheet_text(value):
     return "'" + value if value.lstrip().startswith(('=', '+', '-', '@')) or value.startswith(('\t', '\r', '\n')) else value
 
 
-def write_comparison(input_path, output, *, baseline_name='旧版', candidate_name='新版', synthetic=False):
+def write_comparison(input_path, output, *, baseline_name='旧版', candidate_name='新版', synthetic=False,
+                     canonical_url=None):
     rows, digest = load_pairs(input_path)
     report = compare_pairs(rows)
     report['provenance'] = {'input_sha256': digest, 'baseline_name': baseline_name,
@@ -138,7 +152,7 @@ def write_comparison(input_path, output, *, baseline_name='旧版', candidate_na
     # Validate and calculate before creating the output. Never overwrite a report.
     output.mkdir(parents=True, exist_ok=False)
     (output / 'comparison.json').write_text(json.dumps(report, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    (output / 'index.html').write_text(render_comparison(report), encoding='utf-8')
+    (output / 'index.html').write_text(render_comparison(report, canonical_url=canonical_url), encoding='utf-8')
     (output / 'input.csv').write_bytes(input_path.read_bytes())
     with (output / 'comparison.csv').open('w', encoding='utf-8-sig', newline='') as stream:
         writer = csv.writer(stream)

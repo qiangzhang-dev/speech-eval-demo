@@ -11,7 +11,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
-from speech_eval.comparison import compare_pairs, load_pairs, write_comparison
+from speech_eval.comparison import compare_pairs, load_pairs, render_comparison, write_comparison
 
 
 def row(identifier, reference, baseline, candidate):
@@ -19,6 +19,43 @@ def row(identifier, reference, baseline, candidate):
 
 
 class ComparisonTests(unittest.TestCase):
+    def test_metadata_is_explicit_escaped_and_separate_from_result_data(self):
+        report = compare_pairs([row('one', 'hello', 'hello', 'hello')])
+        report['provenance'] = {'synthetic': False, 'baseline_name': 'old',
+                                'candidate_name': 'new', 'input_sha256': 'abc'}
+        original = json.dumps(report, sort_keys=True)
+        generic = render_comparison(report)
+        self.assertIn('<title>转写版本对比 · Nate Zhang</title>', generic)
+        self.assertIn('1 条导入转写文本', generic)
+        self.assertNotIn('rel="canonical"', generic)
+        self.assertNotIn('单版本结果', generic)
+        self.assertIn('合成样例演示', generic)
+        custom = render_comparison(report, title='<test> & title',
+                                   description='"description" <tag>',
+                                   canonical_url='https://example.org/report/?a=1&b=2')
+        self.assertIn('<title>&lt;test&gt; &amp; title</title>', custom)
+        self.assertIn('content="&quot;description&quot; &lt;tag&gt;"', custom)
+        self.assertIn('href="https://example.org/report/?a=1&amp;b=2"', custom)
+        self.assertEqual(json.dumps(report, sort_keys=True), original)
+
+    def test_default_synthetic_cli_metadata_and_custom_input_boundary(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            for name, arguments in [('synthetic', []),
+                                    ('imported', ['--input', str(ROOT/'data/comparison/pairs.csv')])]:
+                output = Path(tmp)/name
+                command = [sys.executable, str(ROOT/'scripts/compare.py'),
+                           '--output', str(output), *arguments]
+                result = subprocess.run(command, cwd=tmp, capture_output=True, text=True)
+                self.assertEqual(result.returncode, 0, result.stderr)
+                page = (output/'index.html').read_text(encoding='utf-8')
+                if name == 'synthetic':
+                    self.assertIn('<title>6 条合成样例转写对比 · Nate Zhang</title>', page)
+                    self.assertIn('未运行真实语音模型', page)
+                    self.assertIn('<link rel="canonical" href="https://qiangzhang-dev.github.io/speech-eval/compare/">', page)
+                else:
+                    self.assertNotIn('rel="canonical"', page)
+                    self.assertIn('6 条导入转写文本', page)
+
     def test_weighting_and_opposing_changes(self):
         report = compare_pairs([row('short', '甲乙', '甲', '甲乙'), row('long', 'abcdefgh', 'abcdefgh', 'abcdef')])
         stats = report['summary']

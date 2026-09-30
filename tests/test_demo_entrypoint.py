@@ -26,6 +26,9 @@ class DemoEntrypointTests(unittest.TestCase):
                 self.assertEqual(summary['metric_summary']['count'], 6)
                 self.assertFalse(summary['reproduction']['network_used'])
                 self.assertIn('合成文本样例', (output / 'index.html').read_text(encoding='utf-8'))
+                page = (output / 'index.html').read_text(encoding='utf-8')
+                self.assertIn('<title>合成样例评测 · Speech Evaluation Demo · Nate Zhang</title>', page)
+                self.assertIn('<link rel="canonical" href="https://qiangzhang-dev.github.io/speech-eval/">', page)
             self.assertEqual((runs[0] / 'evaluation-results.jsonl').read_bytes(),
                              (runs[1] / 'evaluation-results.jsonl').read_bytes())
             rows = [json.loads(line) for line in (runs[0] / 'evaluation-results.jsonl').read_text(encoding='utf-8').splitlines()]

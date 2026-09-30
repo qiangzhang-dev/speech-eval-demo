@@ -110,7 +110,14 @@ def render_experiment_report(output):
     report['word_summary'] = summarize_words(records)
     report['provenance']['experiment'] = 'LibriSpeech test-clean · 40 speakers / 40 utterances · Whisper tiny.en · CPU int8 · beam 1 vs 5'
     write_json(output / 'report/comparison.json', report)
-    page = render_comparison(report)
+    total = report['summary']['total']
+    page = render_comparison(
+        report,
+        title=f'Whisper beam 1 vs 5：{total} 条录音逐句对比 · Nate Zhang',
+        description=(f'Whisper tiny.en 在 LibriSpeech test-clean {total} 条真实录音上的 '
+                     'beam 1 与 beam 5 逐句对照，含 CER、WER 和字符差异；仅描述这个固定小样本。'),
+        canonical_url='https://qiangzhang-dev.github.io/notes/whisper-beam/report/',
+    )
     page = page.replace('本报告根据导入的参考文本和两个版本输出计算。请确认两版使用相同测试集、参考标注和可比的推理设置；工具不验证输入来源。',
                         '真实音频实验：LibriSpeech test-clean，每位说话人按固定哈希规则选一条，共 40 条。相同 Whisper tiny.en 权重、CPU int8，比较 beam 1 与 beam 5。此小样本不代表完整测试集成绩。<br><a href="https://qiangzhang-dev.github.io/notes/whisper-beam/">阅读实验记录、数据来源与复现方法</a>。')
     (output / 'report/index.html').write_text(page, encoding='utf-8')

@@ -2,16 +2,36 @@
 import sys
 import json
 import hashlib
+import shutil
+import tempfile
 from pathlib import Path
 import unittest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from scripts.librispeech_experiment import word_error, word_tokens, summarize_words
+from scripts.librispeech_experiment import render_experiment_report, word_error, word_tokens, summarize_words
 from speech_eval.comparison import compare_pairs, load_pairs, render_comparison
 
 
 class ExperimentMetricTests(unittest.TestCase):
+    def test_regenerated_report_preserves_data_and_identifies_real_recordings(self):
+        source = ROOT/'experiments/librispeech-beam/results'
+        with tempfile.TemporaryDirectory() as tmp:
+            output = Path(tmp)/'results'
+            shutil.copytree(source, output)
+            saved = (output/'report/comparison.json').read_bytes()
+            render_experiment_report(output)
+            self.assertEqual((output/'report/comparison.json').read_bytes(), saved)
+            page = (output/'report/index.html').read_text(encoding='utf-8')
+            self.assertIn('<title>Whisper beam 1 vs 5：40 条录音逐句对比 · Nate Zhang</title>', page)
+            self.assertIn('40 条真实录音', page)
+            self.assertIn('<link rel="canonical" href="https://qiangzhang-dev.github.io/notes/whisper-beam/report/">', page)
+            self.assertIn('合成样例演示', page)
+            self.assertNotIn('单版本结果', page)
+            self.assertEqual(page.count('<article class="case"'), 40)
+            render_experiment_report(output)
+            self.assertEqual((output/'report/index.html').read_text(encoding='utf-8'), page)
+
     def test_known_word_edits_and_normalization(self):
         self.assertEqual(word_error('ONE TWO THREE FOUR', 'one too four')['errors'], 2)
         self.assertEqual(word_error('one', 'one two three')['wer'], 2)

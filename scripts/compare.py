@@ -43,7 +43,9 @@ def main(argv=None):
             # Reserve a unique parent, then write into a new child directory.
             output = Path(tempfile.mkdtemp(prefix='compare-', dir=parent)) / 'report'
         report = write_comparison(source, output, baseline_name=args.baseline_name,
-                                  candidate_name=args.candidate_name, synthetic=args.input is None)
+                                  candidate_name=args.candidate_name, synthetic=args.input is None,
+                                  canonical_url='https://qiangzhang-dev.github.io/speech-eval/compare/'
+                                  if args.input is None else None)
         print(f"Compared {report['summary']['paired']} pairs; excluded {report['summary']['counts']['excluded']}.")
         page = output / 'index.html'
         print(f'Report: {page}')
